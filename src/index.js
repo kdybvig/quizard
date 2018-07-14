@@ -2,15 +2,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import ReactDOM from 'react-dom';
 import './index.css';
 import Game from './components/Game';
 import registerServiceWorker from './registerServiceWorker';
-import rootReducer from './reducers/index'
+import rootReducer from './reducers/'
 
 const store = createStore(rootReducer);
 
-ReactDOM.render(
+render(
   <Provider store = {store}>
     <Game />
   </Provider>,
