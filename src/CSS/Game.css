@@ -4,15 +4,21 @@ h1 {
 input {
   display: block; }
 
-#board #categories {
+#board #boxes {
   display: flex;
-  flex-direction: row; }
-  #board #categories p {
+  flex-direction: row;
+  flex-wrap: wrap; }
+  #board #boxes p {
     text-align: center;
-    width: 12%;
+    width: 10%;
     padding: 3%;
-    font-size: 1.7vw;
     font-weight: bold;
-    border: 4px solid black;
     border-radius: 5%;
-    margin: 10px 1%; }
+    margin: 5px 1%; }
+    #board #boxes p.category {
+      border: 4px solid black;
+      font-size: 1.7vw; }
+    #board #boxes p.points {
+      border: 4px solid black;
+      font-size: 3vw;
+      padding: 2% 3%; }
