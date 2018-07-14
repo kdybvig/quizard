@@ -6,7 +6,4 @@ const mapStateToProps = state => ({
   categories: state.categories
 })
 
-
-export default connect(
-  mapStateToProps
-)(Board)
+export default connect(mapStateToProps)(Board)

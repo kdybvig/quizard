@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { submitAction } from '../actions';
+import { addCategory } from '../actions';
 
 const CategoryForm = (props) => {
 
@@ -29,7 +29,10 @@ const CategoryForm = (props) => {
       const categoryNode = Array.from(container.childNodes).filter(node => node.className==='cInput')
       return categoryNode[0].value;
     });
-    props.dispatch(submitAction(title, categories))
+    const categoryObjects = categories.map(cat => {
+      return {name: cat, questions: []}
+    })
+    props.dispatch(addCategory(title, categoryObjects))
   }
 
   return (
