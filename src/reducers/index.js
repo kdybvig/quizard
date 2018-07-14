@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 
 const defaultState = {
-  questions: [],
+  title: '',
+  categories: [],
   submitted: false
 }
 
@@ -11,7 +12,8 @@ const rootReducer = (state = defaultState, action) => {
       return {
         ...state,
         submitted: true,
-        questions: action.questions
+        title: action.title,
+        categories: action.categories
       }
     default :
       return state;

@@ -1,4 +1,5 @@
-export const submitAction = (questions) => ({
+export const submitAction = (title, categories) => ({
   type: 'SUBMIT',
-  questions
+  title,
+  categories
 })

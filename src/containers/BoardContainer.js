@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Board from '../components/Board'
 
 const mapStateToProps = state => ({
-  myQuestions: state.questions
+  title: state.title,
+  categories: state.categories
 })
 
 

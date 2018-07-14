@@ -3,3 +3,16 @@ h1 {
 
 input {
   display: block; }
+
+#board #categories {
+  display: flex;
+  flex-direction: row; }
+  #board #categories p {
+    text-align: center;
+    width: 12%;
+    padding: 3%;
+    font-size: 1.7vw;
+    font-weight: bold;
+    border: 4px solid black;
+    border-radius: 5%;
+    margin: 10px 1%; }
