@@ -4,7 +4,7 @@ import { changeActiveQuestion } from '../actions';
 
 const QuestionDisplay = ({activeQuestion, dispatch}) => {
   return (
-    <div>
+    <div id='questionDisplay'>
       <h1>
       {activeQuestion}
       </h1>
