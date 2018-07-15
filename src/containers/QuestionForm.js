@@ -8,7 +8,7 @@ const QuestionForm = (props) => {
     const inputs = [];
     for (let i=0; i<5; i++) {
       const key = `cat-${i}`
-      const input = <textarea cols='50' rows='4' maxLength='250' className='qInput' required/>
+      const input = <textarea cols='50' rows='2' maxLength='250' className='qInput' required/>
       inputs.push(
         <div className='questContainer' key={key}>
           <h5>{`Question ${i+1} (${100*(i+1)} points)`}</h5>
