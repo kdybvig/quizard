@@ -6,6 +6,7 @@ import CategoryForm from '../containers/CategoryForm';
 import QuestionForm from '../containers/QuestionForm'
 import QuestionDisplay from './QuestionDisplay';
 import TeamForm from '../containers/TeamForm';
+import TeamDisplay from './TeamDisplay';
 
 
 
@@ -25,6 +26,7 @@ const Game = (props) => {
 
   return (
     <div className="game">
+      {props.allSubmitted && <TeamDisplay teams={props.teams}/>}
       {renderActiveComponent()}
     </div>
   );
@@ -34,7 +36,8 @@ const mapStateToProps = state => ({
   allSubmitted: state.teamsSubmitted,
   categoriesSubmitted: state.categoriesSubmitted,
   questionsSubmitted: state.questionsSubmitted,
-  activeQuestion: state.activeQuestion
+  activeQuestion: state.activeQuestion,
+  teams: state.teams
 })
 
 export default connect(mapStateToProps)(Game);
