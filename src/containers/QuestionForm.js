@@ -22,12 +22,14 @@ const QuestionForm = (props) => {
   const testSubmit = (e) => {
     e.preventDefault();
     const formChildren = Array.from(e.target.childNodes);
-    const questContainerNodes   = formChildren.filter(node => node.className==='questContainer');
+    const questContainerNodes  = formChildren.filter(node => node.className==='questContainer');
     const questNodes = questContainerNodes.map(container => {
       const questNode = Array.from(container.childNodes).filter(node => node.className==='qInput')
       return questNode;
     });
-    const questions = questNodes.map(node => node[0].value);
+    const questions = questNodes.map((node, index) => {
+      return {name: node[0].value, answered: false, value: 100*(index + 1)};
+    })
     questNodes.forEach(node => node[0].value='')
     props.dispatch(addQuestions(questions));
   }

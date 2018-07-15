@@ -8,13 +8,13 @@ const QuestionDisplay = ({activeQuestion, dispatch}) => {
       <h1>
       {activeQuestion}
       </h1>
-      <button onClick={()=> dispatch(changeActiveQuestion(''))}>Back</button>
+      <button onClick={()=> dispatch(changeActiveQuestion(false))}>Back</button>
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  activeQuestion: state.activeQuestion
+  activeQuestion: state.categories[state.activeQuestion[0]].questions[state.activeQuestion[1]].name
 });
 
 export default connect(mapStateToProps)(QuestionDisplay);

@@ -9,7 +9,7 @@ export const addQuestions = (questions) => ({
   questions
 })
 
-export const changeActiveQuestion = (question) => ({
+export const changeActiveQuestion = (location) => ({
   type: 'ACT_QUEST_CHANGE',
-  question
+  location
 })

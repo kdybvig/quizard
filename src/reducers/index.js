@@ -5,7 +5,7 @@ const defaultState = {
   categoriesSubmitted: false,
   questionsSubmitted: false,
   teamsSubmitted: false,
-  activeQuestion: ''
+  activeQuestion: false
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -32,9 +32,15 @@ const rootReducer = (state = defaultState, action) => {
         questionsSubmitted: questionsSubmitted
       }
     case 'ACT_QUEST_CHANGE' :
+      const catIndex2 = action.location[0];
+      const questIndex = action.location[1];
+      const categories = state.categories.slice();
+      if(action.location) categories[catIndex2].questions[questIndex].answered = true;
+
      return {
        ...state,
-       activeQuestion: action.question
+       categories: categories,
+       activeQuestion: action.location
      }
     default :
       return state;

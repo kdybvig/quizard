@@ -4,11 +4,25 @@ h1 {
 input {
   display: block; }
 
+#board h1 {
+  font-size: calc(16px + 2vw);
+  margin: 0px auto;
+  padding: 5px;
+  width: 50%;
+  background-color: #005;
+  border: 3px solid black;
+  color: white; }
+
 #board #boxes {
+  background-color: #006;
+  justify-content: center;
+  border: 6px solid black;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
   #board #boxes p {
+    background-color: blue;
+    color: white;
     text-align: center;
     width: 10%;
     padding: 3%;
@@ -22,3 +36,9 @@ input {
       border: 4px solid black;
       font-size: 3vw;
       padding: 2% 3%; }
+      #board #boxes p.points:hover {
+        cursor: pointer; }
+      #board #boxes p.points.answered {
+        background-color: grey; }
+        #board #boxes p.points.answered:hover {
+          cursor: not-allowed; }

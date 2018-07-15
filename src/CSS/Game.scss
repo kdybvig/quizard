@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+
 }
 
 input {
@@ -7,11 +8,25 @@ input {
 }
 
 #board {
+  h1 {
+    font-size: calc(16px + 2vw);
+    margin: 0px auto;
+    padding: 5px;
+    width: 50%;
+    background-color: #005;
+    border: 3px solid black;
+    color: white;
+  }
   #boxes {
+    background-color: #006;
+    justify-content: center;
+    border: 6px solid black;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     p {
+      background-color: blue;
+      color: white;
       text-align: center;
       width: 10%;
       padding: 3%;
@@ -28,6 +43,15 @@ input {
         border: 4px solid black;
         font-size: 3vw;
         padding: 2% 3%;
+        &:hover {
+          cursor: pointer;
+        }
+        &.answered {
+          background-color: grey;
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
       }
     }
   }
