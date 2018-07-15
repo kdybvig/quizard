@@ -1,6 +1,10 @@
 .form-page {
   grid-column: 1/3;
 
+  h5 {
+    margin-bottom: 7px;
+  }
+
   input, textarea {
     display: block;
 
@@ -17,5 +21,9 @@
       max-width: 90%;
       border: 3px solid black;
     }
+  }
+
+  button {
+    margin-top: 20px;
   }
 }
