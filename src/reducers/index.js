@@ -2,6 +2,7 @@ const defaultState = {
   title: '',
   categories: [],
   catIndex: 0,
+  teams: [],
   categoriesSubmitted: false,
   questionsSubmitted: false,
   teamsSubmitted: false,
@@ -31,6 +32,14 @@ const rootReducer = (state = defaultState, action) => {
         catIndex: newCatIndex,
         questionsSubmitted: questionsSubmitted
       }
+
+    case 'TEAMS_ADD' :
+      return {
+        ...state,
+        teams: action.teams,
+        teamsSubmitted: true
+      }
+
     case 'ACT_QUEST_CHANGE' :
       const catIndex2 = action.location[0];
       const questIndex = action.location[1];

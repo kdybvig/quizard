@@ -5,6 +5,7 @@ import BoardContainer from '../containers/BoardContainer';
 import CategoryForm from '../containers/CategoryForm';
 import QuestionForm from '../containers/QuestionForm'
 import QuestionDisplay from './QuestionDisplay';
+import TeamForm from '../containers/TeamForm';
 
 
 
@@ -12,7 +13,10 @@ const Game = (props) => {
 
   const renderActiveComponent = () => {
     if (!props.allSubmitted) {
-      return props.categoriesSubmitted ? <QuestionForm /> : <CategoryForm />
+      if (!props.questionsSubmitted) {
+        return props.categoriesSubmitted ? <QuestionForm /> : <CategoryForm />
+      }
+      else return <TeamForm />
     }
     else {
       return props.activeQuestion ? <QuestionDisplay /> : <BoardContainer />
@@ -20,15 +24,16 @@ const Game = (props) => {
   }
 
   return (
-    <div className="Game">
+    <div className="game">
       {renderActiveComponent()}
     </div>
   );
 }
 
 const mapStateToProps = state => ({
-  allSubmitted: state.questionsSubmitted,
+  allSubmitted: state.teamsSubmitted,
   categoriesSubmitted: state.categoriesSubmitted,
+  questionsSubmitted: state.questionsSubmitted,
   activeQuestion: state.activeQuestion
 })
 

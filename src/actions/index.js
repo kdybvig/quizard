@@ -9,6 +9,11 @@ export const addQuestions = (questions) => ({
   questions
 })
 
+export const addTeams = (teams) => ({
+  type: 'TEAMS_ADD',
+  teams
+})
+
 export const changeActiveQuestion = (location) => ({
   type: 'ACT_QUEST_CHANGE',
   location
