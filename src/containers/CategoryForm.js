@@ -8,7 +8,7 @@ const CategoryForm = (props) => {
     const inputs = [];
     for (let i=0; i<5; i++) {
       const key = `cat-${i}`
-      const input = <input className='cInput' required/>
+      const input = <input maxLength='30' className='cInput' required/>
       inputs.push(
         <div className='catContainer' key={key}>
           <h5>{`Category ${i+1}`}</h5>
@@ -36,7 +36,7 @@ const CategoryForm = (props) => {
   }
 
   return (
-    <div>
+    <div className='form-page'>
       <h1>New Review Game</h1>
       <form onSubmit={testSubmit}>
         <h5>Game Title</h5>
