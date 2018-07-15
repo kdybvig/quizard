@@ -24,13 +24,15 @@ const TeamForm = (props) => {
     const formChildren = Array.from(e.target.childNodes);
     const teamContainerNodes  = formChildren.filter(node => node.className==='teamContainer');
     const teamNodes = teamContainerNodes.map(container => {
-      const teamNode = Array.from(container.childNodes).filter(node => node.className==='tInput')
+      const teamNode = Array.from(container.childNodes).filter(node => {
+        return node.className==='tInput' && node.value
+      })[0]
       return teamNode;
-    });
+    }).filter(node => node);
     const teams= teamNodes.map((node, index) => {
-      return {name: node[0].value, points: 0};
+      return {name: node.value, points: 0};
     })
-    teamNodes.forEach(node => node[0].value='')
+    teamNodes.forEach(node => node.value='')
     props.dispatch(addTeams(teams));
   }
 

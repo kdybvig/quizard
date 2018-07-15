@@ -8,7 +8,7 @@ const TeamDisplay = ({teams}) => {
         return (
           <div key={key} className='team'>
             <h5 className = 'team-name'>{team.name}</h5>
-            <h7 className = 'team-points'>{team.points}</h7>
+            <h6 className = 'team-points'>{team.points}</h6>
           </div>
         )
       })}

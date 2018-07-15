@@ -51,15 +51,18 @@
   grid-column: 2/3; }
 
 #teams {
-  grid-column: 1/2; }
+  grid-column: 1/2;
+  margin-top: calc(2vw + 32px); }
   #teams .team {
+    background-color: black;
+    color: white;
     overflow: hidden;
     text-overflow: ellipse;
     overflow-wrap: break-word;
     width: 75%;
     padding: 3px 0px;
-    border: solid 2px black;
-    border-radius: 10%;
+    border: solid 3px #AAA;
+    outline: 1px solid black;
     text-align: center;
     margin: 1vw auto; }
     #teams .team .team-name {
