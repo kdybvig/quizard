@@ -44,13 +44,26 @@ const rootReducer = (state = defaultState, action) => {
       const catIndex2 = action.location[0];
       const questIndex = action.location[1];
       const categories = state.categories.slice();
-      if(action.location) categories[catIndex2].questions[questIndex].answered = true;
+      categories[catIndex2].questions[questIndex].answered = true;
 
      return {
        ...state,
        categories: categories,
        activeQuestion: action.location
      }
+
+    case 'TEAM_AWARD_PTS' :
+      const newTeams = state.teams.map(team => {
+        if(team.name === action.team) team.points += action.points;
+        return team;
+      })
+
+      return {
+        ...state,
+        teams: newTeams,
+        activeQuestion: false
+      }
+
     default :
       return state;
   }

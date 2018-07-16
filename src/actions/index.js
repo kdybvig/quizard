@@ -18,3 +18,9 @@ export const changeActiveQuestion = (location) => ({
   type: 'ACT_QUEST_CHANGE',
   location
 })
+
+export const awardPoints = (points, team) => ({
+  type: 'TEAM_AWARD_PTS',
+  points,
+  team
+})
