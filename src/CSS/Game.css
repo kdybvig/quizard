@@ -44,7 +44,7 @@
         width: 13.5%;
         border: 4px solid blue;
         border-radius: 0px;
-        font-size: 1.6vw; }
+        font-size: 1.5vw; }
         @media screen and (max-width: 450px) {
           #board #boxes p.category {
             width: 11.5%;
