@@ -25,7 +25,7 @@ const savedGames = [
       {
         name: 'Loops',
         questions: [
-          'What is wrong with this for loop? for(let i = 0, i<5 i++) {console.log(i)}',
+          'What is wrong with this for loop? for(let i = 0, i<5, i++) {console.log(i)}',
           'Write a for loop that console logs the numbers 1 through 100.',
           'Write a while loop that console logs the numbers 1 through 100.',
           'Give two examples of a case where it would be better to use a for loop than a forEach loop.',
