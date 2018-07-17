@@ -4,7 +4,7 @@ import { addCategory } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 const CategoryForm = (props) => {
-
+  
   const renderInputs = () => {
     const inputs = [];
     for (let i=0; i<5; i++) {

@@ -4,6 +4,8 @@ import { addTeams } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 const TeamForm = (props) => {
+  console.log(props.hasQuestions)
+  if(!props.hasQuestions) props.history.push('/')
   const renderInputs = () => {
     const inputs = [];
     for (let i=0; i<6; i++) {
@@ -50,5 +52,14 @@ const TeamForm = (props) => {
   )
 }
 
+const mapStateToProps = state => {
 
-export default withRouter(connect()(TeamForm));
+  console.log(state.catIndex)
+
+  return {
+    hasQuestions: state.catIndex
+  }
+};
+
+
+export default withRouter(connect(mapStateToProps)(TeamForm));

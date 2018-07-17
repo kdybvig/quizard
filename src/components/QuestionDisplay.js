@@ -6,6 +6,9 @@ import { awardPoints } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 const QuestionDisplay = ({activeQuestion, teams, points, dispatch, history}) => {
+
+  if(!teams.length) history.push('/')
+
   const dispatchAwardPoints = (points, team) => {
     dispatch(awardPoints(points, team));
     history.push('/game/board')

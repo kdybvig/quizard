@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom';
 
 const QuestionForm = (props) => {
 
+  if(!props.categories) props.history.push('/')
+
   const renderInputs = () => {
     const inputs = [];
     for (let i=0; i<5; i++) {

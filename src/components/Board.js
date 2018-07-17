@@ -1,8 +1,10 @@
 import React from 'react';
 import QuestionButton from '../containers/QuestionButton';
+import { withRouter } from 'react-router-dom';
 
 
-const Board = ({title, categories}) => {
+const Board = ({title, categories, history}) => {
+  if(!categories.length) history.push('/')
   const questionButtons = [];
   for(let i = 0; i< 25; i++) {
     const catIndex = i%5;
@@ -32,4 +34,4 @@ const Board = ({title, categories}) => {
   )
 }
 
-export default Board;
+export default withRouter(Board);

@@ -11,7 +11,6 @@ const QuestionButton = (props) => {
 
   const showQuestion = () => {
     if(isAnswered) return;
-    console.log(location);
     props.dispatch(changeActiveQuestion(location))
     props.history.push('/game/question')
   }

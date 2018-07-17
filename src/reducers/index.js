@@ -2,11 +2,7 @@ const defaultState = {
   title: '',
   categories: [],
   catIndex: 0,
-  teams: [],
-  categoriesSubmitted: false,
-  questionsSubmitted: false,
-  teamsSubmitted: false,
-  activeQuestion: false
+  teams: []
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -14,7 +10,6 @@ const rootReducer = (state = defaultState, action) => {
     case 'CAT_ADD':
       return {
         ...state,
-        categoriesSubmitted: true,
         title: action.title,
         categories: action.categories
       }
@@ -23,20 +18,17 @@ const rootReducer = (state = defaultState, action) => {
       const newCategories = state.categories.slice();
       newCategories[catIndex].questions = action.questions;
       const newCatIndex = catIndex + 1;
-      const questionsSubmitted = newCatIndex === 5;
 
       return {
         ...state,
         categories: newCategories,
-        catIndex: newCatIndex,
-        questionsSubmitted: questionsSubmitted
+        catIndex: newCatIndex
       }
 
     case 'TEAMS_ADD' :
       return {
         ...state,
-        teams: action.teams,
-        teamsSubmitted: true
+        teams: action.teams
       }
 
     case 'ACT_QUEST_CHANGE' :
@@ -66,9 +58,7 @@ const rootReducer = (state = defaultState, action) => {
     case 'QUIZ_LOAD' :
       return {
         ...state,
-        categories: action.categories,
-        categoriesSubmitted: true,
-        questionsSubmitted: true
+        categories: action.categories
       }
 
     default :
