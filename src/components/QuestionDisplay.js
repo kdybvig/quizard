@@ -5,9 +5,10 @@ import { awardPoints } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 const QuestionDisplay = ({activeQ, teams, points, dispatch, history}) => {
-
-
-  if(!teams) history.push('/')
+  if(!teams) {
+    history.push('/')
+    return<div></div>
+  }
 
   const dispatchAwardPoints = (points, team) => {
     dispatch(awardPoints(points, team));
@@ -25,8 +26,10 @@ const QuestionDisplay = ({activeQ, teams, points, dispatch, history}) => {
 }
 
 const mapStateToProps = state => {
-  if (!state.teams.length) return {
-    teams: false
+  if (!state.teams.length) {
+    return {
+      teams: false
+    }
   }
   return {
     activeQ: state.categories[state.activeQuestion[0]].questions[state.activeQuestion[1]].name,
