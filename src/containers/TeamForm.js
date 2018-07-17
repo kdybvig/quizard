@@ -54,10 +54,8 @@ const TeamForm = (props) => {
 
 const mapStateToProps = state => {
 
-  console.log(state.catIndex)
-
   return {
-    hasQuestions: state.catIndex
+    hasQuestions: state.catIndex === 5
   }
 };
 
