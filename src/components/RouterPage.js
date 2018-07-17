@@ -1,7 +1,9 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link,
+  NavLink
 } from 'react-router-dom';
 import LoadQuizzes from './LoadQuizzes';
 import CategoryForm from '../containers/CategoryForm';
@@ -17,6 +19,7 @@ const RouterPage = (props) => {
   return (
     <Router>
       <div className='game'>
+        <nav><Link to='/'><i class="fas fa-home"></i></Link></nav>
         <Route exact path="/" component={Home}/>
         <Route path="/create" component={CategoryForm}/>
         <Route path="/load" component={LoadQuizzes}/>

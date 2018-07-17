@@ -157,3 +157,7 @@
   grid-template-columns: 20% 80%; }
   .game h1 {
     text-align: center; }
+  .game nav {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: calc(12px + 1vw); }
