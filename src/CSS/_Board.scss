@@ -45,11 +45,11 @@
       }
 
       &.category {
-        padding: 3% 1%;
+        padding: 2% 1%;
         width: 13.5%;
         border: 4px solid blue;
         border-radius: 0px;
-        font-size: 1.7vw;
+        font-size: 1.6vw;
         @media screen and (max-width: 450px) {
           width: 11.5%;
           font-size: 1.3vw;
@@ -59,7 +59,7 @@
       &.points {
         border: 4px outset #9AB;
         font-size: 3vw;
-        padding: 2% 2%;
+        padding: 1.6% 2%;
 
         &:hover {
           cursor: pointer;

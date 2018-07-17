@@ -40,11 +40,11 @@
         #board #boxes p {
           width: 9.5%; } }
       #board #boxes p.category {
-        padding: 3% 1%;
+        padding: 2% 1%;
         width: 13.5%;
         border: 4px solid blue;
         border-radius: 0px;
-        font-size: 1.7vw; }
+        font-size: 1.6vw; }
         @media screen and (max-width: 450px) {
           #board #boxes p.category {
             width: 11.5%;
@@ -52,7 +52,7 @@
       #board #boxes p.points {
         border: 4px outset #9AB;
         font-size: 3vw;
-        padding: 2% 2%; }
+        padding: 1.6% 2%; }
         #board #boxes p.points:hover {
           cursor: pointer; }
         #board #boxes p.points:active {
@@ -71,12 +71,15 @@
   height: calc(45vw + 60px);
   border: 4px solid #888;
   background-color: #006;
-  color: white;
   font-size: calc(8px + 1.5vw);
   grid-column: 2/3;
   padding: 1vw 0px;
   overflow: hidden;
   text-overflow: scroll; }
+  #questionDisplay h1 {
+    color: white;
+    text-align: left;
+    margin: 2vw 4vw; }
   #questionDisplay #team-select-form {
     position: absolute;
     bottom: 5px;
