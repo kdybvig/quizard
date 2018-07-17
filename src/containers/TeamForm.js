@@ -8,7 +8,7 @@ const TeamForm = (props) => {
   if(!props.hasQuestions) props.history.push('/')
   const renderInputs = () => {
     const inputs = [];
-    for (let i=0; i<6; i++) {
+    for (let i=0; i<5; i++) {
       const key = `cat-${i}`
       const input = <input maxLength='25' className='tInput' required/>
       const inputNotReq = <input maxLength='25' className='tInput'/>
@@ -43,7 +43,7 @@ const TeamForm = (props) => {
 
   return (
     <div className='form-page'>
-      <h4>Enter Two To Six Team Names</h4>
+      <h4>Enter Two To Five Team Names</h4>
       <form onSubmit={testSubmit}>
         {renderInputs()}
         <button type="submit">Submit</button>
