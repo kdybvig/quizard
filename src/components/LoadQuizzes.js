@@ -19,7 +19,8 @@ const LoadQuizzes = ({ dispatch }) => {
   console.log(games)
 
   return (
-    <div>
+    <div  id='load-screen'>
+      <h2> Choose An Existing Quiz To Load </h2>
       {
         games.map((game,index) => {
 
