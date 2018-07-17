@@ -15,7 +15,7 @@ const savedGames = [
       {
         name: 'Arrays',
         questions: [
-          'What number will be logged to the console? const arr = [3,2,1]  console.log(arr[1])'
+          'What number will be logged to the console? const arr = [3,2,1]  console.log(arr[1])',
           'How would you console log the 5th element in an array?',
           'Which array method removes the last element from an array?',
           'Use Array.reduce() to find the sum of the squares of the numbers 93, 123, and 823.1.',
@@ -35,9 +35,9 @@ const savedGames = [
       {
         name: 'Objects',
         questions: [
-          'What will be logged to the console? const obj = {food: 'pizza'}  console.log(obj.food)',
-          'What will be logged to the console? const obj = {food: 'pizza', drink:'soda'} const drink = 'food' console.log(obj[drink])',
-          'How would you access the name property in the following object: {person: {name: 'Keith'}}',
+          `What will be logged to the console? const obj = {food: 'pizza'}  console.log(obj.food)`,
+          `What will be logged to the console? const obj = {food: 'pizza', drink:'soda'} const drink = 'food' console.log(obj[drink])`,
+          `How would you access the name property in the following object: {person: {name: 'Keith'}}`,
           "How would you add 10 points to Joe's score? const scores = [{name: 'Bob', score: 50}{name: 'Joe', score: 45}]",
           'Write a function that loops through all the keys in an object and returns an array of all the keys which have falsy values.'
         ]
@@ -53,6 +53,7 @@ const savedGames = [
           'Write a function that reduces a fraction to its simplest form.'
         ]
       }
+    ]
   },
   {
     name: 'Lorem Ipsum',

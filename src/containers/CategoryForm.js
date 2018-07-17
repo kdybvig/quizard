@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addCategory } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 const CategoryForm = (props) => {
 
@@ -23,7 +24,6 @@ const CategoryForm = (props) => {
     const formChildren = Array.from(e.target.childNodes);
     const titleNode = formChildren.filter(node => node.className === 'titleInput');
     const title = titleNode[0].value;
-    console.log(title);
     const catContainerNodes   = formChildren.filter(node => node.className==='catContainer');
     const categories = catContainerNodes.map(container => {
       const categoryNode = Array.from(container.childNodes).filter(node => node.className==='cInput')
@@ -33,6 +33,7 @@ const CategoryForm = (props) => {
       return {name: cat, questions: []}
     })
     props.dispatch(addCategory(title, categoryObjects))
+    props.history.push('/createquestions')
   }
 
   return (
@@ -49,4 +50,4 @@ const CategoryForm = (props) => {
 }
 
 
-export default connect()(CategoryForm);
+export default withRouter(connect()(CategoryForm));

@@ -24,3 +24,8 @@ export const awardPoints = (points, team) => ({
   points,
   team
 })
+
+export const loadQuiz = (categories) => ({
+  type: 'QUIZ_LOAD',
+  categories
+})

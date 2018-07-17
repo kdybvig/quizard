@@ -24,7 +24,6 @@ const rootReducer = (state = defaultState, action) => {
       newCategories[catIndex].questions = action.questions;
       const newCatIndex = catIndex + 1;
       const questionsSubmitted = newCatIndex === 5;
-      console.log(newCategories);
 
       return {
         ...state,
@@ -62,6 +61,14 @@ const rootReducer = (state = defaultState, action) => {
         ...state,
         teams: newTeams,
         activeQuestion: false
+      }
+
+    case 'QUIZ_LOAD' :
+      return {
+        ...state,
+        categories: action.categories,
+        categoriesSubmitted: true,
+        questionsSubmitted: true
       }
 
     default :

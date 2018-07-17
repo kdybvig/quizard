@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { changeActiveQuestion } from '../actions';
 import TeamSelect from './TeamSelect';
 import { awardPoints } from '../actions';
+import { withRouter } from 'react-router-dom';
 
-const QuestionDisplay = ({activeQuestion, teams, points, dispatch}) => {
+const QuestionDisplay = ({activeQuestion, teams, points, dispatch, history}) => {
   const dispatchAwardPoints = (points, team) => {
     dispatch(awardPoints(points, team));
+    history.push('/game/board')
   }
 
   return (
@@ -25,4 +27,4 @@ const mapStateToProps = state => ({
   teams: state.teams.map(team => team.name)
 });
 
-export default connect(mapStateToProps)(QuestionDisplay);
+export default withRouter(connect(mapStateToProps)(QuestionDisplay));

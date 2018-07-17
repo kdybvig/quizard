@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const TeamDisplay = ({teams}) => {
   return (
     <div id='teams'>
-      {teams.map((team,index) => {
+      {
+        teams.map((team,index) => {
         const key = `team-${index}`
         return (
           <div key={key} className='team'>
@@ -16,4 +18,8 @@ const TeamDisplay = ({teams}) => {
   )
 }
 
-export default TeamDisplay;
+const mapStateToProps = state => ({
+  teams: state.teams
+});
+
+export default connect(mapStateToProps)(TeamDisplay);

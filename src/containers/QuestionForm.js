@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addQuestions } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 const QuestionForm = (props) => {
 
@@ -31,7 +32,9 @@ const QuestionForm = (props) => {
       return {name: node[0].value, answered: false, value: 100*(index + 1)};
     })
     questNodes.forEach(node => node[0].value='')
+    const isLastCat = props.catIndex === 4
     props.dispatch(addQuestions(questions));
+    if(isLastCat) props.history.push('/addteams')
   }
 
 

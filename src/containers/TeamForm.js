@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addTeams } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 const TeamForm = (props) => {
   const renderInputs = () => {
@@ -34,6 +35,7 @@ const TeamForm = (props) => {
     })
     teamNodes.forEach(node => node.value='')
     props.dispatch(addTeams(teams));
+    props.history.push('/game/board')
   }
 
 
@@ -49,4 +51,4 @@ const TeamForm = (props) => {
 }
 
 
-export default connect()(TeamForm);
+export default withRouter(connect()(TeamForm));
