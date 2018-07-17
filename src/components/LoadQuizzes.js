@@ -20,7 +20,7 @@ const LoadQuizzes = ({ dispatch }) => {
 
   return (
     <div  id='load-screen'>
-      <h2> Choose An Existing Quiz To Load </h2>
+      <h2> Choose A Quiz To Load </h2>
       {
         games.map((game,index) => {
 
