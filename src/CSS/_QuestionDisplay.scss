@@ -7,9 +7,11 @@
   border: 4px solid #888;
   background-color: #006;
   color: white;
-  font-size: calc(16+2.5vw);
+  font-size: calc(8px + 1.5vw);
   grid-column: 2/3;
   padding: 1vw 0px;
+  overflow: hidden;
+  text-overflow: scroll;
 
   #team-select-form {
     position: absolute;
@@ -23,6 +25,11 @@
       border-radius: 0px;
       color: green;
       font-size: calc(10px + 1vw);
+      @media screen and (max-width: 450px) {
+        min-width: calc(60px + 10vw);
+        max-width: calc(60px + 10vw);
+        font-size: calc(7px + 0.8vw)
+      }
 
       &:focus {
         outline: none;
@@ -36,6 +43,10 @@
       color: green;
       font-size: calc(8px + 1vw);
       margin-left: 4px;
+      @media screen and (max-width: 450px) {
+        font-size: calc(5px + 0.8vw);
+      }
+
       &:hover {
         cursor: pointer;
       }
