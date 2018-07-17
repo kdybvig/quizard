@@ -38,7 +38,7 @@ const savedGames = [
           `What will be logged to the console? const obj = {food: 'pizza'}  console.log(obj.food)`,
           `What will be logged to the console? const obj = {food: 'pizza', drink:'soda'} const drink = 'food' console.log(obj[drink])`,
           `How would you access the name property in the following object: {person: {name: 'Keith'}}`,
-          "How would you add 10 points to Joe's score? const scores = [{name: 'Bob', score: 50}{name: 'Joe', score: 45}]",
+          "How would you add 10 points to Joe's score? const scores = [{name: 'Bob', score: 50},{name: 'Joe', score: 45}]",
           'Write a function that loops through all the keys in an object and returns an array of all the keys which have falsy values.'
         ]
 
