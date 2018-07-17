@@ -11,7 +11,8 @@ const rootReducer = (state = defaultState, action) => {
       return {
         ...state,
         title: action.title,
-        categories: action.categories
+        categories: action.categories,
+        catIndex: 0
       }
     case 'QUEST_ADD' :
       const catIndex = state.catIndex;
