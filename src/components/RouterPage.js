@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { restartGame } from '../actions';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  NavLink
+  Link
 } from 'react-router-dom';
 import LoadQuizzes from './LoadQuizzes';
 import CategoryForm from '../containers/CategoryForm';
@@ -19,7 +20,7 @@ const RouterPage = (props) => {
   return (
     <Router>
       <div className='game'>
-        <nav><Link to='/'><i class="fas fa-home"></i></Link></nav>
+        <nav><Link to='/'><i className="fas fa-home" onClick={()=>props.dispatch(restartGame())}></i></Link></nav>
         <Route exact path="/" component={Home}/>
         <Route path="/create" component={CategoryForm}/>
         <Route path="/load" component={LoadQuizzes}/>
@@ -33,4 +34,4 @@ const RouterPage = (props) => {
   )
 }
 
-export default RouterPage;
+export default connect()(RouterPage);

@@ -4,7 +4,6 @@ import { addTeams } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 const TeamForm = (props) => {
-  console.log(props.hasQuestions)
   if(!props.hasQuestions) props.history.push('/')
   const renderInputs = () => {
     const inputs = [];

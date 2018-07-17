@@ -30,3 +30,7 @@ export const loadQuiz = (categories, title) => ({
   categories,
   title
 })
+
+export const restartGame = () => ({
+  type: 'GAME_RESTART'
+})

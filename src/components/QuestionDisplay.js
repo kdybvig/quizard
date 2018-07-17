@@ -4,9 +4,10 @@ import TeamSelect from './TeamSelect';
 import { awardPoints } from '../actions';
 import { withRouter } from 'react-router-dom';
 
-const QuestionDisplay = ({activeQuestion, teams, points, dispatch, history}) => {
+const QuestionDisplay = ({activeQ, teams, points, dispatch, history}) => {
 
-  if(!teams.length) history.push('/')
+
+  if(!teams) history.push('/')
 
   const dispatchAwardPoints = (points, team) => {
     dispatch(awardPoints(points, team));
@@ -16,17 +17,22 @@ const QuestionDisplay = ({activeQuestion, teams, points, dispatch, history}) => 
   return (
     <div id='questionDisplay'>
       <h1>
-      {activeQuestion}
+      {activeQ}
       </h1>
-      <TeamSelect activeQuestion={activeQuestion} teams={teams} points={points} awardPoints={dispatchAwardPoints}/>
+      <TeamSelect activeQuestion={activeQ} teams={teams} points={points} awardPoints={dispatchAwardPoints}/>
     </div>
   )
 }
 
-const mapStateToProps = state => ({
-  activeQuestion: state.categories[state.activeQuestion[0]].questions[state.activeQuestion[1]].name,
-  points: state.categories[state.activeQuestion[0]].questions[state.activeQuestion[1]].value,
-  teams: state.teams.map(team => team.name)
-});
+const mapStateToProps = state => {
+  if (!state.teams.length) return {
+    teams: false
+  }
+  return {
+    activeQ: state.categories[state.activeQuestion[0]].questions[state.activeQuestion[1]].name,
+    points: state.categories[state.activeQuestion[0]].questions[state.activeQuestion[1]].value,
+    teams: state.teams.map(team => team.name)
+  }
+};
 
 export default withRouter(connect(mapStateToProps)(QuestionDisplay));

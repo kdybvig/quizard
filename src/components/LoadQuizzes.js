@@ -6,17 +6,26 @@ import { Link } from 'react-router-dom';
 
 const LoadQuizzes = ({ dispatch }) => {
 
-  const games =  savedGames
+  const games = savedGames.map(game => {
 
-  games.forEach(game => {
-    game.categories.forEach(cat => {
-      cat.questions = cat.questions.map((question, index) => {
+    const newCategories = game.categories.map(cat=> {
+
+      const newQuestions = cat.questions.map((question, index) => {
         return {name: question, answered: false, value: 100*(index + 1)};
-      })
+      });
+
+      return {
+        ...cat,
+        questions: newQuestions
+      }
     });
+
+    return {
+      ...game,
+      categories: newCategories
+    }
   });
 
-  console.log(games)
 
   return (
     <div  id='load-screen'>
@@ -41,5 +50,8 @@ const LoadQuizzes = ({ dispatch }) => {
   )
 }
 
+const mapStateToProps = state => {
+  return {}
+}
 
-export default connect()(LoadQuizzes);
+export default connect(mapStateToProps)(LoadQuizzes);

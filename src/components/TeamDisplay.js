@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const TeamDisplay = ({teams}) => {
+  if (!teams.length) return;
   return (
     <div id='teams'>
       {

@@ -2,7 +2,8 @@ const defaultState = {
   title: '',
   categories: [],
   catIndex: 0,
-  teams: []
+  teams: [],
+  activeQuestion: false
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -63,6 +64,9 @@ const rootReducer = (state = defaultState, action) => {
         categories: action.categories,
         catIndex: 5
       }
+
+    case 'GAME_RESTART' :
+      return defaultState
 
     default :
       return state;
