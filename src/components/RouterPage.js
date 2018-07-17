@@ -1,9 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import LoadQuizzes from './LoadQuizzes';
 import CategoryForm from '../containers/CategoryForm';

@@ -57,4 +57,4 @@ const mapStateToProps = state => ({
 })
 
 
-export default connect(mapStateToProps)(QuestionForm);
+export default withRouter(connect(mapStateToProps)(QuestionForm));

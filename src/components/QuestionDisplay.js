@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeActiveQuestion } from '../actions';
 import TeamSelect from './TeamSelect';
 import { awardPoints } from '../actions';
 import { withRouter } from 'react-router-dom';
