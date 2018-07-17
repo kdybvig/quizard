@@ -6,23 +6,30 @@ import { Link } from 'react-router-dom';
 
 const LoadQuizzes = ({ dispatch }) => {
 
-  const games =  savedGames.map(game => {
-    game.categories.map(cat => {
-      cat.questions.map((question, index) => {
+  const games =  savedGames
+
+  games.forEach(game => {
+    game.categories.forEach(cat => {
+      cat.questions = cat.questions.map((question, index) => {
         return {name: question, answered: false, value: 100*(index + 1)};
       })
-    })
+    });
   });
+
+  console.log(games)
 
   return (
     <div>
       {
-        games.map(game => {
+        games.map((game,index) => {
+
+          const key = `saved-game-${index}`
+
           return (
-            <h4>
+            <h4 key={key}>
               <Link
                to='/addteams'
-               onClick={() => dispatch(loadQuiz(game.categories))}>
+               onClick={() => dispatch(loadQuiz(game.categories, game.name))}>
                 {game.name}
               </Link>
             </h4>

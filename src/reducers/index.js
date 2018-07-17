@@ -58,7 +58,9 @@ const rootReducer = (state = defaultState, action) => {
     case 'QUIZ_LOAD' :
       return {
         ...state,
-        categories: action.categories
+        title: action.title,
+        categories: action.categories,
+        catIndex: 5
       }
 
     default :
