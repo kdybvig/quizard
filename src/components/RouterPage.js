@@ -7,11 +7,11 @@ import {
   Link
 } from 'react-router-dom';
 import LoadQuizzes from './LoadQuizzes';
-import CategoryForm from '../containers/CategoryForm';
-import QuestionForm from '../containers/QuestionForm';
-import TeamForm from '../containers/TeamForm';
+import CategoryForm from './CategoryForm';
+import QuestionForm from './QuestionForm';
+import TeamForm from './TeamForm';
 import TeamDisplay from './TeamDisplay';
-import BoardContainer from '../containers/BoardContainer';
+import BoardContainer from './BoardContainer';
 import QuestionDisplay from './QuestionDisplay';
 import Home from './Home';
 import '../CSS/Game.css';

@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionButton from '../containers/QuestionButton';
+import QuestionButton from './QuestionButton';
 import { withRouter } from 'react-router-dom';
 
 
