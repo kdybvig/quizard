@@ -6,13 +6,13 @@ import { withRouter } from 'react-router-dom';
 
 const QuestionDisplay = ({activeQ, teams, points, dispatch, history}) => {
   if(!teams) {
-    history.push('/')
+    history.push(process.env.PUBLIC_URL + '/')
     return<div></div>
   }
 
   const dispatchAwardPoints = (points, team) => {
     dispatch(awardPoints(points, team));
-    history.push('/game/board')
+    history.push(process.env.PUBLIC_URL + '/game/board')
   }
 
   return (

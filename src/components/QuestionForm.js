@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const QuestionForm = (props) => {
 
-  if(!props.categories) props.history.push('/')
+  if(!props.categories) props.history.push(process.env.PUBLIC_URL + '/')
 
   const renderInputs = () => {
     const inputs = [];
@@ -36,7 +36,7 @@ const QuestionForm = (props) => {
     questNodes.forEach(node => node[0].value='')
     const isLastCat = props.catIndex === 4
     props.dispatch(addQuestions(questions));
-    if(isLastCat) props.history.push('/addteams')
+    if(isLastCat) props.history.push(process.env.PUBLIC_URL + '/addteams')
   }
 
 

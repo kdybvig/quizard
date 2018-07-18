@@ -33,7 +33,7 @@ const CategoryForm = (props) => {
       return {name: cat, questions: []}
     })
     props.dispatch(addCategory(title, categoryObjects))
-    props.history.push('/createquestions')
+    props.history.push(process.env.PUBLIC_URL + '/createquestions')
   }
 
   return (

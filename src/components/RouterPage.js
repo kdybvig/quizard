@@ -20,7 +20,7 @@ const RouterPage = (props) => {
   return (
     <Router>
       <div className='game'>
-        <nav><Link to='/'><i className="fas fa-home" onClick={()=>props.dispatch(restartGame())}></i></Link></nav>
+        <nav><Link to={process.env.PUBLIC_URL + '/'}><i className="fas fa-home" onClick={()=>props.dispatch(restartGame())}></i></Link></nav>
         <Route exact path="/" component={Home}/>
         <Route path="/create" component={CategoryForm}/>
         <Route path="/load" component={LoadQuizzes}/>

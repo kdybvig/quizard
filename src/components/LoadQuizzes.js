@@ -38,7 +38,7 @@ const LoadQuizzes = ({ dispatch }) => {
           return (
             <h4 key={key}>
               <Link
-               to='/addteams'
+               to={process.env.PUBLIC_URL + '/addteams'}
                onClick={() => dispatch(loadQuiz(game.categories, game.name))}>
                 {game.name}
               </Link>

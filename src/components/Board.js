@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const Board = ({title, categories, history}) => {
-  if(!categories.length) history.push('/')
+  if(!categories.length) history.push(process.env.PUBLIC_URL + '/')
   const questionButtons = [];
   for(let i = 0; i< 25; i++) {
     const catIndex = i%5;

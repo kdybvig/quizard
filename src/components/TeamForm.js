@@ -4,7 +4,7 @@ import { addTeams } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 const TeamForm = (props) => {
-  if(!props.hasQuestions) props.history.push('/')
+  if(!props.hasQuestions) props.history.push(process.env.PUBLIC_URL + '/')
   const renderInputs = () => {
     const inputs = [];
     for (let i=0; i<5; i++) {
@@ -36,7 +36,7 @@ const TeamForm = (props) => {
     })
     teamNodes.forEach(node => node.value='')
     props.dispatch(addTeams(teams));
-    props.history.push('/game/board')
+    props.history.push(process.env.PUBLIC_URL + '/game/board')
   }
 
 
