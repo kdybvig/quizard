@@ -13,7 +13,7 @@ This is a React/Redux application that allows the user to create jeopardy style 
 
 ## Features
 
-* The application tracks of the scores for each team
+* The application tracks the scores for each team
 * Question boxes turn grey and become unclickable once answered
 * Users can navigate between pages with React Router
 * Users can choose to create a new quiz or load a pre-generated quiz
@@ -21,7 +21,7 @@ This is a React/Redux application that allows the user to create jeopardy style 
 
 ## Future Updates
 
-* Create login page so users can save private quizzes
+* Create login page so users can save and load private quizzes
 * Allow users to save quizzes as either public or private, so that quizzes can be reused
 * Users will be able to search the list of saved quizzes
 * Users will be able to rate public quizzes
