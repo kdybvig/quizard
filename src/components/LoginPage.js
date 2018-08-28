@@ -8,6 +8,7 @@ const LoginPage = (props) => {
             <input placeholder="Username"/>
             <h5>Password</h5>
             <input placeholder="Password"/>
+            <a>Forgot password?</a>
             <button>Sign In</button>
         </div>
     )

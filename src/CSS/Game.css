@@ -173,7 +173,8 @@
   padding: 20px; }
   #login-box h1 {
     font-size: 24px;
-    text-align: left; }
+    text-align: left;
+    margin-top: 5px; }
   #login-box h5 {
     margin-bottom: 5px; }
   #login-box input {
@@ -194,6 +195,9 @@
     font-weight: bold; }
   #login-box button:active {
     border: 5px inset #38005A; }
+  #login-box a {
+    margin-top: 20px;
+    float: right; }
 
 .game {
   margin-left: 10px;
