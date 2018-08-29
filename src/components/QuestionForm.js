@@ -9,12 +9,17 @@ const QuestionForm = (props) => {
 
   const renderInputs = () => {
     const inputs = [];
-    for (let i=0; i<5; i++) {
+    for (let i=0; i<10; i++) {
       const key = `cat-${i}`
+      const questNum = Math.floor(i/2) + 1;
+      const className = i%2 === 0 ? 'questContainer' : 'questContainer ansContainer'
+      
+      const label = i%2 === 0 ? 
+        `Question ${questNum} (${questNum*100})` : `Answer` 
       const input = <textarea cols='50' rows='2' maxLength='250' className='qInput' required/>
       inputs.push(
-        <div className='questContainer' key={key}>
-          <h5>{`Question ${i+1} (${100*(i+1)} points)`}</h5>
+        <div className={className} key={key}>
+          <h5>{label}</h5>
           {input}
         </div>
       )
@@ -43,6 +48,7 @@ const QuestionForm = (props) => {
   return (
     <div className='form-page'>
       <form onSubmit={testSubmit}>
+        <h1>{props.title}</h1>
         <h4>Category: {props.categories[props.catIndex].name}</h4>
         {renderInputs()}
         <button type="submit">Submit</button>
@@ -53,7 +59,8 @@ const QuestionForm = (props) => {
 
 const mapStateToProps = state => ({
   categories: state.categories,
-  catIndex: state.catIndex
+  catIndex: state.catIndex,
+  title: state.title
 })
 
 

@@ -21,6 +21,7 @@ const QuestionDisplay = ({activeQ, teams, points, dispatch, history}) => {
       {activeQ}
       </h1>
       <TeamSelect activeQuestion={activeQ} teams={teams} points={points} awardPoints={dispatchAwardPoints}/>
+      <button id="show-answer">Show Answer</button>
     </div>
   )
 }

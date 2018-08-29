@@ -4,6 +4,19 @@
   h5 {
     margin-bottom: 7px;
   }
+  
+  .questContainer {
+    display: inline-block;
+    width: 600px;
+  }
+
+  .ansContainer {
+    display: inline-block;
+  }
+
+  button {
+    display: block;
+  }
 
   input, textarea {
     display: block;
