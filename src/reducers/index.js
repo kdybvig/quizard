@@ -1,4 +1,6 @@
 const defaultState = {
+  loadedQuizzes: [],
+  isLoading: false,
   title: '',
   categories: [],
   catIndex: 0,
@@ -63,6 +65,13 @@ const rootReducer = (state = defaultState, action) => {
         title: action.title,
         categories: action.categories,
         catIndex: 5
+      }
+    
+    case 'QUIZZES_LOAD' :
+      return {
+        ...state,
+        isLoading: false,
+        loadedQuizzes: action.quizzes
       }
 
     case 'GAME_RESTART' :
