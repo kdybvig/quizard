@@ -11,12 +11,12 @@ const Navbar = (props) => {
             </Link>
             <Link 
              to={process.env.PUBLIC_URL + '/login'} 
-             class = "login-link">
+             className = "login-link">
              Login
             </Link>
             <Link 
              to={process.env.PUBLIC_URL + '/signup'} 
-             class = "login-link">
+             className = "login-link">
              Sign Up
             </Link>
         </nav>
