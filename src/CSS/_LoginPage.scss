@@ -38,6 +38,16 @@
     button:active {
         border: 5px inset #38005A;
     }
+
+    .error-message {
+        width: 100% -20px;
+        color: #a93434;
+        background-color: #f2dede;
+        border: 1px solid #F2c2C2;
+        border-radius: 3px;
+        font-size: 12px;
+        padding: 10px;
+    }
     #forgot-password {
         margin-top: 20px;
         float: right;
