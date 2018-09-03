@@ -12,11 +12,11 @@ const Navbar = (props) => {
             <div id="right-links">
                 {props.user.username ?
                 <div>
-                    <p
+                    <a
                     to={process.env.PUBLIC_URL + '/'} 
                     className = "right-link">
                     {props.user.username}
-                    </p> 
+                    </a> 
                 </div> :
                 <div>
                     <Link 
