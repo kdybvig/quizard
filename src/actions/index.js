@@ -51,6 +51,41 @@ export const loadQuiz = (categories, title) => ({
   title
 })
 
+export const fetchUser = (user) => {
+  const {username, password} = user;
+  return dispatch => {
+    dispatch({
+      type: "USER_LOADING"
+    });
+    fetch("https://quizard-data.herokuapp.com/users/login", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({username, password})
+    })
+    .then(res => res.json())
+    .then(json => {
+      if(!json.username) {
+        dispatch(loginError(json));
+        return;
+      }
+      dispatch(loginUser(username, password))
+    })
+  }
+}
+
+export const loginError = message => ({
+  type: 'ERROR_LOGIN',
+  message
+})
+
+export const loginUser = (username, password) => ({
+  type: 'USER_LOGIN',
+  username,
+  password
+})
+
 export const restartGame = () => ({
   type: 'GAME_RESTART'
 })
