@@ -10,19 +10,34 @@ const Navbar = (props) => {
                 <i className="fas fa-home" onClick={()=>props.dispatch(restartGame())}></i>
             </Link>
             <div id="right-links">
-                <Link 
-                to={process.env.PUBLIC_URL + '/login'} 
-                className = "right-link">
-                Login
-                </Link>
-                <Link 
-                to={process.env.PUBLIC_URL + '/signup'} 
-                className = "right-link">
-                Sign Up
-                </Link>
+                {props.user.username ?
+                <div>
+                    <p
+                    to={process.env.PUBLIC_URL + '/'} 
+                    className = "right-link">
+                    {props.user.username}
+                    </p> 
+                </div> :
+                <div>
+                    <Link 
+                    to={process.env.PUBLIC_URL + '/login'} 
+                    className = "right-link">
+                    Login
+                    </Link>
+                    <Link 
+                    to={process.env.PUBLIC_URL + '/signup'} 
+                    className = "right-link">
+                    Sign Up
+                    </Link>
+                </div>
+                }
             </div>
         </nav>
     )
-}
+};
 
-export default connect()(Navbar);
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+export default connect(mapStateToProps)(Navbar);
