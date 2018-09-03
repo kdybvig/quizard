@@ -33,6 +33,7 @@ class LoadQuizzes extends Component {
     return (
       <div  id='load-screen'>
         <h2> Choose A Quiz To Load </h2>
+        {this.props.isLoading && <h4>Loading...</h4>}
         {
           games.map((game,index) => {
   
@@ -55,7 +56,8 @@ class LoadQuizzes extends Component {
 }
 
 const mapStateToProps = state => ({
-  quizzes: state.loadedQuizzes
+  quizzes: state.loadedQuizzes,
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps)(LoadQuizzes);
