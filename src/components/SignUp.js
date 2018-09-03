@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SignUp = (props) => {
     return (
@@ -13,6 +14,9 @@ const SignUp = (props) => {
             <h5>Confirm Password</h5>
             <input placeholder="Password"/>
             <button>Sign Up</button>
+            <p>Already have an account? 
+                <Link to={process.env.PUBLIC_URL + '/login'} > Sign in here.</Link>
+            </p>
         </div>
     )
 }

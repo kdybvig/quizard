@@ -194,6 +194,9 @@
   margin: 30px auto;
   text-align: left;
   padding: 20px; }
+  @media screen and (max-width: 600px) {
+    .login-box {
+      width: 85%; } }
   .login-box h1 {
     font-size: 24px;
     text-align: left;
@@ -218,7 +221,7 @@
     font-weight: bold; }
   .login-box button:active {
     border: 5px inset #38005A; }
-  .login-box a {
+  .login-box #forgot-password {
     margin-top: 20px;
     float: right; }
 
