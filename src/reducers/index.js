@@ -5,7 +5,8 @@ const defaultState = {
   categories: [],
   catIndex: 0,
   teams: [],
-  activeQuestion: false
+  activeQuestion: false,
+  user: {}
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -73,6 +74,26 @@ const rootReducer = (state = defaultState, action) => {
         isLoading: false,
         loadedQuizzes: action.quizzes
       }
+
+    case 'QUIZZES_LOADING' :
+      return {
+        ...state,
+        isLoading: true
+      }
+    
+    case 'USER_LOGIN' :
+      const {username, password} = action
+      console.log('login successful', {username, password})
+      return {
+        ...state,
+        user: {username, password}
+      }
+
+    case 'ERROR_LOGIN' :
+    return {
+      ...state,
+      user: {error: action.message}
+    }
 
     case 'GAME_RESTART' :
       return defaultState
