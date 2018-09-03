@@ -9,16 +9,18 @@ const Navbar = (props) => {
             <Link to={process.env.PUBLIC_URL + '/'}>
                 <i className="fas fa-home" onClick={()=>props.dispatch(restartGame())}></i>
             </Link>
-            <Link 
-             to={process.env.PUBLIC_URL + '/login'} 
-             className = "login-link">
-             Login
-            </Link>
-            <Link 
-             to={process.env.PUBLIC_URL + '/signup'} 
-             className = "login-link">
-             Sign Up
-            </Link>
+            <div id="right-links">
+                <Link 
+                to={process.env.PUBLIC_URL + '/login'} 
+                className = "right-link">
+                Login
+                </Link>
+                <Link 
+                to={process.env.PUBLIC_URL + '/signup'} 
+                className = "right-link">
+                Sign Up
+                </Link>
+            </div>
         </nav>
     )
 }

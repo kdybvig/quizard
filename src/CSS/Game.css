@@ -178,11 +178,13 @@
   background-color: #48006A;
   border-bottom: 5px outset black;
   color: white; }
-  #main-nav .login-link {
+  #main-nav #right-links {
     color: white;
     float: right;
     margin-right: 10px;
     font-size: 16px; }
+    #main-nav #right-links .right-link {
+      margin-left: 10px; }
   #main-nav a {
     color: white; }
 

@@ -7,11 +7,14 @@
     background-color: #48006A;
     border-bottom: 5px outset black;
     color: white;
-    .login-link {
+    #right-links {
         color: white;
         float: right;
         margin-right: 10px;
         font-size: 16px;
+        .right-link {
+            margin-left: 10px;
+        }
     }
     a {
         color: white;
