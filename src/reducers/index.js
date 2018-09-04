@@ -6,7 +6,7 @@ const defaultState = {
   catIndex: 0,
   teams: [],
   activeQuestion: false,
-  user: {}
+  user: {error: ''}
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -93,6 +93,12 @@ const rootReducer = (state = defaultState, action) => {
     return {
       ...state,
       user: {error: action.message}
+    }
+
+    case 'ERROR_CLEAR' :
+    return {
+      ...state,
+      user: {...state.user, error: ''}
     }
 
     case 'GAME_RESTART' :
