@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchUser} from '../actions';
-import {Redirect} from 'react-router-dom';
+import {fetchUser, clearLoginError} from '../actions';
+
 
 class LoginPage extends Component {
     state = {
@@ -29,6 +29,11 @@ class LoginPage extends Component {
         })
         this.props.dispatch(fetchUser(user));
     }
+
+        componentWillUnmount = () => {
+            this.props.dispatch(clearLoginError())
+        }
+
     render() {
         
         if(this.props.user.username !== undefined) {
