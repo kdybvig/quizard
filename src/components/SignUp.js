@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {createUser, clearLoginError} from '../actions';
 
 
 class SignUp extends Component {
@@ -31,13 +33,25 @@ class SignUp extends Component {
             password: '',
             confirmPassword: ''
         })
-        console.log(user);
+        this.props.dispatch(createUser(user));
     }
+
+    componentWillUnmount = () => {
+        this.props.dispatch(clearLoginError())
+    }
+
     render() {
+
+        if(this.props.user.username !== undefined) {
+            return <Redirect to={process.env.PUBLIC_URL + '/'} />
+        }
 
         return (
             <div className='login-box'>
                 <h1>Register</h1>
+                {this.props.user.error && 
+                    <div className="error-message">{this.props.user.error}</div>
+                }
                 <form onSubmit={this.handleSubmit}>
                     <h5>Username</h5>
                     <input 
@@ -82,26 +96,10 @@ class SignUp extends Component {
             </div>
         )
     }
-}
+};
 
-/*const SignUp = (props) => {
-    return (
-        <div className='login-box'>
-            <h1>Register</h1>
-            <h5>Username</h5>
-            <input required placeholder="Username"/>
-            <h5>Email</h5>
-            <input required placeholder="Email"/>
-            <h5>Password</h5>
-            <input required type="password" placeholder="Password"/>
-            <h5>Confirm Password</h5>
-            <input required type="password" placeholder="Confirm Password"/>
-            <button>Sign Up</button> 
-            <p>Already have an account? 
-                <Link to={process.env.PUBLIC_URL + '/login'} > Sign in here.</Link>
-            </p>
-        </div>
-    )
-} */
+const mapStateToProps = state => ({
+    user: state.user
+})
 
-export default SignUp;
+export default connect(mapStateToProps)(SignUp);
