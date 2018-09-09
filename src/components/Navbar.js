@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { restartGame } from '../actions';
 import Dropdown from './Dropdown'
-import { withRouter } from 'react-router-dom';
+
 
 const Navbar = (props) => {
     return (
