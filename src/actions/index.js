@@ -105,13 +105,17 @@ export const createUser = user => {
         dispatch(loginError(json));
         return;
       }
-      dispatch(loginUser({username, password}))
+      dispatch(loginUser(username, password))
     })
   }
 }
 
 export const clearLoginError = () => ({
   type: 'ERROR_CLEAR'
+})
+
+export const logout = () => ({
+  type: 'USER_LOGOUT'
 })
 
 export const restartGame = () => ({

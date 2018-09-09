@@ -172,19 +172,39 @@
 #main-nav {
   grid-column: 1/3;
   margin-left: -10px;
-  padding: 10px 10px 5px 15px;
+  margin-right: -1px;
   margin-top: 0px;
-  font-size: calc(12px + 1vw);
   background-color: #48006A;
-  border-bottom: 5px outset black;
   color: white; }
+  #main-nav #home-link {
+    font-size: 20px;
+    padding: 15px; }
+    #main-nav #home-link:hover {
+      background-color: green; }
   #main-nav #right-links {
     color: white;
     float: right;
-    margin-right: 10px;
-    font-size: 16px; }
+    margin-right: 0px;
+    font-size: 16px;
+    margin-top: 15px; }
+    #main-nav #right-links .dropdown {
+      position: absolute;
+      background-color: green;
+      width: 150px;
+      border: 1px solid black;
+      top: 50px;
+      right: 0px;
+      z-index: 1000;
+      padding: 16px 16px; }
+    #main-nav #right-links .hidden {
+      display: none; }
     #main-nav #right-links .right-link {
-      margin-left: 10px; }
+      display: inline;
+      margin-left: 10px;
+      padding: 16px 16px; }
+      #main-nav #right-links .right-link:hover {
+        background-color: green;
+        cursor: pointer; }
   #main-nav a {
     color: white; }
 

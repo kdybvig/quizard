@@ -90,19 +90,29 @@ const rootReducer = (state = defaultState, action) => {
       }
 
     case 'ERROR_LOGIN' :
-    return {
-      ...state,
-      user: {error: action.message}
-    }
+      return {
+        ...state,
+        user: {error: action.message}
+      }
 
     case 'ERROR_CLEAR' :
-    return {
-      ...state,
-      user: {...state.user, error: ''}
-    }
+      return {
+        ...state,
+        user: {...state.user, error: ''}
+      }
 
     case 'GAME_RESTART' :
-      return defaultState
+      const user = state.user
+      return {
+        ...defaultState,
+        user: user
+      }
+    
+    case 'USER_LOGOUT' :
+      return {
+        ...state,
+        user: {error: ''}
+      }
 
     default :
       return state;
