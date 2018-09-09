@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { restartGame } from '../actions';
 import Dropdown from './Dropdown'
 
-
 const Navbar = (props) => {
     return (
         <nav id='main-nav'>
