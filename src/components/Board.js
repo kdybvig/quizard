@@ -21,7 +21,7 @@ const Board = ({title, categories, history}) => {
   const categoryBoxes = categories.map((cat, index) => {
     const key = `q-${index}`;
     const name = cat.name;
-    return <p className='category' key={key}>{name}</p>;
+    return <p className='category blue-box' key={key}>{name}</p>;
   });
   return (
     <div id='board'>
