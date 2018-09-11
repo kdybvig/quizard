@@ -7,7 +7,8 @@
   
   .questContainer {
     display: inline-block;
-    width: 600px;
+    width: 300px;
+    min-width: 40%;
   }
 
   .ansContainer {
@@ -21,16 +22,16 @@
   input, textarea {
     display: block;
 
-    &:focus {
-      outline: none;
-    }
-
     &.cInput {
       width: 200px;
     }
 
+    &.descriptionInput {
+      width: 400px;
+    }
+
     &.qInput {
-      width: 500px;
+      width: 300px;
       max-width: 90%;
       border: 3px solid black;
     }
