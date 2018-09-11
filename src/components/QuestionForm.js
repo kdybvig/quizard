@@ -51,7 +51,7 @@ const QuestionForm = (props) => {
         <h1>{props.title}</h1>
         <h4>Category: {props.categories[props.catIndex].name}</h4>
         {renderInputs()}
-        <button type="submit">Submit</button>
+        <button type="submit">{props.catIndex === 4 ? 'Save' : 'Next Category'}</button>
       </form>
     </div>
   )
