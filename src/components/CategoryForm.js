@@ -42,6 +42,8 @@ const CategoryForm = (props) => {
       <form onSubmit={testSubmit}>
         <h5>Game Title</h5>
         <input className='titleInput' required/>
+        <h5>Short Description</h5>
+        <input className='descriptionInput' required/>
         {renderInputs()}
         <button type="submit">Submit</button>
       </form>
