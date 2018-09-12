@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { loadQuiz, fetchQuizzes } from '../actions';
-import { Link } from 'react-router-dom';
 import QuizCard from './QuizCard'
 import { withRouter } from 'react-router-dom';
 
@@ -49,14 +48,7 @@ class LoadQuizzes extends Component {
               const key = `saved-game-${index}`
     
               return (
-                /*<h4 key={key}>
-                  <Link
-                  to={process.env.PUBLIC_URL + '/addteams'}
-                  onClick={() => this.props.dispatch(loadQuiz(game.categories, game.name))}>
-                    {game.name}
-                  </Link>
-                </h4>*/
-                <QuizCard game={game} handleClick={() => loadGame(game)}/>
+                <QuizCard key={key} game={game} handleClick={() => loadGame(game)}/>
               )
             })
           }
