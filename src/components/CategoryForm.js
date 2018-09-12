@@ -1,15 +1,50 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addCategory } from '../actions';
 import { withRouter } from 'react-router-dom';
 
-const CategoryForm = (props) => {
+class CategoryForm extends Component {
   
-  const renderInputs = () => {
+  defaultCategories = new Array(5).fill(null).map(category => {
+    return {name: '', questions: []}
+  })
+
+  state = {
+    title: '',
+    description: '',
+    categories: this.defaultCategories
+  }
+  
+  handleInputChange = e => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleCategoryChange = e => {
+    e.preventDefault();
+    const index= Number(e.target.getAttribute('index'));
+    const newCategories = this.state.categories.slice();
+    newCategories[index].name = e.target.value;
+    this.setState({
+      categories: newCategories
+    })
+  }
+
+  renderInputs = () => {
     const inputs = [];
     for (let i=0; i<5; i++) {
       const key = `cat-${i}`
-      const input = <input maxLength='30' className='cInput' required/>
+      const input = (
+        <input 
+        onChange={this.handleCategoryChange} 
+        index={i} maxLength='30' 
+        className='cInput' 
+        value={this.state.categories[i].name}
+        required
+        />
+      )
       inputs.push(
         <div className='catContainer' key={key}>
           <h5>{`Category ${i+1}`}</h5>
@@ -19,7 +54,7 @@ const CategoryForm = (props) => {
     return inputs;
   }
 
-  const testSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const formChildren = Array.from(e.target.childNodes);
     const titleNode = formChildren.filter(node => node.className === 'titleInput');
@@ -32,23 +67,36 @@ const CategoryForm = (props) => {
     const categoryObjects = categories.map(cat => {
       return {name: cat, questions: []}
     })
-    props.dispatch(addCategory(title, categoryObjects))
-    props.history.push(process.env.PUBLIC_URL + '/createquestions')
+    this.props.dispatch(addCategory(title, categoryObjects))
+    this.props.history.push(process.env.PUBLIC_URL + '/createquestions')
   }
-
-  return (
-    <div className='form-page'>
-      <h1>New Review Game</h1>
-      <form onSubmit={testSubmit}>
-        <h5>Game Title</h5>
-        <input className='titleInput' required/>
-        <h5>Short Description</h5>
-        <input className='descriptionInput' required/>
-        {renderInputs()}
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  )
+  render () {
+    return (
+      <div className='form-page'>
+        <h1>New Review Game</h1>
+        <form onSubmit={this.handleSubmit}>
+          <h5>Game Title</h5>
+          <input 
+          className='titleInput' 
+          name="title"
+          onChange={this.handleInputChange}
+          value={this.state.title}
+          required
+          />
+          <h5>Short Description</h5>
+          <input 
+          className='descriptionInput'
+          name="description" 
+          onChange={this.handleInputChange}
+          value={this.state.description}
+          required
+          />
+          {this.renderInputs()}
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 
