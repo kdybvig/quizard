@@ -3,13 +3,16 @@
     margin-left: -10px;
     margin-right: -1px;
     margin-top: 0px;
-    background-color: #48006A;
+    background-color: $primary-color;
     color: white;
+    padding: 0px 16px;
+    box-shadow: 0px 4px 3px #555;
+
     #home-link {
         font-size: 20px;
         padding: 15px;
         &:hover {
-            background-color: green;
+            background-color:$palm-springs;
         }
     }
     #right-links {
@@ -20,7 +23,7 @@
         margin-top: 15px;
         .dropdown {
             position: absolute;
-            background-color: green;
+            background-color: $palm-springs;
             width: 150px;
             border: 1px solid black;
             top: 50px;
@@ -33,10 +36,10 @@
         }
         .right-link {
             display: inline;
-            margin-left: 10px;
-            padding: 16px 16px;
+            margin-left: 0px;
+            padding: 16px 12px;
             &:hover {
-                background-color: green;
+                background-color: $palm-springs;
                 cursor: pointer;
             }
         }

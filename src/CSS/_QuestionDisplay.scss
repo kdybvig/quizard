@@ -5,7 +5,7 @@
   margin-right: 20px;
   height: calc(35vw + 60px);
   border: 4px solid #888;
-  background-color: #006;
+  background-color: $board-background;
   font-size: calc(8px + 1.5vw);
   grid-column: 2/3;
   padding: 1vw 0px;
@@ -21,9 +21,9 @@
   button{
     position: relative;
     bottom: 2px;
-    background-color: green;
+    background-color: $palm-springs;
     color: white;
-    border: 2px outset green;
+    border: 2px outset $palm-springs;
     font-size: calc(8px + 1vw);
     margin-left: 4px;
     @media screen and (max-width: 450px) {
@@ -31,7 +31,7 @@
     }
 
     &:active {
-      border: 2px inset green;
+      border: 2px inset $palm-springs;
     }
 
     &:hover {
@@ -55,7 +55,7 @@
       -webkit-appearance: none;
       min-width: calc(100px + 15vw);
       border-radius: 0px;
-      color: green;
+      color: $palm-springs;
       font-size: calc(10px + 1vw);
       @media screen and (max-width: 450px) {
         min-width: calc(60px + 10vw);

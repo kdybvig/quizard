@@ -1,3 +1,4 @@
+@import "./variables";
 @import "./Board";
 @import "./QuestionDisplay";
 @import "./TeamDisplay";
@@ -17,15 +18,15 @@
 
   h1, h2 {
     text-align: center;
-    color:#48006A; 
+    color: black; 
   }
 
   a {
-    color: #48006A;
+    color: $primary-color;
     text-decoration: none;
 
     a:visited {
-      color: #48006A;
+      color: $primary-color;
       text-decoration: none;
     }
   }
