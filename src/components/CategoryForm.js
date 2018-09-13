@@ -24,6 +24,7 @@ class CategoryForm extends Component {
 
   handleCategoryChange = e => {
     e.preventDefault();
+    console.log(this.state);
     const index= Number(e.target.getAttribute('index'));
     const newCategories = this.state.categories.slice();
     newCategories[index].name = e.target.value;
@@ -56,18 +57,7 @@ class CategoryForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const formChildren = Array.from(e.target.childNodes);
-    const titleNode = formChildren.filter(node => node.className === 'titleInput');
-    const title = titleNode[0].value;
-    const catContainerNodes   = formChildren.filter(node => node.className==='catContainer');
-    const categories = catContainerNodes.map(container => {
-      const categoryNode = Array.from(container.childNodes).filter(node => node.className==='cInput')
-      return categoryNode[0].value;
-    });
-    const categoryObjects = categories.map(cat => {
-      return {name: cat, questions: []}
-    })
-    this.props.dispatch(addCategory(title, categoryObjects))
+    this.props.dispatch(addCategory(this.state.title, this.state.categories))
     this.props.history.push(process.env.PUBLIC_URL + '/createquestions')
   }
   render () {
