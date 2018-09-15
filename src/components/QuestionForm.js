@@ -27,9 +27,9 @@ class QuestionForm extends Component {
       const questNum = Math.floor(i/2) + 1;
       const index = questNum -1;
       const className = i%2 === 0 ? 'questContainer' : 'questContainer ansContainer'
-      const isAnswer = i%2 === 0;
-      const type = isAnswer ? 'name' : 'answer'
-      const label = isAnswer ? 
+      const isQuestion = i%2 === 0;
+      const type = isQuestion ? 'name' : 'answer'
+      const label = isQuestion ? 
         `Question ${questNum} (${questNum*100})` : `Answer (Optional)` 
       const input = (
         <textarea 
@@ -41,7 +41,8 @@ class QuestionForm extends Component {
         maxLength='250' 
         className='qInput' 
         value={this.state.questions[index][type]}
-        required/>
+        required={isQuestion}
+        />
       )
       inputs.push(
         <div className={className} key={key}>
