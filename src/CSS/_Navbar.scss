@@ -23,13 +23,25 @@
         margin-top: 15px;
         .dropdown {
             position: absolute;
-            background-color: $palm-springs;
-            width: 150px;
-            border: 1px solid black;
+            margin-right: 15px;
+            background-color: black;
+            width: auto;
+            border-top: 1px solid black;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
             top: 50px;
             right: 0px;
             z-index: 1000;
-            padding: 16px 16px;
+            padding: 16px 0px;
+
+            p {
+                position: static;
+                padding: 16px 40px 10px 16px;
+                padding-bottom: 17px;
+                background-color: darken($primary-color,20%);
+                margin: -2px -2px 0px -1px;
+            }
         }
         .hidden {
             display: none;

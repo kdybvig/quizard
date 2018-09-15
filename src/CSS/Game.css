@@ -171,6 +171,7 @@
   grid-column: 1/3; }
   #load-screen .flex-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; }
     #load-screen .flex-container .quiz-card {
       background-color: #EBF7FF;
@@ -184,19 +185,22 @@
         cursor: pointer; }
       #load-screen .flex-container .quiz-card h3 {
         text-align: center;
-        color: #474787; }
+        color: black; }
       #load-screen .flex-container .quiz-card h4 {
-        text-decoration: underline; }
+        border-bottom: 2px solid #444;
+        padding-bottom: 6px;
+        margin: 10px auto 10px auto;
+        width: 90%; }
       #load-screen .flex-container .quiz-card p {
         text-align: center; }
       #load-screen .flex-container .quiz-card h5 {
-        background-color: blue;
+        background-color: #003fd3;
         width: 80%;
         color: white;
         text-align: center;
         padding: 8px;
         margin: 10px auto;
-        border: 3px solid black; }
+        border: 3px solid #001d63; }
 
 #main-nav {
   grid-column: 1/3;
@@ -220,13 +224,23 @@
     margin-top: 15px; }
     #main-nav #right-links .dropdown {
       position: absolute;
-      background-color: #218c74;
-      width: 150px;
-      border: 1px solid black;
+      margin-right: 15px;
+      background-color: black;
+      width: auto;
+      border-top: 1px solid black;
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
       top: 50px;
       right: 0px;
       z-index: 1000;
-      padding: 16px 16px; }
+      padding: 16px 0px; }
+      #main-nav #right-links .dropdown p {
+        position: static;
+        padding: 16px 40px 10px 16px;
+        padding-bottom: 17px;
+        background-color: #242444;
+        margin: -2px -2px 0px -1px; }
     #main-nav #right-links .hidden {
       display: none; }
     #main-nav #right-links .right-link {
@@ -304,3 +318,7 @@
     .game a a:visited {
       color: #474787;
       text-decoration: none; }
+
+input {
+  padding: 5px;
+  font-size: 14px; }
