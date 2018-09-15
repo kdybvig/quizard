@@ -24,7 +24,6 @@ class CategoryForm extends Component {
 
   handleCategoryChange = e => {
     e.preventDefault();
-    console.log(this.state);
     const index= Number(e.target.getAttribute('index'));
     const newCategories = this.state.categories.slice();
     newCategories[index].name = e.target.value;
