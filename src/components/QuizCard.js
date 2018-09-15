@@ -7,7 +7,6 @@ const QuizCard = props => {
         <div className="quiz-card" onClick={props.handleClick}>
             <h3>{name}</h3>
             <p>This is a placeholder for the description property.</p>
-            <h4>Categories</h4>
             {categories.map((category, index) => {
                 return <h5 key={index}>{category.name}</h5>
             })}
