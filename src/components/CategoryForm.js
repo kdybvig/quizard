@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addCategory } from '../actions';
+import { addCategories } from '../actions';
 import { withRouter } from 'react-router-dom';
+import Board from './Board';
+import { categories } from '../global/demoBoard'
 
 class CategoryForm extends Component {
   
@@ -56,15 +58,16 @@ class CategoryForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.dispatch(addCategory(this.state.title, this.state.categories))
+    this.props.dispatch(addCategories(this.state.title, this.state.categories, this.state.description))
     this.props.history.push(process.env.PUBLIC_URL + '/createquestions')
   }
   render () {
     return (
-      <div className='form-page'>
-        <h1>New Review Game</h1>
+      <div className='form-page cat-form'>
+        <h1>New Quiz</h1>
+        <Board categories={categories} title='Title' />
         <form onSubmit={this.handleSubmit}>
-          <h5>Game Title</h5>
+          <h5>Title</h5>
           <input 
           className='titleInput' 
           name="title"
@@ -73,8 +76,10 @@ class CategoryForm extends Component {
           required
           />
           <h5>Short Description</h5>
-          <input 
+          <textarea 
           className='descriptionInput'
+          cols = '50'
+          rows = '2'
           name="description" 
           onChange={this.handleInputChange}
           value={this.state.description}

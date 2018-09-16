@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom';
 const Board = ({title, categories, history}) => {
   if(!categories.length) history.push(process.env.PUBLIC_URL + '/')
   const questionButtons = [];
+  const isLive = categories[0].questions.length
+  const className = isLive ? '' : 'demo'
   for(let i = 0; i< 25; i++) {
     const catIndex = i%5;
     const questIndex = Math.floor(i/5);
@@ -14,6 +16,7 @@ const Board = ({title, categories, history}) => {
       <QuestionButton
        key={`box-${i}`}
        value= {value}
+       active= {categories[0].questions.length}
        catIndex = {catIndex}
        questIndex = {questIndex}></QuestionButton>)
   }
@@ -24,7 +27,7 @@ const Board = ({title, categories, history}) => {
     return <p className='category blue-box' key={key}>{name}</p>;
   });
   return (
-    <div id='board'>
+    <div className={className} id='board'>
       <h1>{title}</h1>
       <div id='boxes'>
         {categoryBoxes}

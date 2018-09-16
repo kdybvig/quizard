@@ -13,7 +13,9 @@ import QuestionDisplay from './QuestionDisplay';
 import Home from './Home';
 import Navbar from './Navbar';
 import LoginPage from './LoginPage';
-import SignUp from './SignUp'
+import SignUp from './SignUp';
+import Board from './Board';
+import { categories } from '../global/demoBoard'
 
 import '../CSS/Game.css';
 

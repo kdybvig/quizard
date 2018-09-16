@@ -10,7 +10,7 @@ const QuestionButton = (props) => {
   const location = [props.catIndex, props.questIndex];
 
   const showQuestion = () => {
-    if(isAnswered) return;
+    if(isAnswered || !props.active) return;
     props.dispatch(changeActiveQuestion(location))
     props.history.push(process.env.PUBLIC_URL + '/game/question')
   }
