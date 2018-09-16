@@ -217,7 +217,7 @@
     flex-wrap: wrap;
     justify-content: center; }
     #load-screen .flex-container .quiz-card {
-      background-color: #EBF7FF;
+      background-color: #daf1e8;
       width: 320px;
       border: 2px solid #000000;
       margin: 20px 20px;
@@ -237,7 +237,7 @@
         width: 90%; }
       #load-screen .flex-container .quiz-card p {
         text-align: center;
-        padding-bottom: 30px; }
+        padding-bottom: 10px; }
       #load-screen .flex-container .quiz-card h5 {
         background-color: #218c74;
         width: 80%;
