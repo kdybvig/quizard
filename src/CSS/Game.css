@@ -193,7 +193,13 @@
   .form-page .ansContainer {
     display: inline-block; }
   .form-page button {
-    display: block; }
+    display: block;
+    background-color: #218c74;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    padding: 8px 12px; }
   .form-page input, .form-page textarea {
     display: block; }
     .form-page input.cInput, .form-page textarea.cInput {

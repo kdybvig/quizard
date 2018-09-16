@@ -86,9 +86,9 @@ class QuestionForm extends Component {
       <div className='form-page'>
         <form onSubmit={this.handleSubmit}>
           <h1>{this.props.title}</h1>
-          <h4>Category: {this.props.categories[this.props.catIndex].name}</h4>
+          <h4>Category {this.props.catIndex + 1}: {this.props.categories[this.props.catIndex].name}</h4>
           {this.renderInputs()}
-          <button type="submit">{this.props.catIndex === 4 ? 'Save' : 'Next Category'}</button>
+          <button type="submit">{this.props.catIndex === 4 ? 'Next >>' : 'Next Category'}</button>
         </form>
       </div>
     )

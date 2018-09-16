@@ -26,6 +26,12 @@
 
   button {
     display: block;
+    background-color: $board-boxes;
+    font-family: $body;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    padding: 8px 12px;
   }
 
   input, textarea {
