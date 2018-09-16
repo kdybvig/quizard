@@ -3,6 +3,7 @@ const defaultState = {
   isLoading: false,
   title: '',
   categories: [],
+  description: '',
   catIndex: 0,
   teams: [],
   activeQuestion: false,
@@ -16,6 +17,7 @@ const rootReducer = (state = defaultState, action) => {
         ...state,
         title: action.title,
         categories: action.categories,
+        description: action.description,
         catIndex: 0
       }
     case 'QUEST_ADD' :

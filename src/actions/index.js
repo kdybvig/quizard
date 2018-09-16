@@ -1,7 +1,8 @@
-export const addCategory = (title, categories) => ({
+export const addCategories = (title, categories, description) => ({
   type: 'CAT_ADD',
   title,
-  categories
+  categories,
+  description
 })
 
 export const addQuestions = (questions) => ({
