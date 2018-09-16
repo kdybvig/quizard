@@ -114,7 +114,7 @@
   overflow: hidden;
   text-overflow: scroll; }
   #questionDisplay h1 {
-    color: white;
+    color: #124e41;
     text-align: left;
     margin: 2vw 4vw; }
   #questionDisplay button {
@@ -213,6 +213,14 @@
       border: 3px solid black; }
   .form-page button {
     margin-top: 20px; }
+  .form-page .error-message {
+    width: 100% -20px;
+    color: #a93434;
+    background-color: #f2dede;
+    border: 1px solid #F2c2C2;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 10px; }
 
 #home {
   grid-column: 1/3; }

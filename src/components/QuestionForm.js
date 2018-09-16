@@ -56,7 +56,6 @@ class QuestionForm extends Component {
 
   handleInputChange = e => {
     e.preventDefault();
-    console.log(this.state);
     const index= Number(e.target.getAttribute('index'));
     const type = e.target.getAttribute('boxtype');
     const newQuestions = this.state.questions.slice();
@@ -71,7 +70,6 @@ class QuestionForm extends Component {
     const isLastCat = this.props.catIndex === 4;
     const questions = this.state.questions.slice();
     this.props.dispatch(addQuestions(questions));
-    console.log(this.defaultQuestions, 'hello')
     this.setState({
       questions: this.defaultQuestions()
     })

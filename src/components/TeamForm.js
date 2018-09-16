@@ -1,54 +1,82 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addTeams } from '../actions';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
-const TeamForm = (props) => {
-  if(!props.hasQuestions) props.history.push(process.env.PUBLIC_URL + '/')
-  const renderInputs = () => {
+class TeamForm extends Component {
+
+  state = {
+    teams: ['','','','',''],
+    error: false
+  }
+
+  handleInputChange = e => {
+    e.preventDefault();
+    const index = e.target.getAttribute('index');
+    const teams = this.state.teams.slice();
+    teams[index]= e.target.value;
+    this.setState({
+      teams: teams
+    });
+  }
+
+  
+  renderInputs = () => {
     const inputs = [];
     for (let i=0; i<5; i++) {
-      const key = `cat-${i}`
-      const input = <input maxLength='25' className='tInput' required/>
-      const inputNotReq = <input maxLength='25' className='tInput'/>
+      const key = `cat-${i}`;
+      const isRequired = i < 2;
+      const input = (
+        <input 
+        maxLength='25' 
+        className='tInput' 
+        onChange={this.handleInputChange}
+        value={this.state.teams[i]}
+        index={i}
+        required={isRequired}/>
+      );
       inputs.push(
         <div className='teamContainer' key={key}>
           <h5>{`Team ${i+1}`}</h5>
-          {i > 1 ? inputNotReq : input}
+          {input}
         </div>
       )
     }
     return inputs;
   }
 
-  const testSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    const formChildren = Array.from(e.target.childNodes);
-    const teamContainerNodes  = formChildren.filter(node => node.className==='teamContainer');
-    const teamNodes = teamContainerNodes.map(container => {
-      const teamNode = Array.from(container.childNodes).filter(node => {
-        return node.className==='tInput' && node.value
-      })[0]
-      return teamNode;
-    }).filter(node => node);
-    const teams= teamNodes.map((node, index) => {
-      return {name: node.value, points: 0};
-    })
-    teamNodes.forEach(node => node.value='')
-    props.dispatch(addTeams(teams));
-    props.history.push(process.env.PUBLIC_URL + '/game/board')
+    const teams = this.state.teams.filter(team => team)
+    const hasDuplicates = teams.findIndex((team,index) => teams.indexOf(team) !== index) !== -1;
+    if(hasDuplicates) {
+      this.setState({error: true});
+      return;
+    }
+    const teamObjects = teams.map(team => {return {name: team, points: 0}})
+    this.props.dispatch(addTeams(teamObjects));
+    this.props.history.push(process.env.PUBLIC_URL + '/game/board');
   }
 
+  render () {
+    if(!this.props.hasQuestions) {
+      return <Redirect to={process.env.PUBLIC_URL + '/'} />
+    }
 
-  return (
-    <div className='form-page'>
-      <h4>Enter Two To Five Team Names</h4>
-      <form onSubmit={testSubmit}>
-        {renderInputs()}
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  )
+    return (
+      <div className='form-page'>
+        <h4>Enter Two To Five Team Names</h4>
+        {this.state.error && 
+          <div className="error-message">Team names must be unique.</div>
+        }
+        <form onSubmit={this.handleSubmit}>
+          {this.renderInputs()}
+          <button type="submit">Play</button>
+        </form>
+      </div>
+    )
+  }
+  
 }
 
 const mapStateToProps = state => {
