@@ -8,6 +8,18 @@
 @import "./Navbar";
 @import "./LoginPage";
 
+
+@font-face {
+  font-family: chalkboard;
+  src: url(./fonts/chalk.ttf);
+}
+
+@font-face {
+  font-family: chalkboard;
+  src: url(./fonts/chalkbold.ttf);
+  font-weight: bold;
+}
+
 .game {
   margin-left: 10px;
   display: grid;
