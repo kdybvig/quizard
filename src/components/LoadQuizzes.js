@@ -33,7 +33,7 @@ class LoadQuizzes extends Component {
 
     const loadGame = game => {
       console.log('hello')
-      this.props.history.push(process.env.PUBLIC_URL + '/addteams');
+      this.props.history.push(process.env.PUBLIC_URL + '/viewquiz');
       this.props.dispatch(loadQuiz(game.categories, game.name));
     }
 

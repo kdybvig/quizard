@@ -3,12 +3,13 @@
   font-family: chalkboard;
   
   #main {
+    width: 80%;
     background: #005500 url("./images/chalkboard.jpg") no-repeat;
     background-size: cover;
-    margin:0px;
-    margin-left: -10px;
+    margin: 30px auto;
     padding: 10px;
     padding-left: calc(20px + 2vw);
+    border: 1vw solid #775557;
 
     h1 {
       font-family: chalkboard;
