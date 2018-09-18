@@ -71,7 +71,7 @@ export const fetchUser = user => {
         dispatch(loginError(json));
         return;
       }
-      dispatch(loginUser(username, password))
+      dispatch(loginUser(username))
     })
   }
 }
@@ -81,10 +81,9 @@ export const loginError = message => ({
   message
 })
 
-export const loginUser = (username, password) => ({
+export const loginUser = (username) => ({
   type: 'USER_LOGIN',
-  username,
-  password
+  username
 })
 
 export const createUser = user => {

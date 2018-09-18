@@ -88,7 +88,7 @@ const rootReducer = (state = defaultState, action) => {
       console.log('login successful', {username, password})
       return {
         ...state,
-        user: {username, password}
+        user: {username, error: ''}
       }
 
     case 'ERROR_LOGIN' :
