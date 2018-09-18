@@ -29,8 +29,8 @@ const QuizViewer = props => {
                                     <h6><span className="qa-letter">{val}:</span> {quest.name}</h6>
                                     {
                                         quest.answer ?
-                                        <h6><span className="qa-letter">A:</span> {quest.name}</h6> :
-                                        <button onClick={()=>console.log(catIndex,questIndex,quest.name)}>Add Answer</button>
+                                        <h6><span className="qa-letter">Answer:</span> {quest.answer}</h6> :
+                                        <h6><span className="qa-letter">Answer: No Answer</span></h6> 
                                     }
                                 </div>
                             )
