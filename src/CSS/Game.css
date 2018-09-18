@@ -226,12 +226,13 @@
   grid-column: 1/3;
   font-family: chalkboard; }
   #home #main {
+    width: 80%;
     background: #005500 url("./images/chalkboard.jpg") no-repeat;
     background-size: cover;
-    margin: 0px;
-    margin-left: -10px;
+    margin: 30px auto;
     padding: 10px;
-    padding-left: calc(20px + 2vw); }
+    padding-left: calc(20px + 2vw);
+    border: 1vw solid #775557; }
     #home #main h1 {
       font-family: chalkboard;
       font-size: 12vw;
@@ -294,7 +295,7 @@
   color: white;
   padding: 0px 16px;
   box-shadow: 0px 4px 3px #555;
-  z-index: 2; }
+  z-index: 3; }
   #main-nav #home-link {
     font-size: 20px;
     padding: 15px; }
@@ -317,7 +318,7 @@
       border-bottom: 2px solid black;
       top: 50px;
       right: 0px;
-      z-index: 1000;
+      z-index: 10000;
       padding: 16px 0px; }
       #main-nav #right-links .dropdown p {
         position: static;
@@ -385,6 +386,49 @@
   .login-box #forgot-password {
     margin-top: 20px;
     float: right; }
+
+#quiz-viewer {
+  grid-column: 1/3;
+  margin-left: 0px 20px; }
+  #quiz-viewer .heading {
+    text-align: center; }
+    #quiz-viewer .heading h1 {
+      display: inline-block; }
+    #quiz-viewer .heading button {
+      display: inline;
+      padding: 1px;
+      border: none;
+      background: none;
+      margin-left: 20px; }
+      #quiz-viewer .heading button:hover {
+        cursor: pointer; }
+      #quiz-viewer .heading button i {
+        color: #43AA53;
+        font-size: 32px; }
+  #quiz-viewer .category-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #0e3930; }
+    #quiz-viewer .category-boxes .category-box {
+      width: 210px;
+      margin: 10px;
+      border: 2px solid black;
+      padding: 10px;
+      background-color: #e1f4ed; }
+      #quiz-viewer .category-boxes .category-box h4 {
+        text-align: center; }
+      #quiz-viewer .category-boxes .category-box h6 {
+        color: black;
+        margin: 5px; }
+        #quiz-viewer .category-boxes .category-box h6 .qa-letter {
+          font-size: 1.2em;
+          color: #176352;
+          font-weight: bold; }
+      #quiz-viewer .category-boxes .category-box button {
+        background-color: #218c74;
+        color: white;
+        margin: 5px; }
 
 @font-face {
   font-family: chalkboard;

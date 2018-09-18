@@ -14,6 +14,7 @@ import Home from './Home';
 import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
+import QuizViewerContainer from '../containers/QuizViewerContainer';
 
 import '../CSS/Game.css';
 
@@ -32,6 +33,7 @@ const RouterPage = (props) => {
         <Route path={process.env.PUBLIC_URL + "/game/question"} component={QuestionDisplay}/>
         <Route path={process.env.PUBLIC_URL + "/login"} component={LoginPage}/>
         <Route path={process.env.PUBLIC_URL + "/signup"} component={SignUp}/>
+        <Route path={process.env.PUBLIC_URL + "/viewquiz"} component={QuizViewerContainer}/>
       </div>
     </Router>
   )
