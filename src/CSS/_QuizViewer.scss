@@ -27,6 +27,32 @@
         }
     }
     
+    .quiz-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        h6 {
+            display: inline;
+            margin: 15px 20px;
+        }
+    }
+
+    #quiz-info-selectors {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .info-selector {
+            display: block;
+            width: 210px;
+        }
+        
+        h6 {
+            display: inline;
+            margin: 15px 20px;
+        }
+    }
 
     .category-boxes {
         display: flex;

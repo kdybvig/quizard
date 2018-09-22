@@ -405,6 +405,23 @@
       #quiz-viewer .heading button i {
         color: #43AA53;
         font-size: 32px; }
+  #quiz-viewer .quiz-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    #quiz-viewer .quiz-info h6 {
+      display: inline;
+      margin: 15px 20px; }
+  #quiz-viewer #quiz-info-selectors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    #quiz-viewer #quiz-info-selectors .info-selector {
+      display: block;
+      width: 210px; }
+    #quiz-viewer #quiz-info-selectors h6 {
+      display: inline;
+      margin: 15px 20px; }
   #quiz-viewer .category-boxes {
     display: flex;
     flex-wrap: wrap;

@@ -1,5 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import QuizInfoSelectorsContainer from '../containers/QuizInfoSelectorsContainer';
+import QuizInfoContainer from '../containers/QuizInfoContainer';
 
 const QuizViewer = props => {
  console.log('props',props)
@@ -14,6 +16,7 @@ const QuizViewer = props => {
         <h1>{props.title} </h1>
         <button id="play" onClick={props.handlePlayClick}><i className="fas fa-play"></i></button>
     </div>
+        <QuizInfoContainer />
         <h3>{props.description}</h3>
         <div className="category-boxes">
             { props.categories.map((cat, catIndex) => {

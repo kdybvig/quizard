@@ -1,11 +1,11 @@
 import React from 'react';
 
 const QuizInfoSelect = props => {
-    
+    console.log(props.options);
     return (
-        <select>
+        <select statekey={props.stateKey} onChange={props.handleChange}>
             {props.options.map((option,index) => {
-                <option value={index}>{option}</option>
+                return <option value={option} key={`opt-${index}`}>{option}</option>
             })}
         </select>
     )

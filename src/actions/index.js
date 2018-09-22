@@ -121,3 +121,8 @@ export const logout = () => ({
 export const restartGame = () => ({
   type: 'GAME_RESTART'
 })
+
+export const addQuizInfo = info => ({
+  type: 'QUIZ_INFO_ADD',
+  info
+});

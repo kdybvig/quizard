@@ -4,6 +4,7 @@ const defaultState = {
   title: '',
   categories: [],
   description: '',
+  info: {subject: '', gradeLevel: '', visibility: 'Public'},
   catIndex: 0,
   teams: [],
   activeQuestion: false,
@@ -36,6 +37,12 @@ const rootReducer = (state = defaultState, action) => {
       return {
         ...state,
         teams: action.teams
+      }
+    
+    case 'QUIZ_INFO_ADD' : 
+      return {
+        ...state,
+        info: action.info
       }
 
     case 'ACT_QUEST_CHANGE' :

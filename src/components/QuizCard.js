@@ -1,7 +1,6 @@
 import React from 'react';
 
 const QuizCard = props => {
-    console.log(props.game)
     const {name, categories} = props.game
     return (
         <div className="quiz-card" onClick={props.handleClick}>
