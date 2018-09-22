@@ -46,10 +46,9 @@ export const loadQuizzes = (quizzes) => {
   }
 }
 
-export const loadQuiz = (categories, title) => ({
+export const loadQuiz = (quiz) => ({
   type: 'QUIZ_LOAD',
-  categories,
-  title
+  quiz
 })
 
 export const fetchUser = user => {

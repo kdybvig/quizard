@@ -1,6 +1,7 @@
 const defaultState = {
   loadedQuizzes: [],
   isLoading: false,
+  quizId: '',
   title: '',
   owner: '',
   categories: [],
@@ -75,8 +76,10 @@ const rootReducer = (state = defaultState, action) => {
     case 'QUIZ_LOAD' :
       return {
         ...state,
-        title: action.title,
-        categories: action.categories,
+        title: action.quiz.name,
+        categories: action.quiz.categories,
+        description: action.quiz.description,
+        quizId: action.quiz._id,
         catIndex: 5
       }
     
