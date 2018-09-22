@@ -405,13 +405,15 @@
       #quiz-viewer .heading button i {
         color: #43AA53;
         font-size: 32px; }
-  #quiz-viewer .quiz-info {
+  #quiz-viewer #quiz-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; }
-    #quiz-viewer .quiz-info h6 {
+    #quiz-viewer #quiz-info h6 {
       display: inline;
-      margin: 15px 20px; }
+      margin: 15px 20px;
+      font-weight: normal;
+      font-size: 14px; }
   #quiz-viewer #quiz-info-selectors {
     display: flex;
     flex-wrap: wrap;

@@ -27,7 +27,7 @@
         }
     }
     
-    .quiz-info {
+    #quiz-info {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -35,6 +35,8 @@
         h6 {
             display: inline;
             margin: 15px 20px;
+            font-weight: normal;
+            font-size: 14px;
         }
     }
 
