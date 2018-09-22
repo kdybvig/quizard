@@ -80,6 +80,7 @@ const rootReducer = (state = defaultState, action) => {
         categories: action.quiz.categories,
         description: action.quiz.description,
         quizId: action.quiz._id,
+        owner: action.quiz.owner,
         catIndex: 5
       }
     
