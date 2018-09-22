@@ -20,12 +20,6 @@ export const addCategories = (title, username, categories, description) => {
     })
     .then(res => res.json())
     .then(json => {
-      console.log('My body object', {
-        name: title, 
-        owner: username,
-        categories, 
-        description 
-      })
       if(!json._id) {
         console.log('error',json)
         return;
@@ -40,10 +34,28 @@ export const addCategories = (title, username, categories, description) => {
     
 }
 
-export const addQuestions = (questions) => ({
-  type: 'QUEST_ADD',
-  questions
-})
+export const addQuestions = (categories,quizId) => {
+  return dispatch => {
+    dispatch({
+      type: 'QUEST_ADD',
+      categories
+    });
+    fetch(`https://quizard-data.herokuapp.com/quizzes/${quizId}`, {
+      method: "PUT",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({
+        categories
+      })
+    })
+    .then(res => res.json())
+    .then(json => {
+      console.log(json)
+    })
+  }
+  
+}
 
 export const addTeams = (teams) => ({
   type: 'TEAMS_ADD',

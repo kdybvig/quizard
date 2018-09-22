@@ -69,7 +69,9 @@ class QuestionForm extends Component {
     e.preventDefault();
     const isLastCat = this.props.catIndex === 4;
     const questions = this.state.questions.slice();
-    this.props.dispatch(addQuestions(questions));
+    const categories = [...this.props.categories]
+    categories[this.props.catIndex].questions = questions;
+    this.props.dispatch(addQuestions(categories, this.props.quizId));
     this.setState({
       questions: this.defaultQuestions()
     })
@@ -96,7 +98,8 @@ class QuestionForm extends Component {
 const mapStateToProps = state => ({
   categories: state.categories,
   catIndex: state.catIndex,
-  title: state.title
+  title: state.title,
+  quizId: state.quizId
 })
 
 

@@ -33,14 +33,11 @@ const rootReducer = (state = defaultState, action) => {
       }
 
     case 'QUEST_ADD' :
-      const catIndex = state.catIndex;
-      const newCategories = state.categories.slice();
-      newCategories[catIndex].questions = action.questions;
-      const newCatIndex = catIndex + 1;
+      const newCatIndex = state.catIndex + 1;
 
       return {
         ...state,
-        categories: newCategories,
+        categories: action.categories,
         catIndex: newCatIndex
       }
 
