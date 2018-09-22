@@ -58,7 +58,7 @@ class CategoryForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.dispatch(addCategories(this.state.title, this.state.categories, this.state.description))
+    this.props.dispatch(addCategories(this.state.title, this.props.user, this.state.categories, this.state.description))
     this.props.history.push(process.env.PUBLIC_URL + '/createquestions')
   }
   render () {

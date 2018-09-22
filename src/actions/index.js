@@ -1,9 +1,44 @@
-export const addCategories = (title, categories, description) => ({
-  type: 'CAT_ADD',
-  title,
-  categories,
-  description
-})
+export const addCategories = (title, username, categories, description) => {
+  return dispatch => {
+    dispatch({
+      type: 'CAT_ADD',
+      title,
+      categories,
+      description
+    });
+    fetch("https://quizard-data.herokuapp.com/quizzes/", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({
+        name: title, 
+        owner: username,
+        categories, 
+        description 
+      })
+    })
+    .then(res => res.json())
+    .then(json => {
+      console.log('My body object', {
+        name: title, 
+        owner: username,
+        categories, 
+        description 
+      })
+      if(!json._id) {
+        console.log('error',json)
+        return;
+      }
+      dispatch({
+        type: 'QUIZ_ID_ADD',
+        quizId: json._id
+      })
+    })
+  }
+
+    
+}
 
 export const addQuestions = (questions) => ({
   type: 'QUEST_ADD',

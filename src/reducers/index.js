@@ -25,6 +25,13 @@ const rootReducer = (state = defaultState, action) => {
         description: action.description,
         catIndex: 0
       }
+    
+    case 'QUIZ_ID_ADD':
+      return {
+        ...state,
+        quizId: action.quizId
+      }
+
     case 'QUEST_ADD' :
       const catIndex = state.catIndex;
       const newCategories = state.categories.slice();

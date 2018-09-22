@@ -6,7 +6,7 @@ import { withRouter, Redirect } from 'react-router-dom';
 class QuestionForm extends Component {
   defaultQuestions = () => {
     return (
-      new Array(5).fill({}).map((question,index) => {
+      new Array(5).fill(null).map((question,index) => {
         return {
           name: '',
           answer: '',
