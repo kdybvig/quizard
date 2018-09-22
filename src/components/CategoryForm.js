@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addCategories } from '../actions';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import Board from './Board';
 import { categories } from '../global/demoBoard'
 
@@ -62,6 +62,11 @@ class CategoryForm extends Component {
     this.props.history.push(process.env.PUBLIC_URL + '/createquestions')
   }
   render () {
+    if(!this.props.user) {
+      alert("You must be signed in to create a new quiz.");
+      return <Redirect to={process.env.PUBLIC_URL + '/'} />
+    }
+
     return (
       <div className='form-page cat-form'>
         <h1>New Quiz</h1>
@@ -93,5 +98,8 @@ class CategoryForm extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  user: state.user.username
+})
 
-export default withRouter(connect()(CategoryForm));
+export default withRouter(connect(mapStateToProps)(CategoryForm));

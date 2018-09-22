@@ -2,6 +2,7 @@ const defaultState = {
   loadedQuizzes: [],
   isLoading: false,
   title: '',
+  owner: '',
   categories: [],
   description: '',
   info: {subject: '', gradeLevel: '', visibility: 'Public'},
@@ -14,9 +15,11 @@ const defaultState = {
 const rootReducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'CAT_ADD':
+      const owner = state.user.username;
       return {
         ...state,
         title: action.title,
+        owner,
         categories: action.categories,
         description: action.description,
         catIndex: 0
