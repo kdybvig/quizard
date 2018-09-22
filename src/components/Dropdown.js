@@ -35,7 +35,7 @@ class Dropdown extends Component {
                 <p
                 className = "right-link"
                 onClick={this.openMenu}>
-                {this.props.username} <i class="fas fa-caret-down"></i>
+                {this.props.username} <i className="fas fa-caret-down"></i>
                 </p> 
                 <div className={this.state.showMenu ? "dropdown" : "dropdown hidden"}>
                     <p
