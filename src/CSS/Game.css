@@ -67,7 +67,7 @@
       overflow-wrap: break-word;
       text-align: center;
       width: 11.5%;
-      padding: 2%;
+      padding: 1.5% 2%;
       font-weight: bold;
       border-radius: 5%;
       margin: 5px 1%; }
@@ -89,7 +89,7 @@
         border: 4px outset #9AB;
         font-family: "Open Sans", sans-serif;
         font-size: 3vw;
-        padding: 1.6% 2%; }
+        padding: 1.2% 2%; }
         #board #boxes .blue-box.points:hover {
           cursor: pointer; }
         #board #boxes .blue-box.points:active {
