@@ -15,7 +15,8 @@ export const addCategories = (title, username, categories, description) => {
         name: title, 
         owner: username,
         categories, 
-        description 
+        description,
+        isComplete: false 
       })
     })
     .then(res => res.json())
@@ -40,6 +41,7 @@ export const addQuestions = (categories,quizId) => {
       type: 'QUEST_ADD',
       categories
     });
+    console.log('just added question')
     fetch(`https://quizard-data.herokuapp.com/quizzes/${quizId}`, {
       method: "PUT",
       headers: {
@@ -172,3 +174,29 @@ export const addQuizInfo = info => ({
   type: 'QUIZ_INFO_ADD',
   info
 });
+
+export const saveQuiz = (changesToSave, quizId) => {
+  return dispatch => {
+    dispatch({
+      type: 'QUIZ_SAVING'
+    });
+    fetch(`https://quizard-data.herokuapp.com/quizzes/${quizId}`, {
+      method: "PUT",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify(changesToSave)
+    })
+    .then(res => res.json())
+    .then(json => {
+      console.log(json)
+      dispatch({
+        type: 'QUIZ_SAVE'
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    
+  }
+}

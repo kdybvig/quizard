@@ -2,6 +2,9 @@ const defaultState = {
   loadedQuizzes: [],
   isLoading: false,
   quizId: '',
+  unsavedChanges: false,
+  isComplete: false,
+  saveError: '',
   title: '',
   owner: '',
   categories: [],
@@ -33,7 +36,9 @@ const rootReducer = (state = defaultState, action) => {
       }
 
     case 'QUEST_ADD' :
-      const newCatIndex = state.catIndex + 1;
+      const newCatIndex = state.categories.findIndex(cat => {
+        return cat.questions.length === 0;
+      })
 
       return {
         ...state,
@@ -50,7 +55,22 @@ const rootReducer = (state = defaultState, action) => {
     case 'QUIZ_INFO_ADD' : 
       return {
         ...state,
-        info: action.info
+        info: action.info,
+        unsavedChanges: true
+      }
+
+    case 'QUIZ_SAVING' :
+      return {
+        ...state,
+        isLoading: true
+      }
+    
+    case 'QUIZ_SAVE' :
+      console.log('made it here')
+      return {
+        ...state,
+        unsavedChanges: false,
+        isComplete: true
       }
 
     case 'ACT_QUEST_CHANGE' :
@@ -78,11 +98,13 @@ const rootReducer = (state = defaultState, action) => {
       }
 
     case 'QUIZ_LOAD' :
+      const info = action.quiz.info ? action.quiz.info : {subject: '', gradeLevel: '', visibility: 'Public'};
       return {
         ...state,
         title: action.quiz.name,
         categories: action.quiz.categories,
         description: action.quiz.description,
+        info,
         quizId: action.quiz._id,
         owner: action.quiz.owner,
         catIndex: 5

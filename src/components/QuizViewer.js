@@ -14,10 +14,16 @@ const QuizViewer = props => {
     <div id="quiz-viewer">
     <div className="heading">
         <h1>{props.title} </h1>
+        {props.unsavedChanges ?
+        <button id="play" onClick={props.handleSaveClick}><i className="fas fa-save" style={{color: '#000099'}}></i></button> :
         <button id="play" onClick={props.handlePlayClick}><i className="fas fa-play"></i></button>
+        }
     </div>
-        <QuizInfoContainer />
-        <h3>{props.description}</h3>
+    <h3>{props.description}</h3>
+        {props.ownedByUser ?
+            <QuizInfoSelectorsContainer /> :
+            <QuizInfoContainer />
+        }
         <div className="category-boxes">
             { props.categories.map((cat, catIndex) => {
                 const key=`cat-${catIndex}`
