@@ -405,6 +405,9 @@
       #quiz-viewer .heading button i {
         color: #43AA53;
         font-size: 32px; }
+  #quiz-viewer h3 {
+    text-align: center;
+    font-weight: normal; }
   #quiz-viewer #quiz-info {
     display: flex;
     flex-wrap: wrap;
