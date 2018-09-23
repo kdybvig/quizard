@@ -11,7 +11,7 @@ class LoadQuizzes extends Component {
   }
 
   render() {
-    const games = this.props.quizzes;
+    const games = this.props.quizzes.filter(quiz => quiz.isComplete);
     const loadGame = game => {
       console.log(game)
       this.props.history.push(process.env.PUBLIC_URL + '/viewquiz');

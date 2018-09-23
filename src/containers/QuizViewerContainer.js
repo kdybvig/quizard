@@ -20,7 +20,7 @@ class QuizViewerContainer extends Component {
             if(!this.props.info[key]) saveErrors.push(key)
         });
         if (saveErrors.length) return;
-        this.props.saveQuiz({info: this.props.info}, this.props.quizId)
+        this.props.saveQuiz({info: this.props.info, isComplete: true}, this.props.quizId)
     }
 
     render() {

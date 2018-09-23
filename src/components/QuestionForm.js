@@ -75,7 +75,7 @@ class QuestionForm extends Component {
     this.setState({
       questions: this.defaultQuestions()
     })
-    if(isLastCat) this.props.history.push(process.env.PUBLIC_URL + '/addteams')
+    if(isLastCat) this.props.history.push(process.env.PUBLIC_URL + '/viewquiz')
   }
 
   render () {
