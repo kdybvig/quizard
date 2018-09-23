@@ -11,26 +11,7 @@ class LoadQuizzes extends Component {
   }
 
   render() {
-    const games = this.props.quizzes.map(game => {
-
-      const newCategories = game.categories.map(cat=> {
-  
-        const newQuestions = cat.questions.map((question, index) => {
-          return {name: question, answered: false, value: 100*(index + 1)};
-        });
-  
-        return {
-          ...cat,
-          questions: newQuestions
-        }
-      });
-  
-      return {
-        ...game,
-        categories: newCategories
-      }
-    });
-
+    const games = this.props.quizzes;
     const loadGame = game => {
       console.log(game)
       this.props.history.push(process.env.PUBLIC_URL + '/viewquiz');
