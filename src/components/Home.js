@@ -8,7 +8,7 @@ const Home = (props) => {
         <h1>Welcome to Quizard!</h1>
         <ul>
           <li><Link to={process.env.PUBLIC_URL + '/load'}>Load an existing quiz</Link></li>
-          <li><Link to={process.env.PUBLIC_URL + '/create'}>Create a new quiz</Link></li>
+          <li><Link to={process.env.PUBLIC_URL + props.linkTwo}>{props.linkTwoText}</Link></li>
         </ul>
       </div>
     </div>

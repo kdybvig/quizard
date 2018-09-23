@@ -10,7 +10,7 @@ import TeamForm from './TeamForm';
 import TeamDisplay from './TeamDisplay';
 import BoardContainer from '../containers/BoardContainer';
 import QuestionDisplay from './QuestionDisplay';
-import Home from './Home';
+import HomeContainer from '../containers/HomeContainer';
 import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
@@ -23,7 +23,7 @@ const RouterPage = (props) => {
     <Router>
       <div className='game'>
         <Navbar />
-        <Route exact path={process.env.PUBLIC_URL + "/"} component={Home}/>
+        <Route exact path={process.env.PUBLIC_URL + "/"} component={HomeContainer}/>
         <Route path={process.env.PUBLIC_URL + "/create"} component={CategoryForm}/>
         <Route path={process.env.PUBLIC_URL + "/load"} component={LoadQuizzes}/>
         <Route path={process.env.PUBLIC_URL + "/createquestions"} component={QuestionForm}/>
