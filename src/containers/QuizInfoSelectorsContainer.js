@@ -16,7 +16,7 @@ const QuizInfoSelectorsContainer = props => {
     }
 
     return (
-        <QuizInfoSelectors handleChange={handleChange}/>
+        <QuizInfoSelectors handleChange={handleChange} info={props.info}/>
     )
 }
 

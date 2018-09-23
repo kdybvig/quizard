@@ -8,7 +8,7 @@ import CategoryForm from './CategoryForm';
 import QuestionForm from './QuestionForm';
 import TeamForm from './TeamForm';
 import TeamDisplay from './TeamDisplay';
-import BoardContainer from './BoardContainer';
+import BoardContainer from '../containers/BoardContainer';
 import QuestionDisplay from './QuestionDisplay';
 import Home from './Home';
 import Navbar from './Navbar';

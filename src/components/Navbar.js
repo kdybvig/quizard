@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { restartGame } from '../actions';
-import Dropdown from './Dropdown'
+import DropdownContainer from '../containers/DropdownContainer'
 
 const Navbar = (props) => {
     return (
@@ -12,7 +12,7 @@ const Navbar = (props) => {
             </Link>
             <div id="right-links">
                 {props.user.username ?
-                <Dropdown username={props.user.username} />:
+                <DropdownContainer />:
                 <div>
                     <Link 
                     to={process.env.PUBLIC_URL + '/login'} 

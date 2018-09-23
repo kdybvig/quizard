@@ -17,6 +17,7 @@ const QuizInfoSelectors = props => {
                     <div className='info-selector' key={`selector-${index}`}>
                         <h6>{select.name}</h6>
                         <QuizInfoSelect 
+                        value={props.info[select.stateKey]}
                         options={select.options} 
                         stateKey={select.stateKey}
                         handleChange={props.handleChange}

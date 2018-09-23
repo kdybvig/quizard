@@ -3,7 +3,7 @@ import React from 'react';
 const QuizInfoSelect = props => {
     console.log(props.options);
     return (
-        <select statekey={props.stateKey} onChange={props.handleChange}>
+        <select value={props.value} statekey={props.stateKey} onChange={props.handleChange}>
             {props.options.map((option,index) => {
                 return <option value={option} key={`opt-${index}`}>{option}</option>
             })}
