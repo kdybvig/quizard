@@ -3,8 +3,8 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import LoadQuizzes from './LoadQuizzes';
-import CategoryForm from './CategoryForm';
+import LoadQuizzesContainer from '../containers/LoadQuizzesContainer';
+import CategoryFormContainer from '../containers/CategoryFormContainer';
 import QuestionForm from './QuestionForm';
 import TeamForm from './TeamForm';
 import TeamDisplay from './TeamDisplay';
@@ -12,7 +12,7 @@ import BoardContainer from '../containers/BoardContainer';
 import QuestionDisplay from './QuestionDisplay';
 import HomeContainer from '../containers/HomeContainer';
 import Navbar from './Navbar';
-import LoginPage from './LoginPage';
+import LoginPageContainer from '../containers/LoginPageContainer';
 import SignUp from './SignUp';
 import QuizViewerContainer from '../containers/QuizViewerContainer';
 
@@ -24,14 +24,14 @@ const RouterPage = (props) => {
       <div className='game'>
         <Navbar />
         <Route exact path={process.env.PUBLIC_URL + "/"} component={HomeContainer}/>
-        <Route path={process.env.PUBLIC_URL + "/create"} component={CategoryForm}/>
-        <Route path={process.env.PUBLIC_URL + "/load"} component={LoadQuizzes}/>
+        <Route path={process.env.PUBLIC_URL + "/create"} component={CategoryFormContainer}/>
+        <Route path={process.env.PUBLIC_URL + "/load"} component={LoadQuizzesContainer}/>
         <Route path={process.env.PUBLIC_URL + "/createquestions"} component={QuestionForm}/>
         <Route path={process.env.PUBLIC_URL + "/addteams"} component={TeamForm}/>
         <Route path={process.env.PUBLIC_URL + "/game"} component={TeamDisplay}/>
         <Route path={process.env.PUBLIC_URL + "/game/board"} component={BoardContainer}/>
         <Route path={process.env.PUBLIC_URL + "/game/question"} component={QuestionDisplay}/>
-        <Route path={process.env.PUBLIC_URL + "/login"} component={LoginPage}/>
+        <Route path={process.env.PUBLIC_URL + "/login"} component={LoginPageContainer}/>
         <Route path={process.env.PUBLIC_URL + "/signup"} component={SignUp}/>
         <Route path={process.env.PUBLIC_URL + "/viewquiz"} component={QuizViewerContainer}/>
       </div>
