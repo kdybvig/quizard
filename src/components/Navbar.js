@@ -1,14 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { restartGame } from '../actions';
 import DropdownContainer from '../containers/DropdownContainer'
 
 const Navbar = (props) => {
     return (
         <nav id='main-nav'>
             <Link to={process.env.PUBLIC_URL + '/'}>
-                <i id="home-link" className="fas fa-home" onClick={()=>props.dispatch(restartGame())}></i>
+                <i id="home-link" className="fas fa-home" onClick={()=>props.restartGame()}></i>
             </Link>
             <div id="right-links">
                 {props.user.username ?
@@ -31,8 +29,4 @@ const Navbar = (props) => {
     )
 };
 
-const mapStateToProps = state => ({
-    user: state.user
-});
-
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;

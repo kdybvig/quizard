@@ -11,7 +11,7 @@ import TeamDisplay from './TeamDisplay';
 import BoardContainer from '../containers/BoardContainer';
 import QuestionDisplay from './QuestionDisplay';
 import HomeContainer from '../containers/HomeContainer';
-import Navbar from './Navbar';
+import Navbar from '../containers/NavbarContainer';
 import LoginPageContainer from '../containers/LoginPageContainer';
 import SignUp from './SignUp';
 import QuizViewerContainer from '../containers/QuizViewerContainer';
