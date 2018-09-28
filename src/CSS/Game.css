@@ -224,30 +224,39 @@
 
 #home {
   grid-column: 1/3;
-  font-family: chalkboard; }
+  font-family: chalkboard;
+  color: #f0e371; }
   #home #main {
     width: 80%;
+    height: calc(44vw);
     background: #005500 url("./images/chalkboard.jpg") no-repeat;
     background-size: cover;
     margin: 30px auto;
-    padding: 10px;
-    padding-left: calc(20px + 2vw);
+    padding: 10px 0px 10px 0px;
     border: 1vw solid #775557; }
+    #home #main h2 {
+      font-family: chalkboard;
+      font-size: 7vw;
+      color: #f0e371;
+      margin: 5vw auto 1vw auto; }
     #home #main h1 {
       font-family: chalkboard;
-      font-size: 12vw;
-      color: #f0e371; }
+      font-size: 15vw;
+      color: #f0e371;
+      margin: 1vw; }
     #home #main ul {
-      list-style: none; }
+      list-style: none;
+      text-align: center;
+      padding: 0px; }
       #home #main ul li {
-        font-size: 6vw;
+        font-size: 3.5vw;
         margin-bottom: 2vw; }
         #home #main ul li a {
           color: #f0e371; }
         #home #main ul li:hover {
           position: relative;
           bottom: 1vw;
-          font-size: 7.5vw; }
+          font-size: 4.5vw; }
 
 #load-screen {
   grid-column: 1/3; }
@@ -454,11 +463,11 @@
 
 @font-face {
   font-family: chalkboard;
-  src: url(./fonts/chalk.ttf); }
+  src: url(./fonts/chalk3.ttf); }
 
 @font-face {
   font-family: chalkboard;
-  src: url(./fonts/chalkbold.ttf);
+  src: url(./fonts/chalk3.ttf);
   font-weight: bold; }
 
 .game {
