@@ -4,7 +4,6 @@ import QuizInfoSelectorsContainer from '../containers/QuizInfoSelectorsContainer
 import QuizInfoContainer from '../containers/QuizInfoContainer';
 
 const QuizViewer = props => {
- console.log('props',props)
   if(props.redirect) {
       return (
           <Redirect to={process.env.PUBLIC_URL + '/addteams'}/>
@@ -29,15 +28,15 @@ const QuizViewer = props => {
                     <div key={key} className="category-box">
                         <h4 className="catName">{cat.name}</h4>
                         {cat.questions.map((quest,questIndex) => {
-                            const val = 100*(questIndex+1);
+                            const num = questIndex + 1;
                             const questKey = `quest-${catIndex}${questIndex}`
                             return (
-                                <div key={questKey}>
-                                    <h6><span className="qa-letter">{val}:</span> {quest.name}</h6>
+                                <div className ='q-and-a' key={questKey}>
+                                    <h6><span className="qa-letter">Q{num}:</span> {quest.name}</h6>
                                     {
                                         quest.answer ?
-                                        <h6><span className="qa-letter">Answer:</span> {quest.answer}</h6> :
-                                        <h6><span className="qa-letter">Answer: No Answer</span></h6> 
+                                        <h6><span className="qa-letter">A{num}:</span> {quest.answer}</h6> :
+                                        <h6><span className="qa-letter">A{num}: No Answer</span></h6> 
                                     }
                                 </div>
                             )
