@@ -1,55 +1,74 @@
 #quiz-viewer {
     grid-column: 1/3;
-    margin-left: 0px 20px;
+    margin: 20px 10px;
 
-    .heading {
-        text-align: center;
+    h1 {
+        text-align: left;
+        margin: 0px 15px 10px 15px;
+        @media screen and (max-width: 650px) {
+            text-align: center;
+            margin-left: 0px;
+          }
+    }
 
-        h1 {
-            display: inline-block;
+    button {
+        position: fixed;
+        top: 70px;
+        right: 30px;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #005530;
+        color: #00FF04;
+        @media screen and (max-width: 650px) {
+            position: static;
+            display: block;
+            float: none;
+            margin: 0px auto 20px auto;
+          }
+        &:hover {
+            cursor: pointer;
         }
-    
-        button {
-            display: inline;
-            padding: 1px;
-            border: none;
-            background: none;
-            margin-left: 20px;
 
-            &:hover {
-                cursor: pointer;
-            }
-    
-            i {
-                color: #43AA53;
-                font-size: 32px;
-            }
+        &.save {
+            background-color: #00B9FC;
+            color: #000078;
         }
-
     }
 
     h3 {
-        text-align: center;
+        margin: 20px 15px;
+        text-align: left;
         font-weight: normal;
+        @media screen and (max-width: 650px) {
+            text-align: center;
+            margin-left: 0px;
+          }
     }
     
     #quiz-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: block;
+        text-align: left;
+        margin-left: 15px;
+        @media screen and (max-width: 650px) {
+            text-align: center;
+            margin-left: 0px;
+          }
 
         h6 {
-            display: inline;
-            margin: 15px 20px;
+            margin: 0px;
+            margin-bottom: 20px;
+            display: block;
             font-weight: normal;
             font-size: 14px;
+            @media screen and (max-width: 650px) {
+                display: block;
+                margin-right: 20px;
+              }
         }
     }
 
     #quiz-info-selectors {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: block;
 
         .info-selector {
             display: block;

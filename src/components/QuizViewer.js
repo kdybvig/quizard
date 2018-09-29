@@ -12,13 +12,11 @@ const QuizViewer = props => {
   }
   return (
     <div id="quiz-viewer">
-    <div className="heading">
-        <h1>{props.title} </h1>
-        {props.unsavedChanges ?
-        <button id="play" onClick={props.handleSaveClick}><i className="fas fa-save" style={{color: '#000099'}}></i></button> :
-        <button id="play" onClick={props.handlePlayClick}><i className="fas fa-play"></i></button>
+    <h1>{props.title} </h1>
+    {props.unsavedChanges ?
+        <button id="play" className='save' onClick={props.handleSaveClick}>Save Quiz <i className="fas fa-save" style={{color: '#000099'}}></i></button> :
+        <button id="play" onClick={props.handlePlayClick}>Launch Quiz <i className="fas fa-play"></i></button>
         }
-    </div>
     <h3>{props.description}</h3>
         {props.ownedByUser ?
             <QuizInfoSelectorsContainer /> :
