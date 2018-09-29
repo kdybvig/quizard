@@ -39,11 +39,12 @@ const rootReducer = (state = defaultState, action) => {
       const newCatIndex = state.categories.findIndex(cat => {
         return cat.questions.length === 0;
       })
+      
 
       return {
         ...state,
         categories: action.categories,
-        catIndex: newCatIndex
+        catIndex: newCatIndex === -1 ? 5 : newCatIndex
       }
 
     case 'TEAMS_ADD' :
@@ -57,6 +58,12 @@ const rootReducer = (state = defaultState, action) => {
         ...state,
         info: action.info,
         unsavedChanges: true
+      }
+    
+    case 'CAT_INDEX_CHANGE' :
+      return {
+        ...state,
+        catIndex: action.catIndex
       }
 
     case 'QUIZ_SAVING' :
@@ -107,6 +114,7 @@ const rootReducer = (state = defaultState, action) => {
         info,
         quizId: action.quiz._id,
         owner: action.quiz.owner,
+        isComplete: action.quiz.isComplete !== false,
         catIndex: 5
       }
     

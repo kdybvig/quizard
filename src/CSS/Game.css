@@ -474,6 +474,18 @@
       background-color: #e1f4ed; }
       #quiz-viewer .category-boxes .category-box .q-and-a {
         margin-bottom: 12px; }
+      #quiz-viewer .category-boxes .category-box .cat-edit-button {
+        text-align: center;
+        color: #009900;
+        margin-top: -10px;
+        margin-bottom: 10px; }
+        #quiz-viewer .category-boxes .category-box .cat-edit-button i {
+          font-size: 12px;
+          position: relative;
+          bottom: 2px;
+          left: 2px; }
+        #quiz-viewer .category-boxes .category-box .cat-edit-button:hover {
+          cursor: pointer; }
       #quiz-viewer .category-boxes .category-box h4 {
         text-align: center; }
       #quiz-viewer .category-boxes .category-box h6 {

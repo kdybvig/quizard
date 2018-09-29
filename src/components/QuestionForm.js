@@ -4,6 +4,7 @@ import { addQuestions } from '../actions';
 import { withRouter, Redirect } from 'react-router-dom';
 
 class QuestionForm extends Component {
+
   defaultQuestions = () => {
     return (
       new Array(5).fill(null).map((question,index) => {
@@ -16,8 +17,16 @@ class QuestionForm extends Component {
       })
     )
   }
+
   state = {
     questions: this.defaultQuestions()
+  }
+
+  componentDidMount = () => {
+    const prevQuestions= this.props.categories[this.props.catIndex].questions;
+    if(prevQuestions.length) {
+      this.setState({questions: prevQuestions})
+    }
   }
 
   renderInputs = () => {
@@ -67,7 +76,7 @@ class QuestionForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const isLastCat = this.props.catIndex === 4;
+    const isLastCat = this.props.catIndex === 4 || this.props.isComplete;
     const questions = this.state.questions.slice();
     const categories = [...this.props.categories]
     categories[this.props.catIndex].questions = questions;
@@ -79,16 +88,25 @@ class QuestionForm extends Component {
   }
 
   render () {
+    if(this.props.catIndex > 4) {
+      return <Redirect to={process.env.PUBLIC_URL + '/viewquiz'} />
+    }
+
     if(!this.props.categories.length) {
        return <Redirect to={process.env.PUBLIC_URL + '/'} />
     }
+
+    const buttonText = (this.props.isComplete ? 
+      'Save' : 
+      this.props.catIndex === 4 ? 'Next >>' : 'Next Category'
+    )
     return (
       <div className='form-page'>
         <form onSubmit={this.handleSubmit}>
           <h1>{this.props.title}</h1>
           <h4>Category {this.props.catIndex + 1}: {this.props.categories[this.props.catIndex].name}</h4>
           {this.renderInputs()}
-          <button type="submit">{this.props.catIndex === 4 ? 'Next >>' : 'Next Category'}</button>
+          <button type="submit">{buttonText}</button>
         </form>
       </div>
     )
@@ -99,7 +117,8 @@ const mapStateToProps = state => ({
   categories: state.categories,
   catIndex: state.catIndex,
   title: state.title,
-  quizId: state.quizId
+  quizId: state.quizId,
+  isComplete: state.isComplete
 })
 
 

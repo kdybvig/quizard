@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import QuizViewer from '../components/QuizViewer';
 import {saveQuiz} from '../actions';
+import {Redirect} from 'react-router-dom';
 
 class QuizViewerContainer extends Component {
     state = {
@@ -24,6 +25,7 @@ class QuizViewerContainer extends Component {
     }
 
     render() {
+        if(this.props.catIndex !== 5) return <Redirect to={process.env.PUBLIC_URL + '/createQuestions'} />
         return (
             <QuizViewer 
             handlePlayClick = {this.handlePlayClick}
@@ -40,7 +42,7 @@ class QuizViewerContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    const {title, description, categories, owner, user, unsavedChanges, info, quizId} = state;
+    const {title, description, categories, owner, user, unsavedChanges, info, quizId, catIndex} = state;
     return {
         title,
         description,
@@ -48,7 +50,8 @@ const mapStateToProps = state => {
         info,
         ownedByUser: user.username === owner,
         unsavedChanges,
-        quizId
+        quizId,
+        catIndex
     }
 }
 

@@ -98,6 +98,24 @@
                 margin-bottom: 12px;
             }
 
+            .cat-edit-button {
+                text-align: center;
+                color: #009900;
+                margin-top: -10px;
+                margin-bottom: 10px;
+
+                i {
+                    font-size: 12px;
+                    position: relative;
+                    bottom: 2px;
+                    left: 2px;
+                }
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
             h4 {
                 text-align: center;
             }

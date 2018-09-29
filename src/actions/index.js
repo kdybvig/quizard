@@ -175,6 +175,11 @@ export const addQuizInfo = info => ({
   info
 });
 
+export const changeCatIndex = catIndex => ({
+  type: 'CAT_INDEX_CHANGE',
+  catIndex
+})
+
 export const saveQuiz = (changesToSave, quizId) => {
   return dispatch => {
     dispatch({

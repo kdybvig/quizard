@@ -2,6 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import QuizInfoSelectorsContainer from '../containers/QuizInfoSelectorsContainer';
 import QuizInfoContainer from '../containers/QuizInfoContainer';
+import EditCategoryContainer from '../containers/EditCategoryContainer'
 
 const QuizViewer = props => {
   if(props.redirect) {
@@ -27,6 +28,7 @@ const QuizViewer = props => {
                 return (
                     <div key={key} className="category-box">
                         <h4 className="catName">{cat.name}</h4>
+                        {props.ownedByUser && <EditCategoryContainer catIndex={catIndex}/>}
                         {cat.questions.map((quest,questIndex) => {
                             const num = questIndex + 1;
                             const questKey = `quest-${catIndex}${questIndex}`
