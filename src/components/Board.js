@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import PlaySaveButton from './PlaySaveButton';
 
 
-const Board = ({title, categories, demo, quiz, hasSavedProgress, quizId, handleSaveClick, history}) => {
+const Board = ({title, categories, demo, loggedIn, quiz, hasSavedProgress, quizId, handleSaveClick, history}) => {
   if(!categories.length) history.push(process.env.PUBLIC_URL + '/')
   const questionButtons = [];
   const isLive = categories[0].questions.length
@@ -31,7 +31,7 @@ const Board = ({title, categories, demo, quiz, hasSavedProgress, quizId, handleS
   return (
     <div className={className} id='board'>
       <h1>{title}</h1>
-      {!demo && 
+      {!demo && loggedIn &&
         <PlaySaveButton
         handleClick={() => handleSaveClick(quiz, hasSavedProgress, quizId)}
         text='Save Progress'

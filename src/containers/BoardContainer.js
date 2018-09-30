@@ -5,6 +5,7 @@ import {updateProgress} from '../actions';
 const mapStateToProps = state => ({
   title: state.title,
   categories: state.categories,
+  loggedIn: Boolean(state.user.username),
   quiz: {
     name: state.title,
     categories: state.categories,
