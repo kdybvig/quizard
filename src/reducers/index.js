@@ -87,13 +87,12 @@ const rootReducer = (state = defaultState, action) => {
       }
     
       case 'PROGRESS_SAVED' :
-        const owner= state.user.username;
         return {
           ...state,
           hasSavedProgress: true,
           quizId: action.quizId,
           isLoading: false,
-          owner
+          owner: state.user.username
         }
 
     case 'ACT_QUEST_CHANGE' :
