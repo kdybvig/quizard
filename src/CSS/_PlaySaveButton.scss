@@ -1,0 +1,17 @@
+.play-save-btn {
+    padding: 10px;
+    font-size: 20px;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.save {
+        background-color: #00B9FC;
+        color: #000078;
+    }
+
+    &.play {
+        background-color: #005530;
+        color: #00FF04;
+    }
+}

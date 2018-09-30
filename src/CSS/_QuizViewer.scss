@@ -11,28 +11,17 @@
           }
     }
 
-    button {
+    .play-save-btn {
         position: absolute;
         top: 70px;
         right: 30px;
-        padding: 10px;
-        font-size: 20px;
-        background-color: #005530;
-        color: #00FF04;
+        
         @media screen and (max-width: 650px) {
             position: static;
             display: block;
             float: none;
             margin: 0px auto 20px auto;
           }
-        &:hover {
-            cursor: pointer;
-        }
-
-        &.save {
-            background-color: #00B9FC;
-            color: #000078;
-        }
     }
 
     h3 {

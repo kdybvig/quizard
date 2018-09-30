@@ -4,6 +4,7 @@ import QuizInfoSelectorsContainer from '../containers/QuizInfoSelectorsContainer
 import QuizInfoContainer from '../containers/QuizInfoContainer';
 import EditCategoryContainer from '../containers/EditCategoryContainer'
 import EditTitleContainer from '../containers/EditTitleContainer';
+import PlaySaveButton from './PlaySaveButton';
 
 const QuizViewer = props => {
   if(props.redirect) {
@@ -11,14 +12,17 @@ const QuizViewer = props => {
           <Redirect to={process.env.PUBLIC_URL + '/addteams'}/>
       )
   }
+
+  const isSave = props.unsavedChanges;
+
   return (
     <div id="quiz-viewer">
     <h1>{props.title} </h1>
-    {props.unsavedChanges ?
-        <button id="play" className='save' onClick={props.handleSaveClick}>Save Quiz <i className="fas fa-save" style={{color: '#000099'}}></i></button> :
-        <button id="play" onClick={props.handlePlayClick}>Launch Quiz <i className="fas fa-play"></i></button>
-        }
     <h3>{props.description}</h3>
+    <PlaySaveButton 
+    handleClick={isSave ? props.handleSaveClick : props.handlePlayClick}
+    isSave={isSave}
+    text={isSave ? 'Save Quiz' : 'Launch Quiz'}/>
     {props.ownedByUser && <EditTitleContainer />}
         {props.ownedByUser ?
             <QuizInfoSelectorsContainer /> :

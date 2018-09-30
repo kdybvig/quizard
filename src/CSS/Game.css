@@ -378,25 +378,16 @@
       #quiz-viewer h1 {
         text-align: center;
         margin-left: 0px; } }
-  #quiz-viewer button {
+  #quiz-viewer .play-save-btn {
     position: absolute;
     top: 70px;
-    right: 30px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #005530;
-    color: #00FF04; }
+    right: 30px; }
     @media screen and (max-width: 650px) {
-      #quiz-viewer button {
+      #quiz-viewer .play-save-btn {
         position: static;
         display: block;
         float: none;
         margin: 0px auto 20px auto; } }
-    #quiz-viewer button:hover {
-      cursor: pointer; }
-    #quiz-viewer button.save {
-      background-color: #00B9FC;
-      color: #000078; }
   #quiz-viewer h3 {
     margin: 20px 15px;
     text-align: left;
@@ -507,6 +498,18 @@
     padding: 8px;
     margin: 10px auto;
     border: 3px solid #0c3129; }
+
+.play-save-btn {
+  padding: 10px;
+  font-size: 20px; }
+  .play-save-btn:hover {
+    cursor: pointer; }
+  .play-save-btn.save {
+    background-color: #00B9FC;
+    color: #000078; }
+  .play-save-btn.play {
+    background-color: #005530;
+    color: #00FF04; }
 
 @font-face {
   font-family: chalkboard;
