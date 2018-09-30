@@ -57,7 +57,7 @@
     top: calc(85px + 0.2vw);
     right: calc(25px + 3vw);
     z-index: 20;
-    font-size: calc(3px + 1.4vw);
+    font-size: calc(3px + 1.2vw);
     padding: 1vw; }
   #board #boxes {
     background-color: #a2ddc6;
