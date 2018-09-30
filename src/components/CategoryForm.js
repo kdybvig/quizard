@@ -12,7 +12,7 @@ const CategoryForm = props => {
     return (
       <div className='form-page cat-form'>
         {props.editMode ? <h1>Edit Quiz</h1> : <h1>New Quiz</h1>}
-        <Board categories={categories} title='Title' />
+        <Board categories={categories} title='Title' demo={true} />
         <form onSubmit={props.handleSubmit}>
           <h5>Title</h5>
           <input 

@@ -38,10 +38,10 @@
   #board h1 {
     font-family: "Alegreya Sans SC", sans-serif;
     position: relative;
-    top: 4px;
+    top: 8px;
     z-index: 2;
     font-size: calc(16px + 2vw);
-    margin: 15px auto 0px auto;
+    margin: 18px auto 0px auto;
     padding: 5px;
     padding-bottom: 12px;
     width: auto;
@@ -52,6 +52,13 @@
     @media screen and (max-width: 450px) {
       #board h1 {
         font-size: calc(8px + 2vw); } }
+  #board .play-save-btn {
+    position: absolute;
+    top: calc(85px + 0.2vw);
+    right: calc(25px + 3vw);
+    z-index: 20;
+    font-size: calc(3px + 1.4vw);
+    padding: 1vw; }
   #board #boxes {
     background-color: #a2ddc6;
     justify-content: center;
