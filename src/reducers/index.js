@@ -9,6 +9,7 @@ const defaultState = {
   owner: '',
   categories: [],
   description: '',
+  hasSavedProgress: false,
   info: {subject: '', gradeLevel: '', visibility: 'Public'},
   catIndex: 0,
   teams: [],
@@ -76,12 +77,19 @@ const rootReducer = (state = defaultState, action) => {
       }
     
     case 'QUIZ_SAVE' :
-      console.log('made it here')
       return {
         ...state,
         unsavedChanges: false,
         isComplete: true
       }
+    
+      case 'PROGRESS_SAVED' :
+        return {
+          ...state,
+          hasSavedProgress: true,
+          quizId: action.quizId,
+          isLoading: false
+        }
 
     case 'ACT_QUEST_CHANGE' :
       const catIndex2 = action.location[0];

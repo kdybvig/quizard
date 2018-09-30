@@ -1,5 +1,4 @@
 export const addCategories = (title, username, categories, description, quizId) => {
-  console.log('quizId2',quizId)
   return dispatch => {
     dispatch({
       type: 'CAT_ADD',
@@ -67,7 +66,6 @@ export const addQuestions = (categories,quizId) => {
       type: 'QUEST_ADD',
       categories
     });
-    console.log('just added question')
     fetch(`https://quizard-data.herokuapp.com/quizzes/${quizId}`, {
       method: "PUT",
       headers: {
@@ -233,4 +231,58 @@ export const saveQuiz = (changesToSave, quizId) => {
     })
     
   }
+}
+
+export const updateProgress = (quiz, hasSavedProgress, quizId) => {
+  return dispatch => {
+    dispatch({
+      type: 'QUIZ_SAVING'
+    });
+    if(!hasSavedProgress){
+      fetch("https://quizard-data.herokuapp.com/quizzes/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify(quiz)
+      })
+      .then(res => res.json())
+      .then(json => {
+        if(!json._id) {
+          console.log('error',json)
+          return;
+        }
+        dispatch({
+          type: 'PROGRESS_SAVED',
+          quizId: json._id
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    } else {
+      fetch(`https://quizard-data.herokuapp.com/quizzes/${quizId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+          categories: quiz.categories,
+          teams: quiz.teams
+        })
+      })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        dispatch({
+          type: 'PROGRESS_SAVED',
+          quizId: json._id
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+    
+  }   
 }
