@@ -26,3 +26,7 @@ This is a React/Redux application that allows the user to create Jeopardy-style 
 * Users will be able to search the list of saved quizzes
 * Users will be able to rate public quizzes
 * Users will be able to sort quizzes by date added, rating, or total views, as well as filter quizzes by topic
+
+## Server
+* Github repository located at https://github.com/kdybvig/quizard-server
+* API URL: https://quizard-data.herokuapp.com/
