@@ -15,6 +15,7 @@ export const addCategories = (title, username, categories, description, quizId) 
         body: JSON.stringify({
           name: title, 
           owner: username,
+          createdBy: username,
           categories, 
           description,
           isComplete: false 

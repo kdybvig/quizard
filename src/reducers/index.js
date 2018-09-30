@@ -7,6 +7,7 @@ const defaultState = {
   saveError: '',
   title: '',
   owner: '',
+  createdBy: '',
   categories: [],
   description: '',
   hasSavedProgress: false,
@@ -21,11 +22,13 @@ const rootReducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'CAT_ADD':
       const owner = state.user.username;
+      const createdBy = owner;
       const catIndex = state.title ? 5 : 0;
       return {
         ...state,
         title: action.title,
         owner,
+        createdBy,
         categories: action.categories,
         description: action.description,
         catIndex,
@@ -84,11 +87,13 @@ const rootReducer = (state = defaultState, action) => {
       }
     
       case 'PROGRESS_SAVED' :
+        const owner= state.user.username;
         return {
           ...state,
           hasSavedProgress: true,
           quizId: action.quizId,
-          isLoading: false
+          isLoading: false,
+          owner
         }
 
     case 'ACT_QUEST_CHANGE' :
@@ -125,6 +130,7 @@ const rootReducer = (state = defaultState, action) => {
         info,
         quizId: action.quiz._id,
         owner: action.quiz.owner,
+        createdBy: action.quiz.createdBy,
         isComplete: action.quiz.isComplete !== false,
         catIndex: 5
       }
