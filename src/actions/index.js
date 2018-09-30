@@ -1,4 +1,5 @@
-export const addCategories = (title, username, categories, description) => {
+export const addCategories = (title, username, categories, description, quizId) => {
+  console.log('quizId2',quizId)
   return dispatch => {
     dispatch({
       type: 'CAT_ADD',
@@ -6,30 +7,55 @@ export const addCategories = (title, username, categories, description) => {
       categories,
       description
     });
-    fetch("https://quizard-data.herokuapp.com/quizzes/", {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json; charset=utf-8"
-      },
-      body: JSON.stringify({
-        name: title, 
-        owner: username,
-        categories, 
-        description,
-        isComplete: false 
+    if(!quizId){
+      fetch("https://quizard-data.herokuapp.com/quizzes/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+          name: title, 
+          owner: username,
+          categories, 
+          description,
+          isComplete: false 
+        })
       })
-    })
-    .then(res => res.json())
-    .then(json => {
-      if(!json._id) {
-        console.log('error',json)
-        return;
-      }
-      dispatch({
-        type: 'QUIZ_ID_ADD',
-        quizId: json._id
+      .then(res => res.json())
+      .then(json => {
+        if(!json._id) {
+          console.log('error',json)
+          return;
+        }
+        dispatch({
+          type: 'QUIZ_ID_ADD',
+          quizId: json._id
+        })
       })
-    })
+      .catch(err => {
+        console.log(err)
+      })
+    } else {
+      fetch(`https://quizard-data.herokuapp.com/quizzes/${quizId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+          name: title, 
+          categories, 
+          description
+        })
+      })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+    
   }
 
     
@@ -54,6 +80,9 @@ export const addQuestions = (categories,quizId) => {
     .then(res => res.json())
     .then(json => {
       console.log(json)
+    })
+    .catch(err => {
+      console.log(err)
     })
   }
   

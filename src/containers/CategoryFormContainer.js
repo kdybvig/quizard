@@ -13,7 +13,8 @@ class CategoryFormContainer extends Component {
   state = {
     title: '',
     description: '',
-    categories: this.defaultCategories
+    categories: this.defaultCategories,
+    nextPage: '/createquestions'
   }
   
   handleInputChange = e => {
@@ -57,9 +58,21 @@ class CategoryFormContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addCategories(this.state.title, this.props.user, this.state.categories, this.state.description)
-    this.props.history.push(process.env.PUBLIC_URL + '/createquestions')
+    const {title, categories, description} = this.state;
+    const {user, quizId} = this.props;
+    console.log('quizId', quizId)
+    this.props.addCategories(title, user, categories, description, quizId)
+    this.props.history.push(process.env.PUBLIC_URL + this.state.nextPage)
   }
+
+  componentDidMount = () => {
+    const {title, description, categories} = this.props;
+    const nextPage = '/viewquiz'
+    if(this.props.title) {
+      this.setState({title, description, categories, nextPage})
+    }
+  }
+
   render () {
     return (
       <CategoryForm 
@@ -71,18 +84,27 @@ class CategoryFormContainer extends Component {
       handleInputChange={this.handleInputChange}
       handleCategoryChange={this.handleCategoryChange}
       renderInputs={this.renderInputs}
+      buttonValue={this.props.buttonValue}
       />
     )
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user.username
-})
+const mapStateToProps = state => {
+  const {title, description, categories, quizId} = state;
+  return {
+    user: state.user.username,
+    buttonValue: state.isComplete ? 'Save' : 'Next >>',
+    title,
+    description,
+    categories,
+    quizId
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
-  addCategories: (title, user, categories, description) => {
-    dispatch(addCategories(title, user, categories, description));
+  addCategories: (title, user, categories, description, quizId) => {
+    dispatch(addCategories(title, user, categories, description, quizId));
     return;
   }
 })

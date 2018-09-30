@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 import QuizInfoSelectorsContainer from '../containers/QuizInfoSelectorsContainer';
 import QuizInfoContainer from '../containers/QuizInfoContainer';
 import EditCategoryContainer from '../containers/EditCategoryContainer'
+import EditTitleContainer from '../containers/EditTitleContainer';
 
 const QuizViewer = props => {
   if(props.redirect) {
@@ -18,6 +19,7 @@ const QuizViewer = props => {
         <button id="play" onClick={props.handlePlayClick}>Launch Quiz <i className="fas fa-play"></i></button>
         }
     <h3>{props.description}</h3>
+    {props.ownedByUser && <EditTitleContainer />}
         {props.ownedByUser ?
             <QuizInfoSelectorsContainer /> :
             <QuizInfoContainer />

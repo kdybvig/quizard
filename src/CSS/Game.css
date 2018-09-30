@@ -461,6 +461,25 @@
     #quiz-viewer #quiz-info-selectors h6 {
       display: inline;
       margin: 15px 20px; }
+  #quiz-viewer .edit-button {
+    color: #009900;
+    margin-top: -10px;
+    margin-bottom: 10px; }
+    #quiz-viewer .edit-button.cat {
+      text-align: center; }
+    #quiz-viewer .edit-button.title {
+      margin-left: 15px; }
+      @media screen and (max-width: 650px) {
+        #quiz-viewer .edit-button.title {
+          text-align: center;
+          margin-left: 0px; } }
+    #quiz-viewer .edit-button i {
+      font-size: 12px;
+      position: relative;
+      bottom: 2px;
+      left: 2px; }
+    #quiz-viewer .edit-button:hover {
+      cursor: pointer; }
   #quiz-viewer .category-boxes {
     display: flex;
     flex-wrap: wrap;
@@ -474,18 +493,6 @@
       background-color: #e1f4ed; }
       #quiz-viewer .category-boxes .category-box .q-and-a {
         margin-bottom: 12px; }
-      #quiz-viewer .category-boxes .category-box .cat-edit-button {
-        text-align: center;
-        color: #009900;
-        margin-top: -10px;
-        margin-bottom: 10px; }
-        #quiz-viewer .category-boxes .category-box .cat-edit-button i {
-          font-size: 12px;
-          position: relative;
-          bottom: 2px;
-          left: 2px; }
-        #quiz-viewer .category-boxes .category-box .cat-edit-button:hover {
-          cursor: pointer; }
       #quiz-viewer .category-boxes .category-box h4 {
         text-align: center; }
       #quiz-viewer .category-boxes .category-box h6 {

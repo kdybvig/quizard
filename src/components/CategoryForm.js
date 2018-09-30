@@ -33,7 +33,7 @@ const CategoryForm = props => {
           required
           />
           {props.renderInputs()}
-          <button type="submit">Next >></button>
+          <button type="submit">{props.buttonValue}</button>
         </form>
       </div>
     )

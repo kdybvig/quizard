@@ -1,4 +1,4 @@
-import EditCategory from '../components/EditCategory';
+import EditButton from '../components/EditButton';
 import {connect} from 'react-redux';
 import {changeCatIndex} from '../actions';
 
@@ -6,8 +6,10 @@ import React from 'react';
 
 const EditCategoryContainer = props => {
     return (
-        <EditCategory
+        <EditButton
         handleClick={() => props.editCategory(props.catIndex)}
+        extraClass='cat'
+        editText='Edit'
         />
     )
 }

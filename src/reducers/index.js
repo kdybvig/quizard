@@ -20,13 +20,15 @@ const rootReducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'CAT_ADD':
       const owner = state.user.username;
+      const catIndex = state.title ? 5 : 0;
       return {
         ...state,
         title: action.title,
         owner,
         categories: action.categories,
         description: action.description,
-        catIndex: 0
+        catIndex,
+        unsavedChanges: true
       }
     
     case 'QUIZ_ID_ADD':
@@ -63,7 +65,8 @@ const rootReducer = (state = defaultState, action) => {
     case 'CAT_INDEX_CHANGE' :
       return {
         ...state,
-        catIndex: action.catIndex
+        catIndex: action.catIndex,
+        unsavedChanges: true
       }
 
     case 'QUIZ_SAVING' :
