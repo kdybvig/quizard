@@ -25,6 +25,7 @@ class QuizViewerContainer extends Component {
     }
 
     render() {
+        if(!this.props.quizId) return <Redirect to={process.env.PUBLIC_URL + '/load'} />
         if(this.props.catIndex !== 5) return <Redirect to={process.env.PUBLIC_URL + '/createQuestions'} />
         return (
             <QuizViewer 
