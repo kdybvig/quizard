@@ -85,6 +85,7 @@ class CategoryFormContainer extends Component {
       handleCategoryChange={this.handleCategoryChange}
       renderInputs={this.renderInputs}
       buttonValue={this.props.buttonValue}
+      editMode={Boolean(this.props.quizId)}
       />
     )
   }
