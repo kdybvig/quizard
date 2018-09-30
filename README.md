@@ -16,13 +16,11 @@ This is a React/Redux application that allows the user to create Jeopardy-style 
 * The application tracks the scores for each team
 * Question boxes turn grey and become unclickable once answered
 * Users can navigate between pages with React Router
-* Users can choose to create a new quiz or load a pre-generated quiz
+* Users can choose to create a new quiz or load a quiz from the database
 * The game can be played with two to five teams
 
 ## Future Updates
 
-* Create login page so users can save and load private quizzes
-* Allow users to save quizzes as either public or private, so that quizzes can be reused
 * Users will be able to search the list of saved quizzes
 * Users will be able to rate public quizzes
 * Users will be able to sort quizzes by date added, rating, or total views, as well as filter quizzes by topic
