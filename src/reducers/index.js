@@ -1,5 +1,6 @@
 const defaultState = {
   loadedQuizzes: [],
+  userQuizzes: {underConstruction: [], readyToPlay: [], inProgress: []},
   isLoading: false,
   quizId: '',
   unsavedChanges: false,
@@ -15,8 +16,7 @@ const defaultState = {
   catIndex: 0,
   teams: [],
   activeQuestion: false,
-  user: {error: ''},
-  userId: ''
+  user: {error: ''}
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -122,6 +122,7 @@ const rootReducer = (state = defaultState, action) => {
 
     case 'QUIZ_LOAD' :
       const info = action.quiz.info ? action.quiz.info : {subject: '', gradeLevel: '', visibility: 'Public'};
+      const teams = action.quiz.teams ? action.quiz.teams : []
       return {
         ...state,
         title: action.quiz.name,
@@ -132,6 +133,7 @@ const rootReducer = (state = defaultState, action) => {
         owner: action.quiz.owner,
         createdBy: action.quiz.createdBy,
         isComplete: action.quiz.isComplete !== false,
+        teams,
         catIndex: 5
       }
     
@@ -142,6 +144,13 @@ const rootReducer = (state = defaultState, action) => {
         loadedQuizzes: action.quizzes
       }
 
+    case 'QUIZZES_LOAD_USER' :
+      return {
+        ...state,
+        isLoading: false,
+        userQuizzes: action.userQuizzes
+      }
+
     case 'QUIZZES_LOADING' :
       return {
         ...state,
@@ -150,11 +159,9 @@ const rootReducer = (state = defaultState, action) => {
     
     case 'USER_LOGIN' :
       const {username, userId} = action
-      console.log('login successful', {username, password})
       return {
         ...state,
-        user: {username, error: ''},
-        userId
+        user: {username, userId, error: ''},
       }
 
     case 'ERROR_LOGIN' :

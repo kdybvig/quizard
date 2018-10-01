@@ -1,4 +1,4 @@
-export const addCategories = (title, username, categories, description, quizId) => {
+export const addCategories = (title, user, categories, description, quizId) => {
   return dispatch => {
     dispatch({
       type: 'CAT_ADD',
@@ -14,8 +14,9 @@ export const addCategories = (title, username, categories, description, quizId) 
         },
         body: JSON.stringify({
           name: title, 
-          owner: username,
-          createdBy: username,
+          owner: user.username,
+          createdBy: user.username,
+          user: user.userId,
           categories, 
           description,
           isComplete: false 
@@ -287,4 +288,30 @@ export const updateProgress = (quiz, hasSavedProgress, quizId) => {
     }
     
   }   
+}
+
+export const fetchQuizzesByUser = username => {
+  console.log('hello', username)
+  return dispatch => {
+    console.log('hello again')
+    dispatch({
+      type: "QUIZZES_LOADING"
+    });
+    fetch(`https://quizard-data.herokuapp.com/quizzes/user/${username}`)
+    .then(res => res.json())
+    .then(json => {
+      console.log('json',json)
+      dispatch(loadUserQuizzes(json))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+}
+
+export const loadUserQuizzes = userQuizzes => {
+  return {
+    type: 'QUIZZES_LOAD_USER',
+    userQuizzes
+  }
 }

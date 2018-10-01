@@ -76,7 +76,7 @@ class CategoryFormContainer extends Component {
   render () {
     return (
       <CategoryForm 
-      user={this.props.user}
+      user={this.props.user.username}
       title={this.state.title}
       description={this.state.description}
       categories={this.state.categories}
@@ -94,7 +94,7 @@ class CategoryFormContainer extends Component {
 const mapStateToProps = state => {
   const {title, description, categories, quizId} = state;
   return {
-    user: state.user.username,
+    user: state.user,
     buttonValue: state.isComplete ? 'Save' : 'Next >>',
     title,
     description,

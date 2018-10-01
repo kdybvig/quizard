@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Dropdown = props => {
     return (
@@ -13,6 +14,10 @@ const Dropdown = props => {
                 className="right-link"
                 onClick={props.logout}>
                     Logout
+                </p>
+                <p
+                className="right-link">
+                    <Link to={process.env.PUBLIC_URL + '/myquizzes'} >My Quizzes</Link>
                 </p>
             </div>      
         </div>

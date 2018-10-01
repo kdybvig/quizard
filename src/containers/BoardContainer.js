@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
     categories: state.categories,
     description: state.description,
     owner: state.user.username,
+    userId: state.user.userId,
     createdBy: state.createdBy,
     info: state.info,
     isComplete: true,
