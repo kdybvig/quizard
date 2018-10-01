@@ -81,10 +81,12 @@ const rootReducer = (state = defaultState, action) => {
       }
     
     case 'QUIZ_SAVE' :
+      const isComplete = state.categories.findIndex(cat => cat.questions.length === 0) === -1;
+      console.log('quiz is complete:', isComplete)
       return {
         ...state,
         unsavedChanges: false,
-        isComplete: true
+        isComplete
       }
     
       case 'PROGRESS_SAVED' :

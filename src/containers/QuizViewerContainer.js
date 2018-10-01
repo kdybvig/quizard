@@ -15,14 +15,16 @@ class QuizViewerContainer extends Component {
     }
 
     handleSaveClick = () => {
-        if(!this.props.isComplete) return;
         const saveErrors = [];
         const infoKeys = Object.keys(this.props.info);
+        const isComplete = (
+            this.props.categories.findIndex(cat => cat.questions.length === 0) === -1
+        ) 
         infoKeys.forEach(key => {
             if(!this.props.info[key]) saveErrors.push(key)
         });
         if (saveErrors.length) return;
-        this.props.saveQuiz({info: this.props.info, isComplete: true}, this.props.quizId)
+        this.props.saveQuiz({info: this.props.info, isComplete}, this.props.quizId)
     }
 
     render() {
