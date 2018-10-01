@@ -30,6 +30,10 @@ class DropdownContainer extends Component {
         this.props.history.push(process.env.PUBLIC_URL + '/login')
     }
 
+    componentWillUnmount () {
+        document.removeEventListener('click', this.closeMenu)
+    }
+
     render () {
         return (
             <Dropdown 

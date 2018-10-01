@@ -298,22 +298,23 @@
     #main-nav #right-links .dropdown {
       position: absolute;
       margin-right: 15px;
-      background-color: black;
+      background-color: #242444;
       width: auto;
-      border-top: 1px solid black;
-      border-left: 2px solid black;
-      border-right: 2px solid black;
-      border-bottom: 2px solid black;
+      border: 2px solid black;
       top: 50px;
-      right: 0px;
+      right: 10px;
       z-index: 10000;
-      padding: 16px 0px; }
+      padding: 0px 0px; }
       #main-nav #right-links .dropdown p {
         position: static;
+        display: block;
         padding: 16px 40px 10px 16px;
         padding-bottom: 17px;
         background-color: #242444;
-        margin: -2px -2px 0px -1px; }
+        border: 1px solid black;
+        margin: 0px; }
+        #main-nav #right-links .dropdown p:last {
+          border-bottom: 20px solid black; }
     #main-nav #right-links .hidden {
       display: none; }
     #main-nav #right-links .right-link {
