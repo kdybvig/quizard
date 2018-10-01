@@ -15,6 +15,7 @@ class QuizViewerContainer extends Component {
     }
 
     handleSaveClick = () => {
+        if(!this.props.isComplete) return;
         const saveErrors = [];
         const infoKeys = Object.keys(this.props.info);
         infoKeys.forEach(key => {
@@ -37,13 +38,14 @@ class QuizViewerContainer extends Component {
             ownedByUser={this.props.ownedByUser}
             handleSaveClick={this.handleSaveClick}
             unsavedChanges={this.props.unsavedChanges}
+            isComplete={this.props.isComplete}
             />
         )
     }
 }
 
 const mapStateToProps = state => {
-    const {title, description, categories, owner, user, unsavedChanges, info, quizId, catIndex} = state;
+    const {title, description, categories, owner, user, unsavedChanges, info, quizId, catIndex, isComplete} = state;
     return {
         title,
         description,
@@ -52,7 +54,8 @@ const mapStateToProps = state => {
         ownedByUser: user.username === owner,
         unsavedChanges,
         quizId,
-        catIndex
+        catIndex,
+        isComplete
     }
 }
 

@@ -13,7 +13,7 @@ const QuizViewer = props => {
       )
   }
 
-  const isSave = props.unsavedChanges;
+  const isSave = props.unsavedChanges || !props.isComplete;
 
   return (
     <div id="quiz-viewer">

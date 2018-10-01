@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const QuestionButton = (props) => {
   const questionObj = props.categories.length && props.categories[props.catIndex].questions[props.questIndex];
-  const isAnswered = questionObj.answered;
+  const isAnswered = questionObj && questionObj.answered;
   const className = isAnswered ? 'points answered blue-box' : 'points blue-box';
   const location = [props.catIndex, props.questIndex];
 
