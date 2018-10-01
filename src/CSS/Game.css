@@ -551,7 +551,8 @@
       background-color: #ecf0f1;
       margin: 10px 10px; }
       #my-quizzes .quizzes-grid-wrapper .quizzes-container h2 {
-        text-decoration: underline; }
+        text-decoration: underline;
+        margin-bottom: 40px; }
       #my-quizzes .quizzes-grid-wrapper .quizzes-container .default-text {
         margin: 20px;
         text-align: center; }
