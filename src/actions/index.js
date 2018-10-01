@@ -16,7 +16,7 @@ export const addCategories = (title, user, categories, description, quizId) => {
           name: title, 
           owner: user.username,
           createdBy: user.username,
-          user: user.userId,
+          userId: user.userId,
           categories, 
           description,
           isComplete: false 
