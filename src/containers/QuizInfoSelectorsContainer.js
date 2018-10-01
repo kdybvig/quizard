@@ -9,9 +9,7 @@ const QuizInfoSelectorsContainer = props => {
         const stateKey = e.target.getAttribute('statekey');
         const stateVal = e.target.value;
         const info = {...props.info};
-        console.log(info);
         info[stateKey] = stateVal;
-        console.log('new info', info)
         props.addQuizInfo(info);
     }
 

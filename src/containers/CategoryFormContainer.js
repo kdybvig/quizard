@@ -60,7 +60,6 @@ class CategoryFormContainer extends Component {
     e.preventDefault();
     const {title, categories, description} = this.state;
     const {user, quizId} = this.props;
-    console.log('quizId', quizId)
     this.props.addCategories(title, user, categories, description, quizId)
     this.props.history.push(process.env.PUBLIC_URL + this.state.nextPage)
   }

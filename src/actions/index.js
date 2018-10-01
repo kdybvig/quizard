@@ -50,7 +50,6 @@ export const addCategories = (title, user, categories, description, quizId) => {
       })
       .then(res => res.json())
       .then(json => {
-        console.log(json)
       })
       .catch(err => {
         console.log(err)
@@ -79,7 +78,6 @@ export const addQuestions = (categories,quizId) => {
     })
     .then(res => res.json())
     .then(json => {
-      console.log(json)
     })
     .catch(err => {
       console.log(err)
@@ -224,7 +222,6 @@ export const saveQuiz = (changesToSave, quizId) => {
     })
     .then(res => res.json())
     .then(json => {
-      console.log(json)
       dispatch({
         type: 'QUIZ_SAVE'
       })
@@ -276,7 +273,6 @@ export const updateProgress = (quiz, hasSavedProgress, quizId) => {
       })
       .then(res => res.json())
       .then(json => {
-        console.log(json)
         dispatch({
           type: 'PROGRESS_SAVED',
           quizId: json._id
@@ -291,16 +287,13 @@ export const updateProgress = (quiz, hasSavedProgress, quizId) => {
 }
 
 export const fetchQuizzesByUser = username => {
-  console.log('hello', username)
   return dispatch => {
-    console.log('hello again')
     dispatch({
       type: "QUIZZES_LOADING"
     });
     fetch(`https://quizard-data.herokuapp.com/quizzes/user/${username}`)
     .then(res => res.json())
     .then(json => {
-      console.log('json',json)
       dispatch(loadUserQuizzes(json))
     })
     .catch(err => {

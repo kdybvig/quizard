@@ -22,9 +22,7 @@ class MyQuizzesContainer extends Component {
     }
 
     render () {
-        console.log('quizzes',this.props.quizzes)
         if(this.state.redirect && this.props.isLoaded) {
-            console.log('redirecting')
             return <Redirect to={process.env.PUBLIC_URL + this.state.redirect} />
         }
         return (
