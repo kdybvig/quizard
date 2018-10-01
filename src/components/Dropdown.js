@@ -10,15 +10,16 @@ const Dropdown = props => {
             {props.username} <i className="fas fa-caret-down"></i>
             </p> 
             <div className={props.showMenu ? "dropdown" : "dropdown hidden"}>
-                <p
+                <Link 
+                className="right-link" 
+                to={process.env.PUBLIC_URL + '/myquizzes'} >
+                    My Quizzes
+                </Link>
+                <div
                 className="right-link"
                 onClick={props.logout}>
                     Logout
-                </p>
-                <p
-                className="right-link">
-                    <Link to={process.env.PUBLIC_URL + '/myquizzes'} >My Quizzes</Link>
-                </p>
+                </div>
             </div>      
         </div>
     )

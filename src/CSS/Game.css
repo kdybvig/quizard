@@ -305,7 +305,7 @@
       right: 10px;
       z-index: 10000;
       padding: 0px 0px; }
-      #main-nav #right-links .dropdown p {
+      #main-nav #right-links .dropdown .right-link {
         position: static;
         display: block;
         padding: 16px 40px 10px 16px;
@@ -313,7 +313,7 @@
         background-color: #242444;
         border: 1px solid black;
         margin: 0px; }
-        #main-nav #right-links .dropdown p:last {
+        #main-nav #right-links .dropdown .right-link:last {
           border-bottom: 20px solid black; }
     #main-nav #right-links .hidden {
       display: none; }
