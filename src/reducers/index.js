@@ -15,7 +15,8 @@ const defaultState = {
   catIndex: 0,
   teams: [],
   activeQuestion: false,
-  user: {error: ''}
+  user: {error: ''},
+  userId: ''
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -148,11 +149,12 @@ const rootReducer = (state = defaultState, action) => {
       }
     
     case 'USER_LOGIN' :
-      const {username, password} = action
+      const {username, userId} = action
       console.log('login successful', {username, password})
       return {
         ...state,
-        user: {username, error: ''}
+        user: {username, error: ''},
+        userId
       }
 
     case 'ERROR_LOGIN' :
