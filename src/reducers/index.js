@@ -124,7 +124,7 @@ const rootReducer = (state = defaultState, action) => {
 
     case 'QUIZ_LOAD' :
       const info = action.quiz.info ? action.quiz.info : {subject: '', gradeLevel: '', visibility: 'Public'};
-      const teams = action.quiz.teams ? action.quiz.teams : []
+      const teams = action.quiz.teams ? action.quiz.teams : [];
       return {
         ...state,
         title: action.quiz.name,
@@ -136,6 +136,7 @@ const rootReducer = (state = defaultState, action) => {
         createdBy: action.quiz.createdBy,
         isComplete: action.quiz.isComplete !== false,
         teams,
+        hasSavedProgress: Boolean(teams.length),
         catIndex: 5
       }
     
