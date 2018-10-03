@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import ErrorMessage from './ErrorMessage';
 
 
 const LoginPage = props => {
@@ -12,7 +13,7 @@ const LoginPage = props => {
         <div className='login-box'>
             <h1>Login</h1>
             {props.user.error && 
-                <div className="error-message">{props.user.error}</div>
+                <ErrorMessage text={props.user.error}/>
             }
             <form onSubmit={props.handleSubmit}>
             <h5>Username</h5>

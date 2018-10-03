@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addTeams } from '../actions';
 import { withRouter, Redirect } from 'react-router-dom';
+import ErrorMessage from './ErrorMessage';
 
 class TeamForm extends Component {
 
@@ -67,7 +68,7 @@ class TeamForm extends Component {
       <div className='form-page'>
         <h4>Enter Two To Five Team Names</h4>
         {this.state.error && 
-          <div className="error-message">Team names must be unique.</div>
+          <ErrorMessage text='Team names must be unique.'/>
         }
         <form onSubmit={this.handleSubmit}>
           {this.renderInputs()}

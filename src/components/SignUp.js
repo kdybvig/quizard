@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {createUser, clearLoginError} from '../actions';
+import ErrorMessage from './ErrorMessage';
 
 
 class SignUp extends Component {
@@ -50,7 +51,7 @@ class SignUp extends Component {
             <div className='login-box'>
                 <h1>Register</h1>
                 {this.props.user.error && 
-                    <div className="error-message">{this.props.user.error}</div>
+                    <ErrorMessage text={this.props.user.error}/>
                 }
                 <form onSubmit={this.handleSubmit}>
                     <h5>Username</h5>
