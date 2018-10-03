@@ -18,12 +18,14 @@ This is a React/Redux application that allows the user to create Jeopardy-style 
 * Users can navigate between pages with React Router
 * Users can choose to create a new quiz or load a quiz from the database
 * The game can be played with two to five teams
+* Users can register for an account and sign in and out
+* Users can create, save, and edit quizzes
 
 ## Future Updates
 
 * Users will be able to search the list of saved quizzes
 * Users will be able to rate public quizzes
-* Users will be able to sort quizzes by date added, rating, or total views, as well as filter quizzes by topic
+* Users will be able to sort quizzes by date added, rating, or total views, as well as filter quizzes by subject
 
 ## Server
 * Github repository located at https://github.com/kdybvig/quizard-server
