@@ -2,7 +2,7 @@ import React from 'react';
 import QuizInfoSelect from './QuizInfoSelect';
 
 const QuizInfoSelectors = props => {
-    const subjectOptions = ['Please select...','Math', 'English', 'Science', 'Social Studies', 'Computer Science', 'Other'];
+    const subjectOptions = ['Please select...','Math', 'English', 'Science', 'Social Studies', 'Computer Science', 'Other', 'N/A'];
     const gradeLevelOptions = ['Please select...','K-5', '6-8', '9-12', 'Postsecondary', 'Other', 'N/A'];
     const visibilityOptions = ['Public', 'Private'];
     const selects = [

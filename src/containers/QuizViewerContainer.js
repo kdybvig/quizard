@@ -21,13 +21,25 @@ class QuizViewerContainer extends Component {
             this.props.categories.findIndex(cat => cat.questions.length === 0) === -1
         ) 
         infoKeys.forEach(key => {
-            if(!this.props.info[key]) saveErrors.push(key)
+            if(!this.props.info[key]) {
+                if(key === 'subject'){
+                    saveErrors.push('subject');
+                    return;
+                }
+                saveErrors.push('grade level') 
+            }
         });
-        if (saveErrors.length) return;
+        if (saveErrors.length) {
+            this.setState({saveErrors});
+            return;
+        }
         this.props.saveQuiz({info: this.props.info, isComplete}, this.props.quizId)
     }
 
     render() {
+        const {saveErrors} = this.state
+        const errorMessage = saveErrors.length ? 
+            `Please select a ${saveErrors[0]}${saveErrors[1] ? ` and a ${saveErrors[1]}` : ''}.` : '';
         if(!this.props.quizId) return <Redirect to={process.env.PUBLIC_URL + '/load'} />
         if(this.props.catIndex !== 5) return <Redirect to={process.env.PUBLIC_URL + '/createQuestions'} />
         return (
@@ -41,6 +53,7 @@ class QuizViewerContainer extends Component {
             handleSaveClick={this.handleSaveClick}
             unsavedChanges={this.props.unsavedChanges}
             isComplete={this.props.isComplete}
+            errorMessage={errorMessage}
             />
         )
     }

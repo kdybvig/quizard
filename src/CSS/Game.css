@@ -386,6 +386,16 @@
       #quiz-viewer h1 {
         text-align: center;
         margin-left: 0px; } }
+  #quiz-viewer .error-message {
+    width: 500px;
+    max-width: 80%;
+    margin-bottom: 20px;
+    margin-left: 15px; }
+    @media screen and (max-width: 650px) {
+      #quiz-viewer .error-message {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto; } }
   #quiz-viewer .play-save-btn {
     position: absolute;
     top: 70px;
@@ -556,6 +566,15 @@
       #my-quizzes .quizzes-grid-wrapper .quizzes-container .default-text {
         margin: 20px;
         text-align: center; }
+
+.error-message {
+  width: 100% -20px;
+  color: #a93434;
+  background-color: #f2dede;
+  border: 1px solid #F2c2C2;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 10px; }
 
 @font-face {
   font-family: chalkboard;

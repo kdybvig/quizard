@@ -11,6 +11,18 @@
           }
     }
 
+    .error-message {
+        width: 500px;
+        max-width: 80%;
+        margin-bottom: 20px;
+        margin-left: 15px;
+        @media screen and (max-width: 650px) {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+    }
+
     .play-save-btn {
         position: absolute;
         top: 70px;

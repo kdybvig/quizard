@@ -5,6 +5,7 @@ import QuizInfoContainer from '../containers/QuizInfoContainer';
 import EditCategoryContainer from '../containers/EditCategoryContainer'
 import EditTitleContainer from '../containers/EditTitleContainer';
 import PlaySaveButton from './PlaySaveButton';
+import ErrorMessage from './ErrorMessage';
 
 const QuizViewer = props => {
   if(props.redirect) {
@@ -23,6 +24,7 @@ const QuizViewer = props => {
     handleClick={isSave ? props.handleSaveClick : props.handlePlayClick}
     isSave={isSave}
     text={isSave ? 'Save Quiz' : 'Launch Quiz'}/>
+    {props.errorMessage && <ErrorMessage text={props.errorMessage}/>}
     {props.ownedByUser && <EditTitleContainer />}
         {props.ownedByUser ?
             <QuizInfoSelectorsContainer /> :

@@ -4,7 +4,15 @@ const QuizInfoSelect = props => {
     return (
         <select value={props.value} statekey={props.stateKey} onChange={props.handleChange}>
             {props.options.map((option,index) => {
-                return <option value={option} key={`opt-${index}`}>{option}</option>
+                return (
+                <option 
+                value={option === 'Please select...' ? '' : option} 
+                disabled={!index}  
+                hidden={!index}
+                key={`opt-${index}`}>
+                    {option}
+                </option>
+            )
             })}
         </select>
     )
