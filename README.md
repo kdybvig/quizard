@@ -1,6 +1,6 @@
 # Quizard
 
-This is a React/Redux application that allows the user to create Jeopardy-style quizzes.  The user enters a title, five categories and five questions for each category and the application creates a Jeopardy-style game with that information.  Users also have the option to load previously generated quizzes, and in a future update users will be able to login, create quizzes, and save them for future use, as well as create public quizzes which other users will be able to access.
+This is a React/Redux application that allows the user to create Jeopardy-style quizzes.  The user enters a title, five categories and five questions for each category and the application creates a Jeopardy-style game with that information.  Users also have the option to load quizzes from the public database, and can login, create quizzes, and save them privately for future personally use or save them publically for others to view and play.
 
 <img src='quizard.png' width='600px' height='600px' alt='screenshot'/>
 
