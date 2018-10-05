@@ -1,6 +1,12 @@
 #board {
   margin-right: 20px;
   grid-column: 2/3; }
+  @media screen and (max-width: 750px) {
+    #board {
+      float: none;
+      grid-column: 1/3;
+      width: 90%;
+      margin: 10px auto; } }
   #board.demo {
     grid-column: 1/3;
     width: 50%;
@@ -164,6 +170,15 @@
 #teams {
   grid-column: 1/2;
   margin-top: calc(1.6vw + 53px); }
+  @media screen and (max-width: 750px) {
+    #teams {
+      float: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-column: 1/3;
+      width: 90%;
+      margin: 10px auto; } }
   #teams .team {
     background-color: black;
     color: white;
@@ -176,6 +191,9 @@
     outline: 1px solid black;
     text-align: center;
     margin: 1vw auto; }
+    @media screen and (max-width: 750px) {
+      #teams .team {
+        width: 18%; } }
     #teams .team .team-name {
       font-size: 2vw;
       font-family: "Archivo", sans-serif;
