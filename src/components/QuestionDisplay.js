@@ -6,7 +6,25 @@ import { withRouter, Redirect } from 'react-router-dom';
 
 class QuestionDisplay extends Component {
   state = {
-    showAnswer: false
+    showAnswer: false,
+    smallScreen: false
+  }
+
+  componentDidMount = () => {
+    window.addEventListener('resize', this.updateScreenSize);
+    this.updateScreenSize();
+  }
+
+  updateScreenSize = () => {
+    const smallState = this.state.smallScreen;
+    const isSmall = window.innerWidth <= 400;
+    if(smallState === isSmall) return
+    this.setState({smallScreen: !smallState})
+    return;
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.updateScreenSize)
   }
 
   dispatchAwardPoints = (points, team) => {
@@ -25,6 +43,8 @@ class QuestionDisplay extends Component {
       return<Redirect to={process.env.PUBLIC_URL + '/'} />
     }
 
+    const show = this.state.smallScreen ? '' : 'Show '
+
     return (
       <div id='questionDisplay'>
         <h1>
@@ -33,9 +53,10 @@ class QuestionDisplay extends Component {
         <TeamSelect 
         activeQuestion={this.props.activeQ} 
         teams={this.props.teams} 
-        points={this.props.points} awardPoints={this.dispatchAwardPoints}/>
+        points={this.props.points} awardPoints={this.dispatchAwardPoints}
+        />
        {this.props.answer  && <button onClick={this.toggleAnswer} id="show-answer">
-       {this.state.showAnswer ? 'Show Question' : 'Show Answer'}
+       {this.state.showAnswer ? `${show}Question` : `${show}Answer`}
        </button>}
       </div>
     )
