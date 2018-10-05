@@ -6,7 +6,7 @@
   height: calc(35vw + 60px);
   border: 4px solid #888;
   background-color: $board-background;
-  font-size: calc(8px + 1.5vw);
+  font-size: calc(4px + 1.6vw);
   grid-column: 2/3;
   padding: 1vw 0px;
   overflow: hidden;
@@ -41,7 +41,7 @@
 
   #show-answer {
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 5px;
   }
 
@@ -60,7 +60,7 @@
       @media screen and (max-width: 450px) {
         min-width: calc(60px + 10vw);
         max-width: calc(60px + 10vw);
-        font-size: calc(7px + 0.8vw)
+        font-size: calc(7px + 0.8vw);
       }
 
       &:focus {

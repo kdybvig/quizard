@@ -24,7 +24,7 @@
             grid-template-columns: 1fr 1fr;
           }
         @media screen and (max-width: 800px) {
-        grid-template-columns: 1fr;
+            grid-template-columns: 1fr;
         }
 
         .quizzes-container {
@@ -33,6 +33,14 @@
             min-height: 360px;
             background-color: $secondary-color;
             margin: 10px 10px;
+            @media screen and (max-width: 320px) {
+                width: 260px;
+                margin: 10px 5px;
+                margin-left: -15px;
+                .quiz-card {
+                    width: 220px;
+                }
+            }
 
             h2 {
                 text-decoration: underline;
