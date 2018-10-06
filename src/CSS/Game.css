@@ -1,6 +1,10 @@
 #board {
   margin-right: 20px;
-  grid-column: 2/3; }
+  grid-column: 2/3;
+  overflow: hidden; }
+  @media screen and (min-width: 960px) {
+    #board {
+      margin-left: 10vw; } }
   @media screen and (max-width: 750px) {
     #board {
       float: none;
@@ -55,16 +59,54 @@
     border: 4px solid #888;
     border-bottom: 0px;
     color: #176352; }
+    @media screen and (max-width: 750px) {
+      #board h1 {
+        margin-bottom: calc(-15px + -2vw); } }
     @media screen and (max-width: 450px) {
       #board h1 {
         font-size: calc(8px + 2vw); } }
+  #board .multiplier-button {
+    position: absolute;
+    top: calc(90px + 0.2vw);
+    left: 24vw;
+    padding: 1vw;
+    border: 2px outset #520077;
+    background-color: #54007B;
+    color: #FFDD33;
+    font-size: calc(3px + 1.2vw);
+    z-index: 4; }
+    @media screen and (min-width: 960px) {
+      #board .multiplier-button {
+        left: 34vw; } }
+    @media screen and (max-width: 750px) {
+      #board .multiplier-button {
+        position: relative;
+        top: 0.1vw;
+        left: calc(6vw + -12px); } }
+    @media screen and (max-width: 450px) {
+      #board .multiplier-button {
+        position: relative;
+        top: 0.1vw;
+        left: calc(10vw + -12px); } }
+    #board .multiplier-button:active {
+      border: 2px inset #CC7735; }
   #board .play-save-btn {
     position: absolute;
-    top: calc(85px + 0.2vw);
+    top: calc(90px + 0.2vw);
     right: calc(25px + 3vw);
     z-index: 20;
     font-size: calc(3px + 1.2vw);
     padding: 1vw; }
+    @media screen and (max-width: 750px) {
+      #board .play-save-btn {
+        position: relative;
+        top: 0.1vw;
+        left: calc(63vw + -40px); } }
+    @media screen and (max-width: 450px) {
+      #board .play-save-btn {
+        position: relative;
+        top: 0.1vw;
+        left: calc(58vw + -40px); } }
   #board #boxes {
     background-color: #a2ddc6;
     justify-content: center;
@@ -196,6 +238,9 @@
     outline: 1px solid black;
     text-align: center;
     margin: 1vw auto; }
+    @media screen and (min-width: 960px) {
+      #teams .team {
+        margin-left: 7vw; } }
     @media screen and (max-width: 750px) {
       #teams .team {
         width: 18%; } }
@@ -607,9 +652,6 @@
   margin-top: 50px;
   display: grid;
   grid-template-columns: 20% 80%; }
-  @media screen and (min-width: 960px) {
-    .game {
-      grid-template-columns: 30% 70%; } }
   .game h1, .game h2 {
     text-align: center;
     font-family: "Archivo", sans-serif;

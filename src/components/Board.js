@@ -2,6 +2,7 @@ import React from 'react';
 import QuestionButton from './QuestionButton';
 import { withRouter } from 'react-router-dom';
 import PlaySaveButton from './PlaySaveButton';
+import MultiplierButtonContainer from '../containers/MultiplierButtonContainer';
 
 
 const Board = ({title, categories, demo, loggedIn, quiz, hasSavedProgress, quizId, handleSaveClick, history}) => {
@@ -12,7 +13,7 @@ const Board = ({title, categories, demo, loggedIn, quiz, hasSavedProgress, quizI
   for(let i = 0; i< 25; i++) {
     const catIndex = i%5;
     const questIndex = Math.floor(i/5);
-    const value = questIndex*100 + 100;
+    const value = categories[catIndex].questions[questIndex].value;
     questionButtons.push(
       <QuestionButton
        key={`box-${i}`}
@@ -31,6 +32,7 @@ const Board = ({title, categories, demo, loggedIn, quiz, hasSavedProgress, quizI
   return (
     <div className={className} id='board'>
       <h1>{title}</h1>
+      <MultiplierButtonContainer />
       {!demo && loggedIn && hasSavedProgress &&
         <PlaySaveButton
         handleClick={() => handleSaveClick(quiz, hasSavedProgress, quizId)}

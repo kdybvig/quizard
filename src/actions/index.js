@@ -308,3 +308,9 @@ export const loadUserQuizzes = userQuizzes => {
     userQuizzes
   }
 }
+
+export const changeMultiplier = () => {
+  return {
+    type: 'MULTIPLIER_CHANGE'
+  }
+}

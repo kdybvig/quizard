@@ -1,3 +1,5 @@
+import { stat } from "fs";
+
 const defaultState = {
   loadedQuizzes: [],
   userQuizzes: {underConstruction: [], readyToPlay: [], inProgress: []},
@@ -10,6 +12,7 @@ const defaultState = {
   owner: '',
   createdBy: '',
   categories: [],
+  multiplier: 1,
   description: '',
   hasSavedProgress: false,
   info: {subject: '', gradeLevel: '', visibility: 'Public'},
@@ -121,6 +124,28 @@ const rootReducer = (state = defaultState, action) => {
         ...state,
         teams: newTeams,
         activeQuestion: false
+      }
+
+    case 'MULTIPLIER_CHANGE' :
+      console.log(state.multiplier)
+      const multiplier = state.multiplier === 3 ? 1 : state.multiplier + 1;
+      console.log('good times', multiplier)
+      const newCats = state.categories.slice().map(cat => {
+        const newCat = {...cat}
+        newCat.questions = cat.questions.map((quest, index) => {
+          if(quest.answered) return quest;
+          const newQuest = {...quest};
+          newQuest.value=(100*(index + 1))*multiplier;
+          return newQuest;
+        })
+        return newCat;
+      })
+
+      console.log('meow',newCats)
+      return {
+        ...state,
+        multiplier,
+        categories: newCats
       }
 
     case 'QUIZ_LOAD' :

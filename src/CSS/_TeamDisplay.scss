@@ -23,6 +23,9 @@
     outline: 1px solid black;
     text-align: center;
     margin: 1vw auto;
+    @media screen and (min-width: 960px) {
+      margin-left: 7vw;
+    }
     @media screen and (max-width: 750px) {
       width: 18%;
     }
