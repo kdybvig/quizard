@@ -252,6 +252,22 @@
       font-size: 2vw;
       font-family: "Open Sans", sans-serif;
       margin: 0px auto; }
+    #teams .team .bonus-penalty {
+      float: right;
+      font-size: 2vw;
+      background-color: black;
+      font-weight: bold;
+      border: none; }
+      #teams .team .bonus-penalty:hover {
+        cursor: pointer; }
+      #teams .team .bonus-penalty.plus {
+        float: right;
+        color: #00FF00;
+        margin-right: 1.5vw; }
+      #teams .team .bonus-penalty.minus {
+        float: left;
+        color: #FF2222;
+        margin-left: 1.5vw; }
 
 .form-page {
   grid-column: 1/3;

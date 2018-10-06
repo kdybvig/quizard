@@ -40,5 +40,29 @@
       font-family:$body;
       margin: 0px auto;
     }
+
+    .bonus-penalty {
+      float: right;
+      font-size: 2vw;
+      background-color: black;
+      font-weight: bold;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+      
+      &.plus {
+        float: right;
+        color: #00FF00;
+        margin-right: 1.5vw;
+      }
+
+      &.minus {
+        float: left;
+        color: #FF2222;
+        margin-left: 1.5vw;
+      }
+    }
   }
 }

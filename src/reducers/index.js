@@ -121,7 +121,8 @@ const rootReducer = (state = defaultState, action) => {
       return {
         ...state,
         teams: newTeams,
-        activeQuestion: false
+        activeQuestion: false,
+        hasSavedProgress: true
       }
 
     case 'MULTIPLIER_CHANGE' :
