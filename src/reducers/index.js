@@ -94,7 +94,7 @@ const rootReducer = (state = defaultState, action) => {
         return {
           ...state,
           hasSavedProgress: true,
-          unsavedChanges: true,
+          unsavedChanges: false,
           quizId: action.quizId,
           isLoading: false,
           owner: state.user.username
