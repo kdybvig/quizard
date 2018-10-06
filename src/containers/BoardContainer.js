@@ -19,6 +19,7 @@ const mapStateToProps = state => ({
     teams: state.teams
   },
   hasSavedProgress: state.hasSavedProgress,
+  unsavedChanges: state.unsavedChanges,
   quizId: state.quizId
 })
 

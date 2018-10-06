@@ -302,6 +302,22 @@ export const fetchQuizzesByUser = username => {
   }
 }
 
+export const fetchPublicQuizzesByUser = username => {
+  return dispatch => {
+    dispatch({
+      type: "QUIZZES_LOADING"
+    });
+    fetch(`https://quizard-data.herokuapp.com/quizzes/public/user/${username}`)
+    .then(res => res.json())
+    .then(json => {
+      dispatch(loadUserQuizzes(json))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+}
+
 export const loadUserQuizzes = userQuizzes => {
   return {
     type: 'QUIZZES_LOAD_USER',

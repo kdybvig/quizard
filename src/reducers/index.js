@@ -93,7 +93,8 @@ const rootReducer = (state = defaultState, action) => {
       case 'PROGRESS_SAVED' :
         return {
           ...state,
-          hasSavedProgress: false,
+          hasSavedProgress: true,
+          unsavedChanges: true,
           quizId: action.quizId,
           isLoading: false,
           owner: state.user.username
@@ -107,7 +108,7 @@ const rootReducer = (state = defaultState, action) => {
 
      return {
        ...state,
-       hasSavedProgress: true,
+       unsavedChanges: true,
        categories: categories,
        activeQuestion: action.location
      }
@@ -122,7 +123,7 @@ const rootReducer = (state = defaultState, action) => {
         ...state,
         teams: newTeams,
         activeQuestion: false,
-        hasSavedProgress: true
+        unsavedChanges: true
       }
 
     case 'MULTIPLIER_CHANGE' :
@@ -161,7 +162,7 @@ const rootReducer = (state = defaultState, action) => {
         createdBy: action.quiz.createdBy,
         isComplete: action.quiz.isComplete !== false,
         teams,
-        hasSavedProgress: false,
+        hasSavedProgress: Boolean(teams.length),
         catIndex: 5
       }
     

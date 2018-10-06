@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizCard from './QuizCard'
+import FlexQuizzes from './FlexQuizzes';
 
 
 const LoadQuizzes = props => {
@@ -7,18 +7,7 @@ const LoadQuizzes = props => {
     <div  id='load-screen'>
       <h2> Choose A Quiz To Load </h2>
       {props.isLoading && <h4>Loading...</h4>}
-      <div className='flex-container'>
-        {
-          props.quizzes.map((quiz,index) => {
-  
-            const key = `saved-quiz-${index}`
-  
-            return (
-              <QuizCard key={key} game={quiz} handleClick={() => props.loadQuiz(quiz)}/>
-            )
-          })
-        }
-      </div>
+      <FlexQuizzes loadQuiz={props.loadQuiz} quizzes={props.quizzes}/> 
     </div>
   )
 }
