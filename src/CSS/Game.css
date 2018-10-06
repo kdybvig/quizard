@@ -68,7 +68,7 @@
   #board .multiplier-button {
     position: absolute;
     top: calc(90px + 0.2vw);
-    left: 24vw;
+    left: calc(12vw + 0px);
     padding: 1vw;
     border: 2px outset #520077;
     background-color: #54007B;

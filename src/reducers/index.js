@@ -1,5 +1,3 @@
-import { stat } from "fs";
-
 const defaultState = {
   loadedQuizzes: [],
   userQuizzes: {underConstruction: [], readyToPlay: [], inProgress: []},
