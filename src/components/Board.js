@@ -31,7 +31,7 @@ const Board = ({title, categories, demo, loggedIn, quiz, hasSavedProgress, quizI
   return (
     <div className={className} id='board'>
       <h1>{title}</h1>
-      {!demo && loggedIn &&
+      {!demo && loggedIn && hasSavedProgress &&
         <PlaySaveButton
         handleClick={() => handleSaveClick(quiz, hasSavedProgress, quizId)}
         text='Save Progress'

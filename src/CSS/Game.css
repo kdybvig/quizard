@@ -575,6 +575,8 @@
           margin-left: -15px; }
           #my-quizzes .quizzes-grid-wrapper .quizzes-container .quiz-card {
             width: 220px; } }
+      #my-quizzes .quizzes-grid-wrapper .quizzes-container .quiz-card {
+        width: 290px; }
       #my-quizzes .quizzes-grid-wrapper .quizzes-container h2 {
         text-decoration: underline;
         margin-bottom: 40px; }

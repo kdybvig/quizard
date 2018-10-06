@@ -92,7 +92,7 @@ const rootReducer = (state = defaultState, action) => {
       case 'PROGRESS_SAVED' :
         return {
           ...state,
-          hasSavedProgress: true,
+          hasSavedProgress: false,
           quizId: action.quizId,
           isLoading: false,
           owner: state.user.username
@@ -106,6 +106,7 @@ const rootReducer = (state = defaultState, action) => {
 
      return {
        ...state,
+       hasSavedProgress: true,
        categories: categories,
        activeQuestion: action.location
      }
@@ -136,7 +137,7 @@ const rootReducer = (state = defaultState, action) => {
         createdBy: action.quiz.createdBy,
         isComplete: action.quiz.isComplete !== false,
         teams,
-        hasSavedProgress: Boolean(teams.length),
+        hasSavedProgress: false,
         catIndex: 5
       }
     
