@@ -264,10 +264,18 @@
         float: right;
         color: #00FF00;
         margin-right: 1.5vw; }
+        @media screen and (max-width: 750px) {
+          #teams .team .bonus-penalty.plus {
+            margin-right: 1vw;
+            padding: 2px; } }
       #teams .team .bonus-penalty.minus {
         float: left;
         color: #FF2222;
         margin-left: 1.5vw; }
+        @media screen and (max-width: 750px) {
+          #teams .team .bonus-penalty.minus {
+            margin-left: 1vw;
+            padding: 2px; } }
 
 .form-page {
   grid-column: 1/3;
