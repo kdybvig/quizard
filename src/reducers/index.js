@@ -1,5 +1,7 @@
 const defaultState = {
   loadedQuizzes: [],
+  filters: {grade: '', subject: ''},
+  searchText: '',
   userQuizzes: {underConstruction: [], readyToPlay: [], inProgress: []},
   isLoading: false,
   quizId: '',
@@ -187,6 +189,19 @@ const rootReducer = (state = defaultState, action) => {
         loadedQuizzes: []
       }
     
+    case 'FILTERS_UPDATE' :
+      return {
+        ...state,
+        filters: action.filters
+      }
+    
+    case 'SEARCH_TEXT_UPDATE' :
+      console.log(action.searchText)
+      return {
+        ...state,
+        searchText: action.searchText
+      }
+
     case 'USER_LOGIN' :
       const {username, userId} = action
       return {

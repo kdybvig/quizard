@@ -1,3 +1,37 @@
 #load-screen {
   grid-column: 1/3;
+
+  #search {
+    text-align: center;
+
+    #search-icon {
+      position: relative;
+      bottom: 2px;
+      padding: 7px;
+      background-color: white;
+      border: 1px outset #EEE;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      &:active {
+        border: 1px inset #DDD;
+      }
+    }
+
+    .selector {
+      display: inline-block;
+      margin: 10px 20px;
+      text-align: left;
+
+      p {
+        margin-bottom: 0px;
+      }
+
+      input{
+        margin-top: 0px;
+      }
+    }
+  }
 }

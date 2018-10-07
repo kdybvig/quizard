@@ -16,10 +16,17 @@ class LoadQuizzesContainer extends Component {
   }
 
   render() {
-    console.log(this.props.quizzes)
+    const {subject, grade} = this.props.filters
+    const filteredQuizzes = this.props.quizzes.filter(quiz => {
+      if(!subject) return true;
+      return quiz.info.subject === subject;
+    }).filter(quiz => {
+      if(!grade) return true;
+      return quiz.info.gradeLevel === grade;
+    })
     return (
       <LoadQuizzes 
-      quizzes={this.props.quizzes}
+      quizzes={filteredQuizzes}
       isLoading={this.props.isLoading}
       loadQuiz={this.loadQuiz}
       />
@@ -29,7 +36,8 @@ class LoadQuizzesContainer extends Component {
 
 const mapStateToProps = state => ({
   quizzes: state.loadedQuizzes,
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  filters: state.filters
 })
 
 const mapDispatchToProps = dispatch => ({

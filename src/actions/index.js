@@ -122,6 +122,43 @@ export const loadQuizzes = (quizzes) => {
   }
 }
 
+export const updateFilters = filters => {
+  return {
+    type: 'FILTERS_UPDATE',
+    filters
+  }
+}
+
+export const updateSearchText = searchText => {
+  return {
+    type: 'SEARCH_TEXT_UPDATE',
+    searchText
+  }
+}
+
+export const fetchFilteredQuizzes = (filters, searchText) => {
+  console.log('fetching filtered quizzes')
+  return dispatch => {
+    const {subject, grade} = filters
+    const paramsArr = []
+    if(subject) paramsArr.push(`subject=${subject}`)
+    if(grade) paramsArr.push(`grade=${grade}`)
+    if(searchText) paramsArr.push(`search=${searchText}`)
+    if(!paramsArr.length) return;
+    const params = paramsArr.join('&');
+    console.log(params)
+    fetch(`https://quizard-data.herokuapp.com/quizzes?${params}`)
+    .then(res => res.json())
+    .then(json => {
+      console.log(json)
+      dispatch(loadQuizzes(json))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+}
+
 export const loadQuiz = (quiz) => ({
   type: 'QUIZ_LOAD',
   quiz
