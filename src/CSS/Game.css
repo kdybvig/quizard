@@ -662,6 +662,11 @@
   font-size: 12px;
   padding: 10px; }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
 @font-face {
   font-family: chalkboard;
   src: url(./fonts/chalk3.ttf); }
