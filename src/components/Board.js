@@ -13,7 +13,7 @@ const Board = ({title, categories, demo, loggedIn, quiz, unsavedChanges, hasSave
   for(let i = 0; i< 25; i++) {
     const catIndex = i%5;
     const questIndex = Math.floor(i/5);
-    const value = categories[catIndex].questions[questIndex].value;
+    const value = demo ? (i+1)*100 : categories[catIndex].questions[questIndex].value;
     questionButtons.push(
       <QuestionButton
        key={`box-${i}`}
@@ -32,7 +32,7 @@ const Board = ({title, categories, demo, loggedIn, quiz, unsavedChanges, hasSave
   return (
     <div className={className} id='board'>
       <h1>{title}</h1>
-      <MultiplierButtonContainer />
+      {!demo && <MultiplierButtonContainer />}
       {!demo && loggedIn && unsavedChanges &&
         <PlaySaveButton
         handleClick={() => handleSaveClick(quiz, hasSavedProgress, quizId)}

@@ -1,5 +1,14 @@
 .flex-container {
+    margin: 10px 2vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    .empty-flex {
+        height: 0px;
+        padding-top: 0px;
+        visibility: hidden;
+        padding-bottom: 0px;
+        border: 0px;
+    }
   }

@@ -351,10 +351,6 @@
 
 #load-screen {
   grid-column: 1/3; }
-  #load-screen .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
 
 #main-nav {
   position: fixed;
@@ -663,9 +659,16 @@
   padding: 10px; }
 
 .flex-container {
+  margin: 10px 2vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: space-evenly; }
+  .flex-container .empty-flex {
+    height: 0px;
+    padding-top: 0px;
+    visibility: hidden;
+    padding-bottom: 0px;
+    border: 0px; }
 
 @font-face {
   font-family: chalkboard;
