@@ -303,6 +303,7 @@ export const fetchQuizzesByUser = username => {
 }
 
 export const fetchPublicQuizzesByUser = username => {
+  console.log('fetching public quizzes by user')
   return dispatch => {
     dispatch({
       type: "QUIZZES_LOADING"
@@ -310,7 +311,8 @@ export const fetchPublicQuizzesByUser = username => {
     fetch(`https://quizard-data.herokuapp.com/quizzes/public/user/${username}`)
     .then(res => res.json())
     .then(json => {
-      dispatch(loadUserQuizzes(json))
+      dispatch(loadQuizzes(json))
+      console.log(json)
     })
     .catch(err => {
       console.log(err)

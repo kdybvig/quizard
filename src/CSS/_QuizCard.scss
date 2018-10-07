@@ -29,6 +29,12 @@
     p {
       text-align: center;
       padding-bottom: 10px;
+
+      a {
+        &:hover {
+          font-weight: bold;
+        }
+      }
     }
 
     h5 {

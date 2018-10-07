@@ -183,7 +183,8 @@ const rootReducer = (state = defaultState, action) => {
     case 'QUIZZES_LOADING' :
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
+        loadedQuizzes: []
       }
     
     case 'USER_LOGIN' :

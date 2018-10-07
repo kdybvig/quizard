@@ -10,13 +10,13 @@ class LoadQuizzesContainer extends Component {
     this.props.fetchQuizzes();
   }
 
-  quizzes = this.props.quizzes.filter(quiz => quiz.isComplete);
   loadQuiz = quiz => {
     this.props.history.push(process.env.PUBLIC_URL + '/viewquiz');
     this.props.loadQuiz(quiz);
   }
 
   render() {
+    console.log(this.props.quizzes)
     return (
       <LoadQuizzes 
       quizzes={this.props.quizzes}

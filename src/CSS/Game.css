@@ -581,6 +581,8 @@
   .quiz-card p {
     text-align: center;
     padding-bottom: 10px; }
+    .quiz-card p a:hover {
+      font-weight: bold; }
   .quiz-card h5 {
     background-color: #218c74;
     width: 80%;
