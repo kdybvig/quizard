@@ -1,12 +1,14 @@
 import React from 'react';
 import QuestionButton from './QuestionButton';
-import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import PlaySaveButton from './PlaySaveButton';
 import MultiplierButtonContainer from '../containers/MultiplierButtonContainer';
 
 
-const Board = ({title, categories, demo, loggedIn, quiz, unsavedChanges, hasSavedProgress, quizId, handleSaveClick, history}) => {
-  if(!categories.length) history.push(process.env.PUBLIC_URL + '/')
+const Board = ({title, categories, demo, loggedIn, quiz, unsavedChanges, hasSavedProgress, quizId, handleSaveClick}) => {
+  if(!categories.length) {
+    return <Redirect to={process.env.PUBLIC_URL + '/'}/>
+  }
   const questionButtons = [];
   const isLive = categories[0].questions.length
   const className = isLive ? '' : 'demo'
@@ -47,4 +49,4 @@ const Board = ({title, categories, demo, loggedIn, quiz, unsavedChanges, hasSave
   )
 }
 
-export default withRouter(Board);
+export default Board;
