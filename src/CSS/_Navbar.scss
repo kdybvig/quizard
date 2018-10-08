@@ -44,6 +44,10 @@
                 border: 1px solid black;
                 margin: 0px;
 
+                i {
+                    margin-left: 6px;
+                }
+
                 &:last {
                     border-bottom: 20px solid black;
                 }

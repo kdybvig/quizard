@@ -413,6 +413,8 @@
         background-color: #242444;
         border: 1px solid black;
         margin: 0px; }
+        #main-nav #right-links .dropdown .right-link i {
+          margin-left: 6px; }
         #main-nav #right-links .dropdown .right-link:last {
           border-bottom: 20px solid black; }
     #main-nav #right-links .hidden {

@@ -15,6 +15,16 @@ const Dropdown = props => {
                 to={process.env.PUBLIC_URL + '/myquizzes'} >
                     My Quizzes
                 </Link>
+                <Link 
+                className="right-link" 
+                to={process.env.PUBLIC_URL + '/create'} >
+                    Create <i className='fas fa-plus'/>
+                </Link>
+                <Link 
+                className="right-link" 
+                to={process.env.PUBLIC_URL + '/load'} >
+                    Explore <i className='fas fa-search'></i>
+                </Link>
                 <div
                 className="right-link"
                 onClick={props.logout}>
