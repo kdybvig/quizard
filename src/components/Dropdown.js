@@ -17,6 +17,7 @@ const Dropdown = props => {
                 </Link>
                 <Link 
                 className="right-link" 
+                onClick={props.restartGame}
                 to={process.env.PUBLIC_URL + '/create'} >
                     Create <i className='fas fa-plus'></i>
                 </Link>

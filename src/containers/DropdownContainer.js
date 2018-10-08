@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { logout } from '../actions';
+import { logout, restartGame } from '../actions';
 import {connect} from 'react-redux';
 import Dropdown from '../components/Dropdown';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
 class DropdownContainer extends Component {
     state = {
@@ -41,6 +41,7 @@ class DropdownContainer extends Component {
             showMenu={this.state.showMenu}
             logout={this.logout}
             username={this.props.username}
+            restartGame={this.props.restartGame}
             />
         )
     }
@@ -54,6 +55,9 @@ const mapDispatchToProps = dispatch => {
     return {
         dispatchLogout: () => {
             dispatch(logout())
+        },
+        restartGame: () => {
+            dispatch(restartGame())
         }
     }
 }

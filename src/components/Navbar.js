@@ -6,7 +6,7 @@ const Navbar = (props) => {
     return (
         <nav id='main-nav'>
             <Link to={process.env.PUBLIC_URL + '/'}>
-                <i id="home-link" className="fas fa-home" onClick={()=>props.restartGame()}></i>
+                <i id="home-link" className="fas fa-home"></i>
             </Link>
             <div id="right-links">
                 {props.user.username ?

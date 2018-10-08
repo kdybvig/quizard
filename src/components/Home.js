@@ -9,7 +9,7 @@ const Home = (props) => {
         <h1>Quizard</h1>
         <ul>
           <li><Link to={process.env.PUBLIC_URL + '/load'}>Explore public quizzes</Link></li>
-          <li><Link to={process.env.PUBLIC_URL + props.linkTwo}>{props.linkTwoText}</Link></li>
+          <li><Link onClick={props.restartGame} to={process.env.PUBLIC_URL + props.linkTwo}>{props.linkTwoText}</Link></li>
         </ul>
       </div>
     </div>
