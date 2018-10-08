@@ -11,17 +11,19 @@ const MyQuizzes = props => {
             {quizContainerHeaders.map((header, headerIndex) => {
                 const contKey = `quizContainer-${headerIndex}`;
                 return (
-                    <div key={contKey} className='quizzes-container'>
-                        <h2>{header}</h2>
-                        {props.quizzes[quizPropKeys[headerIndex]].length ?
-                            (props.quizzes[quizPropKeys[headerIndex]].map((quiz, quizIndex) => {
-                                const quizKey = `quiz-${headerIndex}-${quizIndex}`;
-                                return (
-                                    <QuizCard key={quizKey} game={quiz} handleClick={() => props.loadQuiz(quiz)}/>
-                                )
-                            })) :
-                            <p className='default-text'>{`You do not have any ${headerIndex === 2 ? '' : 'quizzes '}${header.toLowerCase()}.`}</p>
-                        }
+                    <div className='quizzes-flex-box'>
+                        <div key={contKey} className='quizzes-container'>
+                            <h2>{header}</h2>
+                            {props.quizzes[quizPropKeys[headerIndex]].length ?
+                                (props.quizzes[quizPropKeys[headerIndex]].map((quiz, quizIndex) => {
+                                    const quizKey = `quiz-${headerIndex}-${quizIndex}`;
+                                    return (
+                                        <QuizCard key={quizKey} game={quiz} handleClick={() => props.loadQuiz(quiz)}/>
+                                    )
+                                })) :
+                                <p className='default-text'>{`You do not have any ${headerIndex === 2 ? '' : 'quizzes '}${header.toLowerCase()}.`}</p>
+                            }
+                        </div>
                     </div>
                 )
             })}
