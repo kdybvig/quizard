@@ -18,7 +18,7 @@ const Dropdown = props => {
                 <Link 
                 className="right-link" 
                 to={process.env.PUBLIC_URL + '/create'} >
-                    Create <i className='fas fa-plus'/>
+                    Create <i className='fas fa-plus'></i>
                 </Link>
                 <Link 
                 className="right-link" 
