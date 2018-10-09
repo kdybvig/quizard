@@ -530,7 +530,11 @@
     display: block; }
     #quiz-viewer #quiz-info-selectors .info-selector {
       display: block;
-      width: 210px; }
+      width: 250px;
+      margin-bottom: 10px; }
+      @media screen and (max-width: 650px) {
+        #quiz-viewer #quiz-info-selectors .info-selector {
+          margin-left: calc(50vw + -125px); } }
     #quiz-viewer #quiz-info-selectors h6 {
       display: inline;
       margin: 15px 20px; }

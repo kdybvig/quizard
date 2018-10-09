@@ -70,10 +70,14 @@
 
     #quiz-info-selectors {
         display: block;
-
+        
         .info-selector {
             display: block;
-            width: 210px;
+            width: 250px;
+            margin-bottom: 10px;
+            @media screen and (max-width: 650px) {
+                margin-left: calc(50vw + -125px);
+              }
         }
         
         h6 {
