@@ -7,8 +7,8 @@ const QuizInfoSelect = props => {
                 return (
                 <option 
                 value={option === 'Please select...' ? '' : option} 
-                disabled={!index}  
-                hidden={!index}
+                disabled={option === 'Please select...'}  
+                hidden={option === 'Please select...'}
                 key={`opt-${index}`}>
                     {option}
                 </option>
