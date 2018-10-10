@@ -164,6 +164,7 @@ const rootReducer = (state = defaultState, action) => {
         createdBy: action.quiz.createdBy,
         isComplete: action.quiz.isComplete !== false,
         teams,
+        unsavedChanges: false,
         hasSavedProgress: Boolean(teams.length),
         catIndex: 5
       }
@@ -230,8 +231,7 @@ const rootReducer = (state = defaultState, action) => {
     
     case 'USER_LOGOUT' :
       return {
-        ...state,
-        user: {error: ''}
+        ...defaultState
       }
 
     default :
