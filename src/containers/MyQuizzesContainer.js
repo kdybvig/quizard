@@ -11,7 +11,12 @@ class MyQuizzesContainer extends Component {
     }
     
     state = {
-        redirect: ''
+        redirect: '',
+        filter: 'All'
+    }
+
+    changeFilter = filter => {
+        this.setState({filter})
     }
 
 
@@ -29,6 +34,8 @@ class MyQuizzesContainer extends Component {
             <MyQuizzes 
             loadQuiz={this.loadQuiz}
             quizzes={this.props.quizzes}
+            changeFilter={this.changeFilter}
+            filter={this.state.filter}
             />
         )
     }
