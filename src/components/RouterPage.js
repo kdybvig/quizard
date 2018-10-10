@@ -17,6 +17,8 @@ import SignUp from './SignUp';
 import QuizViewerContainer from '../containers/QuizViewerContainer';
 import MyQuizzesContainer from '../containers/MyQuizzesContainer';
 import UserQuizzesContainer from '../containers/UserQuizzesContainer';
+import CreateContainer from '../containers/CreateContainer';
+import LogoutContainer from '../containers/LogoutContainer';
 
 import '../CSS/Game.css';
 
@@ -27,7 +29,9 @@ const RouterPage = (props) => {
       <div className='game'>
         <Navbar />
         <Route exact path={process.env.PUBLIC_URL + "/"} component={HomeContainer}/>
-        <Route path={process.env.PUBLIC_URL + "/create"} component={CategoryFormContainer}/>
+        <Route path={process.env.PUBLIC_URL + "/create"} component={CreateContainer}/>
+        <Route path={process.env.PUBLIC_URL + "/logout"} component={LogoutContainer}/>
+        <Route path={process.env.PUBLIC_URL + "/createquiz"} component={CategoryFormContainer}/>
         <Route path={process.env.PUBLIC_URL + "/load"} component={LoadQuizzesContainer}/>
         <Route path={process.env.PUBLIC_URL + "/createquestions"} component={QuestionForm}/>
         <Route path={process.env.PUBLIC_URL + "/addteams"} component={TeamForm}/>

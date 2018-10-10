@@ -17,7 +17,6 @@ const Dropdown = props => {
                 </Link>
                 <Link 
                 className="right-link" 
-                onClick={props.restartGame}
                 to={process.env.PUBLIC_URL + '/create'} >
                     Create <i className='fas fa-plus'></i>
                 </Link>
@@ -26,11 +25,11 @@ const Dropdown = props => {
                 to={process.env.PUBLIC_URL + '/load'} >
                     Explore <i className='fas fa-search'></i>
                 </Link>
-                <div
+                <Link
                 className="right-link"
-                onClick={props.logout}>
+                to={process.env.PUBLIC_URL + '/logout'}>
                     Logout
-                </div>
+                </Link>
             </div>      
         </div>
     )
