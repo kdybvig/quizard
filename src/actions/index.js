@@ -144,7 +144,6 @@ export const fetchFilteredQuizzes = (filters, searchText) => {
     if(subject) paramsArr.push(`subject=${subject}`)
     if(grade) paramsArr.push(`grade=${grade}`)
     if(searchText) paramsArr.push(`search=${searchText}`)
-    if(!paramsArr.length) return;
     const params = paramsArr.join('&');
     console.log(params)
     fetch(`https://quizard-data.herokuapp.com/quizzes?${params}`)
