@@ -12,6 +12,9 @@
   padding: 1vw 0px;
   overflow: hidden;
   text-overflow: scroll;
+  @media screen and (min-width: 960px) {
+    margin-left: 10vw;
+  }
   @media screen and (max-width: 750px) {
     margin-top: 20px;
     grid-column: 1/3;

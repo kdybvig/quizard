@@ -169,6 +169,9 @@
   padding: 1vw 0px;
   overflow: hidden;
   text-overflow: scroll; }
+  @media screen and (min-width: 960px) {
+    #questionDisplay {
+      margin-left: 10vw; } }
   @media screen and (max-width: 750px) {
     #questionDisplay {
       margin-top: 20px;

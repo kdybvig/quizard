@@ -18,13 +18,15 @@ class BoardContainer extends Component {
 
   componentWillUnmount () {
     window.removeEventListener('beforeunload', this.alertMessage)
-    this.props.restartGame();
   }
 
   render() {
     return (
       <div>
-      <Prompt when={this.props.unsavedChanges} message='Unsaved changes may be lost'/>
+      <Prompt 
+      when={this.props.unsavedChanges} 
+      message={location => /game/.test(location.pathname) ? true : 'Unsaved changes may be lost'}
+      />
       <Board
       title={this.props.title}
       categories={this.props.categories}
