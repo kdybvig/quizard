@@ -5,6 +5,7 @@ const QuizCard = props => {
     const {name, categories, description, teams, createdBy} = props.game
     return (
         <div className="quiz-card" onClick={props.handleClick}>
+            <button className='delete'>X</button>
             <h3>{name}</h3>
             <p>
                 <span style={{fontWeight: 'bold'}}>Created by </span>

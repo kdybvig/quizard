@@ -14,6 +14,23 @@
       cursor: pointer;
     }
 
+    .delete {
+      float: right;
+      position: relative;
+      bottom: 2px;
+      right: 5px;
+      color: red;
+      padding: 0px;
+      border: none;
+      background: none;
+      font-size: 16px;
+
+      &:hover {
+        cursor: pointer;
+        font-weight:bold;
+      }
+    }
+
     h3 {
       text-align: center;
       color: black;

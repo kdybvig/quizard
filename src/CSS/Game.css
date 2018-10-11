@@ -599,6 +599,19 @@
   padding-bottom: 30px; }
   .quiz-card:hover {
     cursor: pointer; }
+  .quiz-card .delete {
+    float: right;
+    position: relative;
+    bottom: 2px;
+    right: 5px;
+    color: red;
+    padding: 0px;
+    border: none;
+    background: none;
+    font-size: 16px; }
+    .quiz-card .delete:hover {
+      cursor: pointer;
+      font-weight: bold; }
   .quiz-card h3 {
     text-align: center;
     color: black; }
