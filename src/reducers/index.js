@@ -189,6 +189,13 @@ const rootReducer = (state = defaultState, action) => {
         isLoading: true,
         loadedQuizzes: []
       }
+
+    case 'FILTERS_CLEAR' :
+      return {
+        ...state,
+        filters: {grade: '', subject: ''},
+        searchText: ''
+      }
     
     case 'FILTERS_UPDATE' :
       return {

@@ -1,6 +1,26 @@
 import SearchForm from '../components/SearchForm';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {updateFilters, updateSearchText, fetchFilteredQuizzes} from '../actions';
+import {updateFilters, updateSearchText, clearFilters, fetchFilteredQuizzes} from '../actions';
+
+class SearchFormContainer extends Component {
+
+    componentDidMount () {
+        this.props.clearFilters();
+    }
+
+    render () {
+        return (
+            <SearchForm 
+            filters={this.props.filters}
+            searchText={this.props.searchText}
+            handleSelectChange={this.props.handleSelectChange}
+            handleInputChange={this.props.handleInputChange}
+            handleSubmit={this.props.handleSubmit}
+            />
+        )
+    }
+}
 
 const mapStateToProps = state => {
     return {
@@ -19,6 +39,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchFilteredQuizzes: (filters, searchText) => {
             dispatch(fetchFilteredQuizzes(filters, searchText))
+        },
+        clearFilters: () => {
+            dispatch(clearFilters())
         }
     }
 }
@@ -27,6 +50,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     return {
         filters: stateProps.filters,
         searchText: stateProps.searchText,
+        clearFilters: dispatchProps.clearFilters,
         handleSelectChange: e => {
             e.preventDefault();
             const filters = {...stateProps.filters};
@@ -44,4 +68,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(SearchForm);
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(SearchFormContainer);

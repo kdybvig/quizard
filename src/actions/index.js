@@ -122,6 +122,12 @@ export const loadQuizzes = (quizzes) => {
   }
 }
 
+export const clearFilters = () => {
+  return {
+    type: 'FILTERS_CLEAR'
+  }
+}
+
 export const updateFilters = filters => {
   return {
     type: 'FILTERS_UPDATE',
