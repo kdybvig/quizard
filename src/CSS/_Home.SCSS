@@ -4,19 +4,31 @@
   color: $chalk;
   
   #main {
-    width: 80%;
+    width: 70%;
     height: calc(44vw);
     background: #005500 url("./images/chalkboard.jpg") no-repeat;
     background-size: cover;
     margin: 30px auto;
     padding: 10px 0px 10px 0px;
     border: 1vw solid #775557;
+    @media screen and (min-width: 1200px) {
+      line-height-step: 40vw;
+    }
+    @media screen and (min-width: 1450px) {
+      height: 36vw;
+    }
 
     h2 {
       font-family: chalkboard;
-      font-size: 7vw;
+      font-size: 6.5vw;
       color: $chalk;
       margin: 5vw auto 1vw auto;
+      @media screen and (min-width: 1200px) {
+        margin-top: 4vw;
+      }
+      @media screen and (min-width: 1450px) {
+        margin-top: 3vw;
+      }
     }
 
     h1 {
@@ -24,6 +36,9 @@
       font-size: 15vw;
       color: $chalk;
       margin: 1vw;
+      @media screen and (min-width: 1200px) {
+        margin-top: 0.7vw;
+      }
     }
 
     ul {
@@ -32,7 +47,7 @@
       padding: 0px;
 
       li {
-        font-size: 3.5vw;
+        font-size: 3vw;
         margin-bottom: 2vw;
         a {
           color: $chalk;
