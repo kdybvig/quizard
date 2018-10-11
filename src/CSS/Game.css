@@ -154,10 +154,15 @@
         border-radius: 0px;
         font-size: calc(1.5vw);
         font-family: "Alegreya Sans SC", sans-serif; }
+        @media screen and (max-width: 750px) {
+          #board #boxes .blue-box.category {
+            border: 3px solid #218c74; } }
         @media screen and (max-width: 450px) {
           #board #boxes .blue-box.category {
-            width: 11.5%;
-            font-size: 1.3vw; } }
+            width: 12.9%;
+            font-size: 1.8vw;
+            font-family: "Open Sans", sans-serif;
+            border: 2px solid #218c74; } }
       #board #boxes .blue-box.points {
         border: 4px outset #9AB;
         font-family: "Open Sans", sans-serif;
@@ -167,6 +172,18 @@
           #board #boxes .blue-box.points {
             font-size: 3vw;
             padding: 1.2% 2%; } }
+        @media screen and (max-width: 750px) {
+          #board #boxes .blue-box.points {
+            font-size: 2.7vw;
+            border: 3px outset #9AB;
+            padding: 1.4% 2%;
+            margin: 3px 1%; } }
+        @media screen and (max-width: 450px) {
+          #board #boxes .blue-box.points {
+            font-size: 2.5vw;
+            border: 2px outset #9AB;
+            padding: 1.7% 2.7%;
+            margin: 2px 1%; } }
         #board #boxes .blue-box.points:hover {
           cursor: pointer; }
         #board #boxes .blue-box.points:active {
@@ -174,15 +191,21 @@
         #board #boxes .blue-box.points.answered {
           background-color: grey;
           border: 4px solid grey; }
+          @media screen and (max-width: 750px) {
+            #board #boxes .blue-box.points.answered {
+              border: 3px solid grey; } }
+          @media screen and (max-width: 450px) {
+            #board #boxes .blue-box.points.answered {
+              border: 2px solid grey; } }
           #board #boxes .blue-box.points.answered:hover {
             cursor: default; }
 
 #questionDisplay {
   position: relative;
   grid-column: 2/3;
-  margin-top: calc(58px + 2vw);
   margin-right: 20px;
   margin-left: 20px;
+  margin-top: 20px;
   height: calc(35vw + 60px);
   border: 4px solid #888;
   background-color: #a2ddc6;
@@ -196,7 +219,6 @@
       margin-left: 10vw; } }
   @media screen and (max-width: 750px) {
     #questionDisplay {
-      margin-top: 20px;
       grid-column: 1/3; } }
   #questionDisplay h1 {
     color: #124e41;
