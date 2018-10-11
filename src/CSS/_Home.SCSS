@@ -12,7 +12,7 @@
     padding: 10px 0px 10px 0px;
     border: 1vw solid #775557;
     @media screen and (min-width: 1200px) {
-      line-height-step: 40vw;
+      min-height: 40vw;
     }
     @media screen and (min-width: 1450px) {
       height: 36vw;
@@ -25,9 +25,11 @@
       margin: 5vw auto 1vw auto;
       @media screen and (min-width: 1200px) {
         margin-top: 4vw;
+        font-size: 6vw;
       }
       @media screen and (min-width: 1450px) {
         margin-top: 3vw;
+        font-size: 5.5vw;
       }
     }
 
@@ -37,7 +39,12 @@
       color: $chalk;
       margin: 1vw;
       @media screen and (min-width: 1200px) {
-        margin-top: 0.7vw;
+        margin-top: 0.6vw;
+        font-size: 13.5vw;
+      }
+      @media screen and (min-width: 1450px) {
+        margin-top: 0;
+        font-size: 12vw;
       }
     }
 
