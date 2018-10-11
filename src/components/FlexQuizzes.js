@@ -12,7 +12,7 @@ const FlexQuizzes = props => {
                 props.quizzes.map((quiz,index) => {
                 const key = `saved-quiz-${index}`
                 return (
-                    <QuizCard key={key} game={quiz} handleClick={() => props.loadQuiz(quiz)}/>
+                    <QuizCard mine={props.mine} delete={props.delete} key={key} game={quiz} handleClick={() => props.loadQuiz(quiz)}/>
                 )
                 })
             }

@@ -2,10 +2,18 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const QuizCard = props => {
-    const {name, categories, description, teams, createdBy} = props.game
+    const {name, categories, description, teams, createdBy, _id, owner} = props.game
     return (
         <div className="quiz-card" onClick={props.handleClick}>
-            <button className='delete'>X</button>
+            {props.mine && (
+                <button 
+                onClick={e => {
+                    e.stopPropagation()
+                    props.delete(_id, owner)}
+                } 
+                className='delete'
+                >X</button>
+            )}
             <h3>{name}</h3>
             <p>
                 <span style={{fontWeight: 'bold'}}>Created by </span>

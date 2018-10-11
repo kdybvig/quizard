@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import MyQuizzes from '../components/MyQuizzes';
-import {fetchQuizzesByUser, loadQuiz} from '../actions';
+import {fetchQuizzesByUser, loadQuiz, deleteQuiz} from '../actions';
 import {Redirect} from 'react-router-dom';
 
 class MyQuizzesContainer extends Component {
@@ -19,6 +19,10 @@ class MyQuizzesContainer extends Component {
         this.setState({filter})
     }
 
+    deleteQuiz = (quizid, owner) => {
+        const confirmDelete = window.confirm("Are you sure you want to permanently delete this quiz?")
+        if(confirmDelete) this.props.deleteQuiz(quizid, owner);
+    }
 
     loadQuiz = quiz => {
         this.props.loadQuiz(quiz)
@@ -36,6 +40,7 @@ class MyQuizzesContainer extends Component {
             quizzes={this.props.quizzes}
             changeFilter={this.changeFilter}
             filter={this.state.filter}
+            delete={this.deleteQuiz}
             />
         )
     }
@@ -53,7 +58,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchQuizzesByUser: username => dispatch(fetchQuizzesByUser(username)),
-        loadQuiz: quiz => dispatch(loadQuiz(quiz))
+        loadQuiz: quiz => dispatch(loadQuiz(quiz)),
+        deleteQuiz: (quizId, owner) => dispatch(deleteQuiz(quizId, owner))
     }
 }
 

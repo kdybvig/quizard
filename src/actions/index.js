@@ -363,6 +363,27 @@ export const loadUserQuizzes = userQuizzes => {
   }
 }
 
+export const deleteQuiz = (quizId, username) => {
+  return dispatch => {
+    fetch(`https://quizard-data.herokuapp.com/quizzes/delete/${quizId}`, {
+      method: "DELETE",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+    .then(res => res.json())
+    .then(json => {
+      console.log(json)
+      dispatch(fetchQuizzesByUser(username))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    
+  }
+}
+
+
 export const changeMultiplier = () => {
   return {
     type: 'MULTIPLIER_CHANGE'

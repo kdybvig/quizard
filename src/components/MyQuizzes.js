@@ -24,6 +24,8 @@ const MyQuizzes = props => {
                             <FlexQuizzes 
                             quizzes={props.quizzes[quizPropKeys[headerIndex]]} 
                             loadQuiz={props.loadQuiz}
+                            mine={true}
+                            delete={props.delete}
                             />
                         ) :  (
                             <p className='default-text'>
