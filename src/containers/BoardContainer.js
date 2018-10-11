@@ -24,7 +24,7 @@ class BoardContainer extends Component {
     return (
       <div>
       <Prompt 
-      when={this.props.unsavedChanges} 
+      when={this.props.unsavedChanges && this.props.loggedIn} 
       message={location => /game/.test(location.pathname) ? true : 'Unsaved changes may be lost'}
       />
       <Board

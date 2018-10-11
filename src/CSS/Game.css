@@ -29,34 +29,42 @@
         float: none;
         display: block;
         width: 80%; } }
+    @media screen and (max-width: 750px) {
+      #board.demo h1 {
+        margin-bottom: 0px; } }
     @media screen and (max-width: 1250px) {
       #board.demo #boxes .blue-box {
         width: 10%; } }
     @media screen and (max-width: 750px) {
       #board.demo #boxes .blue-box {
         width: 11%; } }
-    @media screen and (max-width: 550px) {
-      #board.demo #boxes .blue-box {
-        width: 10%; } }
     #board.demo #boxes .blue-box.category {
       font-size: 1vw; }
       @media screen and (max-width: 1250px) {
         #board.demo #boxes .blue-box.category {
           font-size: 1.2vw;
-          width: 12%; } }
+          width: 12.8%; } }
       @media screen and (max-width: 750px) {
         #board.demo #boxes .blue-box.category {
           width: 13%;
           font-size: 2.1vw; } }
       @media screen and (max-width: 500px) {
         #board.demo #boxes .blue-box.category {
-          width: 12%;
+          width: 13%;
           font-size: 1.9vw; } }
+      @media screen and (max-width: 450px) {
+        #board.demo #boxes .blue-box.category {
+          width: 13%;
+          border: 4px solid #218c74; } }
     #board.demo #boxes .blue-box.points {
       font-size: 1.6vw; }
       @media screen and (max-width: 1250px) {
         #board.demo #boxes .blue-box.points {
-          font-size: 2vw; } }
+          font-size: 2vw;
+          padding: 1% 2.4%; } }
+      @media screen and (max-width: 450px) {
+        #board.demo #boxes .blue-box.points {
+          width: 11%; } }
   #board h1 {
     font-family: "Alegreya Sans SC", sans-serif;
     position: relative;
