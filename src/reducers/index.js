@@ -153,6 +153,7 @@ const rootReducer = (state = defaultState, action) => {
     case 'QUIZ_LOAD' :
       const info = action.quiz.info ? action.quiz.info : {subject: '', gradeLevel: '', visibility: 'Public'};
       const teams = action.quiz.teams ? action.quiz.teams : [];
+      const multiplier2 = action.quiz.multiplier ? action.quiz.multiplier : 1;
       return {
         ...state,
         title: action.quiz.name,
@@ -166,7 +167,8 @@ const rootReducer = (state = defaultState, action) => {
         teams,
         unsavedChanges: false,
         hasSavedProgress: Boolean(teams.length),
-        catIndex: 5
+        catIndex: 5,
+        multiplier: multiplier2
       }
     
     case 'QUIZZES_LOAD' :
