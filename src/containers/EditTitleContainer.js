@@ -6,7 +6,7 @@ import React from 'react';
 const EditTitleContainer = props => {
     return (
         <EditButton
-        handleClick={() => props.history.push(process.env.PUBLIC_URL + '/create')}
+        handleClick={() => props.history.push(process.env.PUBLIC_URL + '/createquiz')}
         extraClass='title'
         editText='Edit title, description, and categories'
         />
